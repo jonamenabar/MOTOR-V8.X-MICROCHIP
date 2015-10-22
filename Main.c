@@ -37,31 +37,31 @@
 //-------------------DEFINO LEDS------------------
 //Cilindro 1
 #define ROJO1  PORTAbits.RA0=1
-#define CYAN1 PORTAbits.RA1=1 & PORTAbits.RA2=1  //VERDE BIT 4 PUERTO1  (BIT4 Y BIT 2 ON) VERDE+AZUL
+#define CYAN1  PORTA=0b000110//PORTAbits.RA1=1 , PORTAbits.RA2=1  //VERDE BIT 4 PUERTO1  (BIT4 Y BIT 2 ON) VERDE+AZUL
 #define AZUL1	PORTAbits.RA2=1
-#define AMARILLO1 PORTAbits.RA1=1 & PORTAbits.RA0 // VERDE BIT 4 + ROJO BIT 3
-#define BLANCO1  PORTAbits.RA0=1 & (PORTAbits.RA1=1 & PORTAbits.RA2=1) // BIT 3+ BIT 2+BIT 4
+#define AMARILLO1 PORTA=0b000011//PORTAbits.RA1=1 , PORTAbits.RA0 // VERDE BIT 4 + ROJO BIT 3
+#define BLANCO1  PORTA=0b000111//PORTAbits.RA0=1 , PORTAbits.RA1=1 , PORTAbits.RA2=1 // BIT 3+ BIT 2+BIT 4
 
 //Cilindro 3
 #define ROJO3  PORTAbits.RA3=1
-#define CYAN3  PORTAbits.RA4=1 & PORTAbits.RA5=1 //BIT 2
+#define CYAN3  PORTA=0b110000//PORTAbits.RA4=1 , PORTAbits.RA5=1 //BIT 2
 #define AZUL3	PORTAbits.RA5=1
-#define AMARILLO3  PORTAbits.RA4=1 & PORTAbits.RA3=1
-#define BLANCO3	 PORTAbits.RA3=1 & (PORTAbits.RA4=1 & PORTAbits.RA5=1)
+#define AMARILLO3  PORTA=0b011000//PORTAbits.RA4=1 , PORTAbits.RA3=1
+#define BLANCO3	 PORTA=0b111000//PORTAbits.RA3=1 , (PORTAbits.RA4=1 , PORTAbits.RA5=1)
 
 //cilindro 5
 #define ROJO5  PORTCbits.RC0=1
-#define CYAN5  PORTCbits.RC1=1 & PORTCbits.RC2=1
+#define CYAN5  PORTC=0b00000110//PORTCbits.RC1=1 , PORTCbits.RC2=1
 #define AZUL5	PORTCbits.RC2=1
-#define AMARILLO5 PORTCbits.RC1=1 & PORTCbits.RC0=1
-#define BLANCO5 PORTCbits.RC0=1 & (PORTCbits.RC1=1 & PORTCbits.RC2)
+#define AMARILLO5 PORTC=0b00000011//PORTCbits.RC1=1 , PORTCbits.RC0=1
+#define BLANCO5 PORTC=0b00000111//PORTCbits.RC0=1 , (PORTCbits.RC1=1 , PORTCbits.RC2)
 
 //cilindro 7
 #define ROJO7  PORTBbits.RB1=1
-#define CYAN7  PORTBbits.RB2=1 & PORTBbits.RB4=1
+#define CYAN7  PORTB=0b00010100//PORTBbits.RB2=1 , PORTBbits.RB4=1
 #define AZUL7	PORTBbits.RB4=1
-#define AMARILLO7 PORTBbits.RB1=1 & PORTBbits.RB2=1
-#define BLANCO7 PORTBbits.RB1=1 & (PORTBbits.RB2=1 & PORTBbits.RB4)
+#define AMARILLO7 PORTB=0b00000110//PORTBbits.RB1=1 , PORTBbits.RB2=1
+#define BLANCO7 PORTB=0b00010110//PORTBbits.RB1=1 , (PORTBbits.RB2=1 , PORTBbits.RB4)
 
 void main(void) {
 

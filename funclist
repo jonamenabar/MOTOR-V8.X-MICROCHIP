@@ -1,3 +1,6 @@
-_main: CODE, 2043 0 2
+main@SI: STRING, 29 0 2
+__stringtab: STRING, 21 0 6
+main@NO: STRING, 0 0 29
+_main: CODE, 1819 0 226
 __initialization: CODE, 2045 0 0
-Total: 2
+Total: 263
