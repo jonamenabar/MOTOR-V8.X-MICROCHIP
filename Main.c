@@ -63,10 +63,12 @@
 #define AMARILLO7 PORTB=0b00000110//PORTBbits.RB1=1 , PORTBbits.RB2=1
 #define BLANCO7 PORTB=0b00010110//PORTBbits.RB1=1 , (PORTBbits.RB2=1 , PORTBbits.RB4)
 
+#define ANTIREBOTE __delay_ms(50)//ANTI REBOTE, REVISAR SI EL TIEMPO ES MUY LARGO
+
 void main(void) {
 
     //ANSELA=0;
-    
+
 
     PEIE = 0;
     GIE = 0;
@@ -114,17 +116,25 @@ void main(void) {
     while (1) {
 
         do {
-            if (SENSOR_AR == SI)
+            if (SENSOR_AR == SI) {
+                
                 inicio = SI;
+                //ANTIREBOTE;
+            }
         } while (inicio == 0);
 
         if (SENSOR_AR == SI) {
+            
             contador = 0;
+           // ANTIREBOTE;
+
         }
 
-        if (SENSOR_CI == SI)
+        if (SENSOR_CI == SI) {
+           
             contador++;
-
+            // ANTIREBOTE;
+        }
         switch (contador) {
             case 0:
                 BLANCO1;

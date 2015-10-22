@@ -994,307 +994,315 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p x WRT=OFF ]
 "29
 [p x CP=OFF ]
-"66
+"68
 [v _main `(v ~T0 @X0 1 ef ]
 {
-[; ;Main.c: 66: void main(void) {
+[; ;Main.c: 68: void main(void) {
 [e :U _main ]
 [f ]
-[; ;Main.c: 71: PEIE = 0;
-"71
+[; ;Main.c: 73: PEIE = 0;
+"73
 [e = _PEIE -> -> 0 `i `b ]
-[; ;Main.c: 72: GIE = 0;
-"72
+[; ;Main.c: 74: GIE = 0;
+"74
 [e = _GIE -> -> 0 `i `b ]
-"76
+"78
 [v F983 `Ci ~T0 @X0 1 s SI ]
 [i F983
 -> 1 `i
 ]
-"77
+"79
 [v F984 `Ci ~T0 @X0 1 s NO ]
 [i F984
 -> 0 `i
 ]
-"81
+"83
 [v _contador `i ~T0 @X0 1 a ]
-[; ;Main.c: 76: int const SI = 1;
-[; ;Main.c: 77: int const NO = 0;
-[; ;Main.c: 81: int contador = 4;
+[; ;Main.c: 78: int const SI = 1;
+[; ;Main.c: 79: int const NO = 0;
+[; ;Main.c: 83: int contador = 4;
 [e = _contador -> 4 `i ]
-"82
+"84
 [v _inicio `i ~T0 @X0 1 a ]
-[; ;Main.c: 82: int inicio = 0;
+[; ;Main.c: 84: int inicio = 0;
 [e = _inicio -> 0 `i ]
-[; ;Main.c: 86: TRISBbits.TRISB0 = 1;
-"86
+[; ;Main.c: 88: TRISBbits.TRISB0 = 1;
+"88
 [e = . . _TRISBbits 0 0 -> -> 1 `i `uc ]
-[; ;Main.c: 87: TRISBbits.TRISB5 = 1;
-"87
+[; ;Main.c: 89: TRISBbits.TRISB5 = 1;
+"89
 [e = . . _TRISBbits 0 5 -> -> 1 `i `uc ]
-[; ;Main.c: 90: TRISAbits.TRISA2 = 0;
-"90
-[e = . . _TRISAbits 0 2 -> -> 0 `i `uc ]
-[; ;Main.c: 91: TRISAbits.TRISA0 = 0;
-"91
-[e = . . _TRISAbits 0 0 -> -> 0 `i `uc ]
-[; ;Main.c: 92: TRISAbits.TRISA1 = 0;
+[; ;Main.c: 92: TRISAbits.TRISA2 = 0;
 "92
-[e = . . _TRISAbits 0 1 -> -> 0 `i `uc ]
-[; ;Main.c: 94: TRISAbits.TRISA5 = 0;
+[e = . . _TRISAbits 0 2 -> -> 0 `i `uc ]
+[; ;Main.c: 93: TRISAbits.TRISA0 = 0;
+"93
+[e = . . _TRISAbits 0 0 -> -> 0 `i `uc ]
+[; ;Main.c: 94: TRISAbits.TRISA1 = 0;
 "94
-[e = . . _TRISAbits 0 5 -> -> 0 `i `uc ]
-[; ;Main.c: 95: TRISAbits.TRISA3 = 0;
-"95
-[e = . . _TRISAbits 0 3 -> -> 0 `i `uc ]
-[; ;Main.c: 96: TRISAbits.TRISA4 = 0;
+[e = . . _TRISAbits 0 1 -> -> 0 `i `uc ]
+[; ;Main.c: 96: TRISAbits.TRISA5 = 0;
 "96
-[e = . . _TRISAbits 0 4 -> -> 0 `i `uc ]
-[; ;Main.c: 98: TRISCbits.TRISC2 = 0;
+[e = . . _TRISAbits 0 5 -> -> 0 `i `uc ]
+[; ;Main.c: 97: TRISAbits.TRISA3 = 0;
+"97
+[e = . . _TRISAbits 0 3 -> -> 0 `i `uc ]
+[; ;Main.c: 98: TRISAbits.TRISA4 = 0;
 "98
-[e = . . _TRISCbits 0 2 -> -> 0 `i `uc ]
-[; ;Main.c: 99: TRISCbits.TRISC0 = 0;
-"99
-[e = . . _TRISCbits 0 0 -> -> 0 `i `uc ]
-[; ;Main.c: 100: TRISCbits.TRISC1 = 0;
+[e = . . _TRISAbits 0 4 -> -> 0 `i `uc ]
+[; ;Main.c: 100: TRISCbits.TRISC2 = 0;
 "100
-[e = . . _TRISCbits 0 1 -> -> 0 `i `uc ]
-[; ;Main.c: 102: TRISBbits.TRISB1 = 0;
+[e = . . _TRISCbits 0 2 -> -> 0 `i `uc ]
+[; ;Main.c: 101: TRISCbits.TRISC0 = 0;
+"101
+[e = . . _TRISCbits 0 0 -> -> 0 `i `uc ]
+[; ;Main.c: 102: TRISCbits.TRISC1 = 0;
 "102
-[e = . . _TRISBbits 0 1 -> -> 0 `i `uc ]
-[; ;Main.c: 103: TRISBbits.TRISB2 = 0;
-"103
-[e = . . _TRISBbits 0 2 -> -> 0 `i `uc ]
-[; ;Main.c: 104: TRISBbits.TRISB4 = 0;
+[e = . . _TRISCbits 0 1 -> -> 0 `i `uc ]
+[; ;Main.c: 104: TRISBbits.TRISB1 = 0;
 "104
+[e = . . _TRISBbits 0 1 -> -> 0 `i `uc ]
+[; ;Main.c: 105: TRISBbits.TRISB2 = 0;
+"105
+[e = . . _TRISBbits 0 2 -> -> 0 `i `uc ]
+[; ;Main.c: 106: TRISBbits.TRISB4 = 0;
+"106
 [e = . . _TRISBbits 0 4 -> -> 0 `i `uc ]
-[; ;Main.c: 114: while (1) {
-"114
+[; ;Main.c: 116: while (1) {
+"116
 [e :U 90 ]
 {
-[; ;Main.c: 116: do {
-"116
+[; ;Main.c: 118: do {
+"118
 [e :U 94 ]
 {
-[; ;Main.c: 117: if (PORTBbits.RB0 == SI)
-"117
-[e $ ! == -> . . _PORTBbits 0 0 `i F983 95  ]
-[; ;Main.c: 118: inicio = SI;
-"118
-[e = _inicio F983 ]
-[e :U 95 ]
+[; ;Main.c: 119: if (PORTBbits.RB0 == SI) {
 "119
-}
-[; ;Main.c: 119: } while (inicio == 0);
-[e $ == _inicio -> 0 `i 94  ]
-[e :U 93 ]
-[; ;Main.c: 121: if (PORTBbits.RB0 == SI) {
-"121
-[e $ ! == -> . . _PORTBbits 0 0 `i F983 96  ]
+[e $ ! == -> . . _PORTBbits 0 0 `i F983 95  ]
 {
-[; ;Main.c: 122: contador = 0;
-"122
-[e = _contador -> 0 `i ]
+[; ;Main.c: 121: inicio = SI;
+"121
+[e = _inicio F983 ]
 "123
 }
-[e :U 96 ]
+[e :U 95 ]
+"124
+}
 [; ;Main.c: 123: }
-[; ;Main.c: 125: if (PORTBbits.RB5 == SI)
-"125
-[e $ ! == -> . . _PORTBbits 0 5 `i F983 97  ]
-[; ;Main.c: 126: contador++;
+[; ;Main.c: 124: } while (inicio == 0);
+[e $ == _inicio -> 0 `i 94  ]
+[e :U 93 ]
+[; ;Main.c: 126: if (PORTBbits.RB0 == SI) {
 "126
-[e ++ _contador -> 1 `i ]
-[e :U 97 ]
-[; ;Main.c: 128: switch (contador) {
+[e $ ! == -> . . _PORTBbits 0 0 `i F983 96  ]
+{
+[; ;Main.c: 128: contador = 0;
 "128
+[e = _contador -> 0 `i ]
+"131
+}
+[e :U 96 ]
+[; ;Main.c: 131: }
+[; ;Main.c: 133: if (PORTBbits.RB5 == SI) {
+"133
+[e $ ! == -> . . _PORTBbits 0 5 `i F983 97  ]
+{
+[; ;Main.c: 135: contador++;
+"135
+[e ++ _contador -> 1 `i ]
+"137
+}
+[e :U 97 ]
+[; ;Main.c: 137: }
+[; ;Main.c: 138: switch (contador) {
+"138
 [e $U 99  ]
 {
-[; ;Main.c: 129: case 0:
-"129
-[e :U 100 ]
-[; ;Main.c: 130: PORTA=0b000111;
-"130
-[e = _PORTA -> -> 7 `i `uc ]
-[; ;Main.c: 131: PORTA=0b000011;
-"131
-[e = _PORTA -> -> 3 `i `uc ]
-[; ;Main.c: 132: PORTAbits.RA5=1;
-"132
-[e = . . _PORTAbits 0 5 -> -> 1 `i `uc ]
-[; ;Main.c: 133: PORTCbits.RC0=1;
-"133
-[e = . . _PORTCbits 0 0 -> -> 1 `i `uc ]
-[; ;Main.c: 134: PORTBbits.RB1=1;
-"134
-[e = . . _PORTBbits 0 1 -> -> 1 `i `uc ]
-[; ;Main.c: 135: break;
-"135
-[e $U 98  ]
-[; ;Main.c: 136: case 1:
-"136
-[e :U 101 ]
-[; ;Main.c: 137: PORTA=0b000011;
-"137
-[e = _PORTA -> -> 3 `i `uc ]
-[; ;Main.c: 138: PORTA=0b110000;
-"138
-[e = _PORTA -> -> 48 `i `uc ]
-[; ;Main.c: 139: PORTCbits.RC2=1;
+[; ;Main.c: 139: case 0:
 "139
-[e = . . _PORTCbits 0 2 -> -> 1 `i `uc ]
-[; ;Main.c: 140: PORTBbits.RB1=1;
+[e :U 100 ]
+[; ;Main.c: 140: PORTA=0b000111;
 "140
-[e = . . _PORTBbits 0 1 -> -> 1 `i `uc ]
-[; ;Main.c: 141: break;
+[e = _PORTA -> -> 7 `i `uc ]
+[; ;Main.c: 141: PORTA=0b000011;
 "141
-[e $U 98  ]
-[; ;Main.c: 142: case 2:
+[e = _PORTA -> -> 3 `i `uc ]
+[; ;Main.c: 142: PORTAbits.RA5=1;
 "142
-[e :U 102 ]
-[; ;Main.c: 143: PORTAbits.RA0=1;
+[e = . . _PORTAbits 0 5 -> -> 1 `i `uc ]
+[; ;Main.c: 143: PORTCbits.RC0=1;
 "143
-[e = . . _PORTAbits 0 0 -> -> 1 `i `uc ]
-[; ;Main.c: 144: PORTA=0b110000;
+[e = . . _PORTCbits 0 0 -> -> 1 `i `uc ]
+[; ;Main.c: 144: PORTBbits.RB1=1;
 "144
-[e = _PORTA -> -> 48 `i `uc ]
-[; ;Main.c: 145: PORTCbits.RC2=1;
+[e = . . _PORTBbits 0 1 -> -> 1 `i `uc ]
+[; ;Main.c: 145: break;
 "145
-[e = . . _PORTCbits 0 2 -> -> 1 `i `uc ]
-[; ;Main.c: 146: PORTBbits.RB4=1;
+[e $U 98  ]
+[; ;Main.c: 146: case 1:
 "146
-[e = . . _PORTBbits 0 4 -> -> 1 `i `uc ]
-[; ;Main.c: 147: break;
+[e :U 101 ]
+[; ;Main.c: 147: PORTA=0b000011;
 "147
-[e $U 98  ]
-[; ;Main.c: 148: case 3:
+[e = _PORTA -> -> 3 `i `uc ]
+[; ;Main.c: 148: PORTA=0b110000;
 "148
-[e :U 103 ]
-[; ;Main.c: 149: PORTAbits.RA0=1;
+[e = _PORTA -> -> 48 `i `uc ]
+[; ;Main.c: 149: PORTCbits.RC2=1;
 "149
-[e = . . _PORTAbits 0 0 -> -> 1 `i `uc ]
-[; ;Main.c: 150: PORTA=0b111000;
+[e = . . _PORTCbits 0 2 -> -> 1 `i `uc ]
+[; ;Main.c: 150: PORTBbits.RB1=1;
 "150
-[e = _PORTA -> -> 56 `i `uc ]
-[; ;Main.c: 151: PORTA=0b011000;
+[e = . . _PORTBbits 0 1 -> -> 1 `i `uc ]
+[; ;Main.c: 151: break;
 "151
-[e = _PORTA -> -> 24 `i `uc ]
-[; ;Main.c: 152: PORTC=0b00000110;
+[e $U 98  ]
+[; ;Main.c: 152: case 2:
 "152
-[e = _PORTC -> -> 6 `i `uc ]
-[; ;Main.c: 153: PORTBbits.RB4=1;
+[e :U 102 ]
+[; ;Main.c: 153: PORTAbits.RA0=1;
 "153
-[e = . . _PORTBbits 0 4 -> -> 1 `i `uc ]
-[; ;Main.c: 154: break;
+[e = . . _PORTAbits 0 0 -> -> 1 `i `uc ]
+[; ;Main.c: 154: PORTA=0b110000;
 "154
-[e $U 98  ]
-[; ;Main.c: 155: case 4:
+[e = _PORTA -> -> 48 `i `uc ]
+[; ;Main.c: 155: PORTCbits.RC2=1;
 "155
-[e :U 104 ]
-[; ;Main.c: 156: PORTAbits.RA2=1;
+[e = . . _PORTCbits 0 2 -> -> 1 `i `uc ]
+[; ;Main.c: 156: PORTBbits.RB4=1;
 "156
-[e = . . _PORTAbits 0 2 -> -> 1 `i `uc ]
-[; ;Main.c: 157: PORTA=0b011000;
+[e = . . _PORTBbits 0 4 -> -> 1 `i `uc ]
+[; ;Main.c: 157: break;
 "157
-[e = _PORTA -> -> 24 `i `uc ]
-[; ;Main.c: 158: PORTC=0b00000110;
+[e $U 98  ]
+[; ;Main.c: 158: case 3:
 "158
-[e = _PORTC -> -> 6 `i `uc ]
-[; ;Main.c: 159: PORTB=0b00010100;
+[e :U 103 ]
+[; ;Main.c: 159: PORTAbits.RA0=1;
 "159
-[e = _PORTB -> -> 20 `i `uc ]
-[; ;Main.c: 160: break;
+[e = . . _PORTAbits 0 0 -> -> 1 `i `uc ]
+[; ;Main.c: 160: PORTA=0b111000;
 "160
-[e $U 98  ]
-[; ;Main.c: 161: case 5:
+[e = _PORTA -> -> 56 `i `uc ]
+[; ;Main.c: 161: PORTA=0b011000;
 "161
-[e :U 105 ]
-[; ;Main.c: 162: PORTAbits.RA2=1;
+[e = _PORTA -> -> 24 `i `uc ]
+[; ;Main.c: 162: PORTC=0b00000110;
 "162
-[e = . . _PORTAbits 0 2 -> -> 1 `i `uc ]
-[; ;Main.c: 163: PORTAbits.RA3=1;
+[e = _PORTC -> -> 6 `i `uc ]
+[; ;Main.c: 163: PORTBbits.RB4=1;
 "163
-[e = . . _PORTAbits 0 3 -> -> 1 `i `uc ]
-[; ;Main.c: 164: PORTC=0b00000111;
+[e = . . _PORTBbits 0 4 -> -> 1 `i `uc ]
+[; ;Main.c: 164: break;
 "164
-[e = _PORTC -> -> 7 `i `uc ]
-[; ;Main.c: 165: PORTC=0b00000011;
+[e $U 98  ]
+[; ;Main.c: 165: case 4:
 "165
-[e = _PORTC -> -> 3 `i `uc ]
-[; ;Main.c: 166: PORTB=0b00010100;
+[e :U 104 ]
+[; ;Main.c: 166: PORTAbits.RA2=1;
 "166
-[e = _PORTB -> -> 20 `i `uc ]
-[; ;Main.c: 167: break;
+[e = . . _PORTAbits 0 2 -> -> 1 `i `uc ]
+[; ;Main.c: 167: PORTA=0b011000;
 "167
-[e $U 98  ]
-[; ;Main.c: 168: case 6:
+[e = _PORTA -> -> 24 `i `uc ]
+[; ;Main.c: 168: PORTC=0b00000110;
 "168
-[e :U 106 ]
-[; ;Main.c: 169: PORTA=0b000110;
+[e = _PORTC -> -> 6 `i `uc ]
+[; ;Main.c: 169: PORTB=0b00010100;
 "169
-[e = _PORTA -> -> 6 `i `uc ]
-[; ;Main.c: 170: PORTAbits.RA3=1;
+[e = _PORTB -> -> 20 `i `uc ]
+[; ;Main.c: 170: break;
 "170
-[e = . . _PORTAbits 0 3 -> -> 1 `i `uc ]
-[; ;Main.c: 171: PORTC=0b00000011;
+[e $U 98  ]
+[; ;Main.c: 171: case 5:
 "171
-[e = _PORTC -> -> 3 `i `uc ]
-[; ;Main.c: 172: PORTB=0b00010110;
+[e :U 105 ]
+[; ;Main.c: 172: PORTAbits.RA2=1;
 "172
-[e = _PORTB -> -> 22 `i `uc ]
-[; ;Main.c: 173: PORTB=0b00000110;
+[e = . . _PORTAbits 0 2 -> -> 1 `i `uc ]
+[; ;Main.c: 173: PORTAbits.RA3=1;
 "173
-[e = _PORTB -> -> 6 `i `uc ]
-[; ;Main.c: 174: break;
+[e = . . _PORTAbits 0 3 -> -> 1 `i `uc ]
+[; ;Main.c: 174: PORTC=0b00000111;
 "174
-[e $U 98  ]
-[; ;Main.c: 175: case 7:
+[e = _PORTC -> -> 7 `i `uc ]
+[; ;Main.c: 175: PORTC=0b00000011;
 "175
-[e :U 107 ]
-[; ;Main.c: 176: PORTA=0b000110;
+[e = _PORTC -> -> 3 `i `uc ]
+[; ;Main.c: 176: PORTB=0b00010100;
 "176
-[e = _PORTA -> -> 6 `i `uc ]
-[; ;Main.c: 177: PORTAbits.RA5=1;
+[e = _PORTB -> -> 20 `i `uc ]
+[; ;Main.c: 177: break;
 "177
-[e = . . _PORTAbits 0 5 -> -> 1 `i `uc ]
-[; ;Main.c: 178: PORTCbits.RC0=1;
+[e $U 98  ]
+[; ;Main.c: 178: case 6:
 "178
-[e = . . _PORTCbits 0 0 -> -> 1 `i `uc ]
-[; ;Main.c: 179: PORTB=0b00000110;
+[e :U 106 ]
+[; ;Main.c: 179: PORTA=0b000110;
 "179
-[e = _PORTB -> -> 6 `i `uc ]
-[; ;Main.c: 180: break;
-"180
-[e $U 98  ]
-[; ;Main.c: 181: case 8:
-"181
-[e :U 108 ]
-[; ;Main.c: 182: PORTA=0b000110;
-"182
 [e = _PORTA -> -> 6 `i `uc ]
-[; ;Main.c: 183: PORTAbits.RA5=1;
+[; ;Main.c: 180: PORTAbits.RA3=1;
+"180
+[e = . . _PORTAbits 0 3 -> -> 1 `i `uc ]
+[; ;Main.c: 181: PORTC=0b00000011;
+"181
+[e = _PORTC -> -> 3 `i `uc ]
+[; ;Main.c: 182: PORTB=0b00010110;
+"182
+[e = _PORTB -> -> 22 `i `uc ]
+[; ;Main.c: 183: PORTB=0b00000110;
 "183
-[e = . . _PORTAbits 0 5 -> -> 1 `i `uc ]
-[; ;Main.c: 184: PORTCbits.RC0=1;
-"184
-[e = . . _PORTCbits 0 0 -> -> 1 `i `uc ]
-[; ;Main.c: 185: PORTB=0b00000110;
-"185
 [e = _PORTB -> -> 6 `i `uc ]
-[; ;Main.c: 186: break;
+[; ;Main.c: 184: break;
+"184
+[e $U 98  ]
+[; ;Main.c: 185: case 7:
+"185
+[e :U 107 ]
+[; ;Main.c: 186: PORTA=0b000110;
 "186
-[e $U 98  ]
-[; ;Main.c: 187: default:
+[e = _PORTA -> -> 6 `i `uc ]
+[; ;Main.c: 187: PORTAbits.RA5=1;
 "187
-[e :U 109 ]
-[; ;Main.c: 188: break;
+[e = . . _PORTAbits 0 5 -> -> 1 `i `uc ]
+[; ;Main.c: 188: PORTCbits.RC0=1;
 "188
-[e $U 98  ]
+[e = . . _PORTCbits 0 0 -> -> 1 `i `uc ]
+[; ;Main.c: 189: PORTB=0b00000110;
 "189
-}
-[; ;Main.c: 189: }
+[e = _PORTB -> -> 6 `i `uc ]
+[; ;Main.c: 190: break;
+"190
 [e $U 98  ]
-"128
+[; ;Main.c: 191: case 8:
+"191
+[e :U 108 ]
+[; ;Main.c: 192: PORTA=0b000110;
+"192
+[e = _PORTA -> -> 6 `i `uc ]
+[; ;Main.c: 193: PORTAbits.RA5=1;
+"193
+[e = . . _PORTAbits 0 5 -> -> 1 `i `uc ]
+[; ;Main.c: 194: PORTCbits.RC0=1;
+"194
+[e = . . _PORTCbits 0 0 -> -> 1 `i `uc ]
+[; ;Main.c: 195: PORTB=0b00000110;
+"195
+[e = _PORTB -> -> 6 `i `uc ]
+[; ;Main.c: 196: break;
+"196
+[e $U 98  ]
+[; ;Main.c: 197: default:
+"197
+[e :U 109 ]
+[; ;Main.c: 198: break;
+"198
+[e $U 98  ]
+"199
+}
+[; ;Main.c: 199: }
+[e $U 98  ]
+"138
 [e :U 99 ]
 [e [\ _contador , $ -> 0 `i 100
  , $ -> 1 `i 101
@@ -1306,19 +1314,19 @@ Version 3.2 HI-TECH Software Intermediate Code
  , $ -> 7 `i 107
  , $ -> 8 `i 108
  109 ]
-"189
+"199
 [e :U 98 ]
-"191
+"201
 }
 [e :U 89 ]
-"114
+"116
 [e $U 90  ]
 [e :U 91 ]
-[; ;Main.c: 191: }
-[; ;Main.c: 195: return;
-"195
+[; ;Main.c: 201: }
+[; ;Main.c: 205: return;
+"205
 [e $UE 88  ]
-[; ;Main.c: 196: }
-"196
+[; ;Main.c: 206: }
+"206
 [e :UE 88 ]
 }
