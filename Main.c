@@ -2,7 +2,7 @@
  * File:   Main.c
  * Author: amenabarjonathan
  *
- * Created on 17 de octubre de 2015, 20:57
+ * Created on 8 de OCTUBRE de 1987, 20:57
  */
 
 
@@ -36,36 +36,36 @@
 
 //-------------------DEFINO LEDS------------------
 //Cilindro 1
-#define ROJO1  LATAbits.LATA0=1
-#define CYAN1 LATAbits.LATA1=1 & LATAbits.LATA2=1  //VERDE BIT 4 PUERTO1  (BIT4 Y BIT 2 ON) VERDE+AZUL
-#define AZUL1	LATAbits.LATA2=1
-#define AMARILLO1 LATAbits.LATA1=1 & LATAbits.LATA0 // VERDE BIT 4 + ROJO BIT 3
-#define BLANCO1  LATAbits.LATA0=1 & (LATAbits.LATA1=1 & LATAbits.LATA2=1) // BIT 3+ BIT 2+BIT 4
+#define ROJO1  PORTAbits.RA0=1
+#define CYAN1 PORTAbits.RA1=1 & PORTAbits.RA2=1  //VERDE BIT 4 PUERTO1  (BIT4 Y BIT 2 ON) VERDE+AZUL
+#define AZUL1	PORTAbits.RA2=1
+#define AMARILLO1 PORTAbits.RA1=1 & PORTAbits.RA0 // VERDE BIT 4 + ROJO BIT 3
+#define BLANCO1  PORTAbits.RA0=1 & (PORTAbits.RA1=1 & PORTAbits.RA2=1) // BIT 3+ BIT 2+BIT 4
 
 //Cilindro 3
-#define ROJO3  LATA3=1;
-#define CYAN3  LATA4=1 & LATA5=1 //BIT 2
-#define AZUL3	LATA5=1
-#define AMARILLO3  LATA4=1 & LATA3=1
-#define BLANCO3	 LATA3=1 & (LATA4=1 & LATA5=1)
+#define ROJO3  PORTAbits.RA3=1
+#define CYAN3  PORTAbits.RA4=1 & PORTAbits.RA5=1 //BIT 2
+#define AZUL3	PORTAbits.RA5=1
+#define AMARILLO3  PORTAbits.RA4=1 & PORTAbits.RA3=1
+#define BLANCO3	 PORTAbits.RA3=1 & (PORTAbits.RA4=1 & PORTAbits.RA5=1)
 
 //cilindro 5
-#define ROJO5  LATC0=1
-#define CYAN5  LATC1=1 & LATC2=1
-#define AZUL5	LATC2=1
-#define AMARILLO5 LATC1=1 & LATC0=1
-#define BLANCO5 LATC0=1 & (LATC1=1 & LATC2)
+#define ROJO5  PORTCbits.RC0=1
+#define CYAN5  PORTCbits.RC1=1 & PORTCbits.RC2=1
+#define AZUL5	PORTCbits.RC2=1
+#define AMARILLO5 PORTCbits.RC1=1 & PORTCbits.RC0=1
+#define BLANCO5 PORTCbits.RC0=1 & (PORTCbits.RC1=1 & PORTCbits.RC2)
 
 //cilindro 7
-#define ROJO7  LATB1=1
-#define CYAN7  LATB2=1 & LATB4=1
-#define AZUL7	LATB4=1
-#define AMARILLO7 LATB1=1 & LATB2=1
-#define BLANCO7 LATB1=1 & (LATB2=1 & LATB4)
+#define ROJO7  PORTBbits.RB1=1
+#define CYAN7  PORTBbits.RB2=1 & PORTBbits.RB4=1
+#define AZUL7	PORTBbits.RB4=1
+#define AMARILLO7 PORTBbits.RB1=1 & PORTBbits.RB2=1
+#define BLANCO7 PORTBbits.RB1=1 & (PORTBbits.RB2=1 & PORTBbits.RB4)
 
 void main(void) {
 
-    ANSELA=0;
+    //ANSELA=0;
     
 
     PEIE = 0;

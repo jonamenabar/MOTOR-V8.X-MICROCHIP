@@ -1306,7 +1306,7 @@ extern __nonreentrant void _delay(unsigned long);
 # 66
 void main(void) {
 
-ANSELA=0;
+
 
 
 PEIE = 0;
@@ -1361,62 +1361,62 @@ contador++;
 
 switch (contador) {
 case 0:
-LATAbits.LATA0=1 & (LATAbits.LATA1=1 & LATAbits.LATA2=1);
-LATAbits.LATA1=1 & LATAbits.LATA0;
-LATA5=1;
-LATC0=1;
-LATB1=1;
+PORTAbits.RA0=1 & (PORTAbits.RA1=1 & PORTAbits.RA2=1);
+PORTAbits.RA1=1 & PORTAbits.RA0;
+PORTAbits.RA5=1;
+PORTCbits.RC0=1;
+PORTBbits.RB1=1;
 break;
 case 1:
-LATAbits.LATA1=1 & LATAbits.LATA0;
-LATA4=1 & LATA5=1;
-LATC2=1;
-LATB1=1;
+PORTAbits.RA1=1 & PORTAbits.RA0;
+PORTAbits.RA4=1 & PORTAbits.RA5=1;
+PORTCbits.RC2=1;
+PORTBbits.RB1=1;
 break;
 case 2:
-LATAbits.LATA0=1;
-LATA4=1 & LATA5=1;
-LATC2=1;
-LATB4=1;
+PORTAbits.RA0=1;
+PORTAbits.RA4=1 & PORTAbits.RA5=1;
+PORTCbits.RC2=1;
+PORTBbits.RB4=1;
 break;
 case 3:
-LATAbits.LATA0=1;
-LATA3=1 & (LATA4=1 & LATA5=1);
-LATA4=1 & LATA3=1;
-LATC1=1 & LATC2=1;
-LATB4=1;
+PORTAbits.RA0=1;
+PORTAbits.RA3=1 & (PORTAbits.RA4=1 & PORTAbits.RA5=1);
+PORTAbits.RA4=1 & PORTAbits.RA3=1;
+PORTCbits.RC1=1 & PORTCbits.RC2=1;
+PORTBbits.RB4=1;
 break;
 case 4:
-LATAbits.LATA2=1;
-LATA4=1 & LATA3=1;
-LATC1=1 & LATC2=1;
-LATB2=1 & LATB4=1;
+PORTAbits.RA2=1;
+PORTAbits.RA4=1 & PORTAbits.RA3=1;
+PORTCbits.RC1=1 & PORTCbits.RC2=1;
+PORTBbits.RB2=1 & PORTBbits.RB4=1;
 break;
 case 5:
-LATAbits.LATA2=1;
-LATA3=1;;
-LATC0=1 & (LATC1=1 & LATC2);
-LATC1=1 & LATC0=1;
-LATB2=1 & LATB4=1;
+PORTAbits.RA2=1;
+PORTAbits.RA3=1;
+PORTCbits.RC0=1 & (PORTCbits.RC1=1 & PORTCbits.RC2);
+PORTCbits.RC1=1 & PORTCbits.RC0=1;
+PORTBbits.RB2=1 & PORTBbits.RB4=1;
 break;
 case 6:
-LATAbits.LATA1=1 & LATAbits.LATA2=1;
-LATA3=1;;
-LATC1=1 & LATC0=1;
-LATB1=1 & (LATB2=1 & LATB4);
-LATB1=1 & LATB2=1;
+PORTAbits.RA1=1 & PORTAbits.RA2=1;
+PORTAbits.RA3=1;
+PORTCbits.RC1=1 & PORTCbits.RC0=1;
+PORTBbits.RB1=1 & (PORTBbits.RB2=1 & PORTBbits.RB4);
+PORTBbits.RB1=1 & PORTBbits.RB2=1;
 break;
 case 7:
-LATAbits.LATA1=1 & LATAbits.LATA2=1;
-LATA5=1;
-LATC0=1;
-LATB1=1 & LATB2=1;
+PORTAbits.RA1=1 & PORTAbits.RA2=1;
+PORTAbits.RA5=1;
+PORTCbits.RC0=1;
+PORTBbits.RB1=1 & PORTBbits.RB2=1;
 break;
 case 8:
-LATAbits.LATA1=1 & LATAbits.LATA2=1;
-LATA5=1;
-LATC0=1;
-LATB1=1 & LATB2=1;
+PORTAbits.RA1=1 & PORTAbits.RA2=1;
+PORTAbits.RA5=1;
+PORTCbits.RC0=1;
+PORTBbits.RB1=1 & PORTBbits.RB2=1;
 break;
 default:
 break;
