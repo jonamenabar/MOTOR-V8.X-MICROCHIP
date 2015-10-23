@@ -5,7 +5,7 @@ Linker command line:
 --edf=/Applications/microchip/xc8/v1.33/dat/en_msgs.txt -cs \
   -h+dist/default/production/MOTOR_V8.X.production.sym \
   --cmf=dist/default/production/MOTOR_V8.X.production.cmf -z -Q16F873A \
-  -o/tmp/cgtHm77nR -Mdist/default/production/MOTOR_V8.X.production.map -E1 \
+  -o/tmp/cgt8rhcNB -Mdist/default/production/MOTOR_V8.X.production.map -E1 \
   -ver=XC8 -ASTACK=0A0h-0fdh -pstack=STACK -ACONST=00h-0FFhx16 \
   -ACODE=00h-07FFhx2 -ASTRCODE=00h-0FFFh -AENTRY=00h-0FFhx16 \
   -ASTRING=00h-0FFhx16 -ABANK0=020h-07Dh -ABANK1=0A0h-0FDh \
@@ -15,7 +15,7 @@ Linker command line:
   -pfunctab=CODE -ACONFIG=02007h-02007h -pconfig=CONFIG -DCONFIG=2 \
   -AIDLOC=02000h-02003h -pidloc=IDLOC -DIDLOC=2 -AEEDATA=00h-07Fh/02100h \
   -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 \
-  -DENTRY=2 -k /tmp/cgtc4EYqT.obj \
+  -DENTRY=2 -k /tmp/cgtRbamVi.obj \
   dist/default/production/MOTOR_V8.X.production.obj 
 
 Object code version is 3.11
@@ -25,14 +25,14 @@ Machine type is 16F873A
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-/tmp/cgtc4EYqT.obj
+/tmp/cgtRbamVi.obj
                 end_init                              0        0        2        0       0
                 config                             2007     2007        1     400E       0
 dist/default/production/MOTOR_V8.X.production.obj
                 cinit                               7FD      7FD        3      FFA       0
-                text1                               697      697        6      D2E       0
+                text1                               61D      61D        6      C3A       0
                 swtext1                               2        2       12        4       0
-                maintext                            69D      69D      160      D3A       0
+                maintext                            623      623      1DA      C46       0
                 cstackBANK0                          20       20        9       20       1
                 strings                              14       14        A       28       0
 
@@ -45,8 +45,8 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   CODE           
                 end_init                              0        0        2         0
                 cinit                               7FD      7FD        3         0
-                text1                               697      697        6         0
-                maintext                            69D      69D      160         0
+                text1                               61D      61D        6         0
+                maintext                            623      623      1DA         0
 
         CLASS   STRCODE        
 
@@ -94,8 +94,8 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
                 swtext1                        000002  000012  000014         4       0  CONST       2
                 cstackBANK0                    000020  000009  000029        20       1  BANK0       1
                 strings                        000014  00000A  00001E        28       0  STRING      2
-                text1                          000697  000006  00069D       D2E       0  CODE        2
-                maintext                       00069D  000160  0007FD       D3A       0  CODE        2
+                text1                          00061D  000006  000623       C3A       0  CODE        2
+                maintext                       000623  0001DA  0007FD       C46       0  CODE        2
                 cinit                          0007FD  000003  000800       FFA       0  CODE        2
                 config                         002007  000001  002008      400E       0  CONFIG      2
 
@@ -105,12 +105,12 @@ UNUSED ADDRESS RANGES
         Name                Unused          Largest block    Delta
         BANK0            0029-007D             55           1
         BANK1            00A0-00FD             5E           1
-        CODE             001E-0696            679           2
+        CODE             001E-061C            5FF           2
                          0800-0FFF            800
-        CONST            001E-0696            100           2
+        CONST            001E-061C            100           2
                          0800-0FFF            100
         EEDATA           2100-217F             80           2
-        ENTRY            001E-0696            100           2
+        ENTRY            001E-061C            100           2
                          0800-0FFF            100
         IDLOC            2000-2003              4           2
         RAM              0029-007D             55           1
@@ -120,14 +120,14 @@ UNUSED ADDRESS RANGES
         SFR2             0100-017D             7E           1
         SFR3             0180-01FD             7E           1
         STACK            00A0-00FD             5E           1
-        STRCODE          001E-0696            679           2
+        STRCODE          001E-061C            5FF           2
                          0800-0FFF            800
-        STRING           001E-0696            100           2
+        STRING           001E-061C            100           2
                          0800-0FFF            100
 
                                   Symbol Table
 
-_Apagar                  text1        0697
+_Apagar                  text1        061D
 _GIE                     (abs)        005F
 _PEIE                    (abs)        005E
 _PORTA                   (abs)        0005
@@ -218,7 +218,7 @@ __S3                     (abs)        0000
 ___int_sp                stack        0000
 ___latbits               (abs)        0001
 ___sp                    stack        0000
-__end_of_Apagar          text1        069D
+__end_of_Apagar          text1        0623
 __end_of__initialization cinit        07FD
 __end_of__stringtab      strings      001A
 __end_of_main            maintext     07FD
@@ -227,15 +227,15 @@ __end_ofmain@SI          strings      001E
 __initialization         cinit        07FD
 __pcstackBANK0           cstackBANK0  0020
 __pcstackCOMMON          cstackCOMMON 0000
-__pmaintext              maintext     069D
+__pmaintext              maintext     0623
 __pstrings               strings      0014
 __pswtext1               swtext1      0002
-__ptext1                 text1        0697
+__ptext1                 text1        061D
 __size_of_Apagar         (abs)        0000
 __size_of_main           (abs)        0000
 __stringbase             strings      0019
 __stringtab              strings      0014
-_main                    maintext     069D
+_main                    maintext     0623
 btemp                    (abs)        007E
 end_of_initialization    cinit        07FD
 intlevel0                functab      0000
@@ -277,7 +277,7 @@ FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 71 in file "Main.c"
+		line 73 in file "Main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -307,7 +307,7 @@ Total ram usage:        9 bytes
 
  *************** function _Apagar *****************
  Defined at:
-		line 224 in file "Main.c"
+		line 235 in file "Main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -339,10 +339,10 @@ MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
 Main.c
-		_Apagar        		CODE           	0697	0000	6
-		_main          		CODE           	069D	0000	352
+		_Apagar        		CODE           	061D	0000	6
+		_main          		CODE           	0623	0000	474
 
-Main.c estimated size: 358
+Main.c estimated size: 480
 
 shared
 		main@SI        		STRING         	001C	0000	2

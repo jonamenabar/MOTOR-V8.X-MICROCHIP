@@ -36,7 +36,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S8 . . ]
 "224
 [v _PORTBbits `VS8 ~T0 @X0 0 e@6 ]
-"158
+"69 Main.c
+[v _Apagar `(v ~T0 @X0 0 ef ]
+"158 /Applications/microchip/xc8/v1.33/include/pic16f873a.h
 [v _PORTA `Vuc ~T0 @X0 0 e@5 ]
 [v F980 `(v ~T0 @X0 1 tf1`ul ]
 "154 /Applications/microchip/xc8/v1.33/include/pic.h
@@ -46,8 +48,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _PORTC `Vuc ~T0 @X0 0 e@7 ]
 "207
 [v _PORTB `Vuc ~T0 @X0 0 e@6 ]
-"69 Main.c
-[v _Apagar `(v ~T0 @X0 0 ef ]
 [; ;htc.h: 21: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 24: extern void __builtin_software_breakpoint(void);
 [; ;pic16f873a.h: 47: extern volatile unsigned char INDF @ 0x000;
@@ -1112,213 +1112,213 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;Main.c: 142: case 0:
 "142
 [e :U 100 ]
-[; ;Main.c: 143: PORTA|=0b000111;
+[; ;Main.c: 143: Apagar();
 "143
-[e =| _PORTA -> -> 7 `i `uc ]
-[; ;Main.c: 144: _delay((unsigned long)((10)*(4000000/4000.0)));
-"144
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-[; ;Main.c: 145: PORTA|= 0b000011;
-"145
-[e =| _PORTA -> -> 3 `i `uc ]
-[; ;Main.c: 146: PORTA|=0b100000;
-"146
-[e =| _PORTA -> -> 32 `i `uc ]
-[; ;Main.c: 147: PORTC|=0b00000001;
-"147
-[e =| _PORTC -> -> 1 `i `uc ]
-[; ;Main.c: 148: PORTB|=0b00000010;
-"148
-[e =| _PORTB -> -> 2 `i `uc ]
-[; ;Main.c: 149: Apagar();
-"149
 [e ( _Apagar ..  ]
+[; ;Main.c: 144: PORTA|=0b000111;
+"144
+[e =| _PORTA -> -> 7 `i `uc ]
+[; ;Main.c: 145: _delay((unsigned long)((10)*(4000000/4000.0)));
+"145
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;Main.c: 146: PORTA|= 0b000011;
+"146
+[e =| _PORTA -> -> 3 `i `uc ]
+[; ;Main.c: 147: PORTA|=0b100000;
+"147
+[e =| _PORTA -> -> 32 `i `uc ]
+[; ;Main.c: 148: PORTC|=0b00000001;
+"148
+[e =| _PORTC -> -> 1 `i `uc ]
+[; ;Main.c: 149: PORTB|=0b00000010;
+"149
+[e =| _PORTB -> -> 2 `i `uc ]
 [; ;Main.c: 150: break;
 "150
 [e $U 98  ]
 [; ;Main.c: 151: case 1:
 "151
 [e :U 101 ]
-[; ;Main.c: 152: PORTA|= 0b000011;
+[; ;Main.c: 152: Apagar();
 "152
-[e =| _PORTA -> -> 3 `i `uc ]
-[; ;Main.c: 153: PORTA|=0b110000;
-"153
-[e =| _PORTA -> -> 48 `i `uc ]
-[; ;Main.c: 154: PORTC|=0b00000100;
-"154
-[e =| _PORTC -> -> 4 `i `uc ]
-[; ;Main.c: 155: PORTB|=0b00000010;
-"155
-[e =| _PORTB -> -> 2 `i `uc ]
-[; ;Main.c: 156: Apagar();
-"156
 [e ( _Apagar ..  ]
+[; ;Main.c: 153: PORTA|= 0b000011;
+"153
+[e =| _PORTA -> -> 3 `i `uc ]
+[; ;Main.c: 154: PORTA|=0b110000;
+"154
+[e =| _PORTA -> -> 48 `i `uc ]
+[; ;Main.c: 155: PORTC|=0b00000100;
+"155
+[e =| _PORTC -> -> 4 `i `uc ]
+[; ;Main.c: 156: PORTB|=0b00000010;
+"156
+[e =| _PORTB -> -> 2 `i `uc ]
 [; ;Main.c: 157: break;
 "157
 [e $U 98  ]
 [; ;Main.c: 158: case 2:
 "158
 [e :U 102 ]
-[; ;Main.c: 159: PORTA|=0b000001;
+[; ;Main.c: 159: Apagar();
 "159
-[e =| _PORTA -> -> 1 `i `uc ]
-[; ;Main.c: 160: PORTA|=0b110000;
-"160
-[e =| _PORTA -> -> 48 `i `uc ]
-[; ;Main.c: 161: PORTC|=0b00000100;
-"161
-[e =| _PORTC -> -> 4 `i `uc ]
-[; ;Main.c: 162: PORTB|=0b00010000;
-"162
-[e =| _PORTB -> -> 16 `i `uc ]
-[; ;Main.c: 163: Apagar();
-"163
 [e ( _Apagar ..  ]
+[; ;Main.c: 160: PORTA|=0b000001;
+"160
+[e =| _PORTA -> -> 1 `i `uc ]
+[; ;Main.c: 161: PORTA|=0b110000;
+"161
+[e =| _PORTA -> -> 48 `i `uc ]
+[; ;Main.c: 162: PORTC|=0b00000100;
+"162
+[e =| _PORTC -> -> 4 `i `uc ]
+[; ;Main.c: 163: PORTB|=0b00010000;
+"163
+[e =| _PORTB -> -> 16 `i `uc ]
 [; ;Main.c: 164: break;
 "164
 [e $U 98  ]
 [; ;Main.c: 165: case 3:
 "165
 [e :U 103 ]
-[; ;Main.c: 166: PORTA|=0b000001;
+[; ;Main.c: 166: Apagar();
 "166
-[e =| _PORTA -> -> 1 `i `uc ]
-[; ;Main.c: 167: PORTA|=0b111000;
-"167
-[e =| _PORTA -> -> 56 `i `uc ]
-[; ;Main.c: 168: _delay((unsigned long)((10)*(4000000/4000.0)));
-"168
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-[; ;Main.c: 169: PORTA|=0b011000;
-"169
-[e =| _PORTA -> -> 24 `i `uc ]
-[; ;Main.c: 170: PORTC|=0b00000110;
-"170
-[e =| _PORTC -> -> 6 `i `uc ]
-[; ;Main.c: 171: PORTB|=0b00010000;
-"171
-[e =| _PORTB -> -> 16 `i `uc ]
-[; ;Main.c: 172: Apagar();
-"172
 [e ( _Apagar ..  ]
+[; ;Main.c: 167: PORTA|=0b000001;
+"167
+[e =| _PORTA -> -> 1 `i `uc ]
+[; ;Main.c: 168: PORTA|=0b111000;
+"168
+[e =| _PORTA -> -> 56 `i `uc ]
+[; ;Main.c: 169: _delay((unsigned long)((10)*(4000000/4000.0)));
+"169
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;Main.c: 170: PORTA|=0b011000;
+"170
+[e =| _PORTA -> -> 24 `i `uc ]
+[; ;Main.c: 171: PORTC|=0b00000110;
+"171
+[e =| _PORTC -> -> 6 `i `uc ]
+[; ;Main.c: 172: PORTB|=0b00010000;
+"172
+[e =| _PORTB -> -> 16 `i `uc ]
 [; ;Main.c: 173: break;
 "173
 [e $U 98  ]
 [; ;Main.c: 174: case 4:
 "174
 [e :U 104 ]
-[; ;Main.c: 175: PORTA|= 0b000100;
+[; ;Main.c: 175: Apagar();
 "175
-[e =| _PORTA -> -> 4 `i `uc ]
-[; ;Main.c: 176: PORTA|=0b011000;
-"176
-[e =| _PORTA -> -> 24 `i `uc ]
-[; ;Main.c: 177: PORTC|=0b00000110;
-"177
-[e =| _PORTC -> -> 6 `i `uc ]
-[; ;Main.c: 178: PORTB|=0b00010100;
-"178
-[e =| _PORTB -> -> 20 `i `uc ]
-[; ;Main.c: 179: Apagar();
-"179
 [e ( _Apagar ..  ]
+[; ;Main.c: 176: PORTA|= 0b000100;
+"176
+[e =| _PORTA -> -> 4 `i `uc ]
+[; ;Main.c: 177: PORTA|=0b011000;
+"177
+[e =| _PORTA -> -> 24 `i `uc ]
+[; ;Main.c: 178: PORTC|=0b00000110;
+"178
+[e =| _PORTC -> -> 6 `i `uc ]
+[; ;Main.c: 179: PORTB|=0b00010100;
+"179
+[e =| _PORTB -> -> 20 `i `uc ]
 [; ;Main.c: 180: break;
 "180
 [e $U 98  ]
 [; ;Main.c: 181: case 5:
 "181
 [e :U 105 ]
-[; ;Main.c: 182: PORTA|= 0b000100;
+[; ;Main.c: 182: Apagar();
 "182
-[e =| _PORTA -> -> 4 `i `uc ]
-[; ;Main.c: 183: PORTA|=0b001000;
-"183
-[e =| _PORTA -> -> 8 `i `uc ]
-[; ;Main.c: 184: PORTC|=0b00000111;
-"184
-[e =| _PORTC -> -> 7 `i `uc ]
-[; ;Main.c: 185: _delay((unsigned long)((10)*(4000000/4000.0)));
-"185
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-[; ;Main.c: 186: PORTC|=0b00000011;
-"186
-[e =| _PORTC -> -> 3 `i `uc ]
-[; ;Main.c: 187: PORTB|=0b00010100;
-"187
-[e =| _PORTB -> -> 20 `i `uc ]
-[; ;Main.c: 188: Apagar();
-"188
 [e ( _Apagar ..  ]
+[; ;Main.c: 183: PORTA|= 0b000100;
+"183
+[e =| _PORTA -> -> 4 `i `uc ]
+[; ;Main.c: 184: PORTA|=0b001000;
+"184
+[e =| _PORTA -> -> 8 `i `uc ]
+[; ;Main.c: 185: PORTC|=0b00000111;
+"185
+[e =| _PORTC -> -> 7 `i `uc ]
+[; ;Main.c: 186: _delay((unsigned long)((10)*(4000000/4000.0)));
+"186
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;Main.c: 187: PORTC|=0b00000011;
+"187
+[e =| _PORTC -> -> 3 `i `uc ]
+[; ;Main.c: 188: PORTB|=0b00010100;
+"188
+[e =| _PORTB -> -> 20 `i `uc ]
 [; ;Main.c: 189: break;
 "189
 [e $U 98  ]
 [; ;Main.c: 190: case 6:
 "190
 [e :U 106 ]
-[; ;Main.c: 191: PORTA|= 0b000110;
+[; ;Main.c: 191: Apagar();
 "191
-[e =| _PORTA -> -> 6 `i `uc ]
-[; ;Main.c: 192: PORTA|=0b001000;
-"192
-[e =| _PORTA -> -> 8 `i `uc ]
-[; ;Main.c: 193: PORTC|=0b00000011;
-"193
-[e =| _PORTC -> -> 3 `i `uc ]
-[; ;Main.c: 194: PORTB|=0b00010110;
-"194
-[e =| _PORTB -> -> 22 `i `uc ]
-[; ;Main.c: 195: _delay((unsigned long)((10)*(4000000/4000.0)));
-"195
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-[; ;Main.c: 196: PORTB|=0b00000110;
-"196
-[e =| _PORTB -> -> 6 `i `uc ]
-[; ;Main.c: 197: Apagar();
-"197
 [e ( _Apagar ..  ]
+[; ;Main.c: 192: PORTA|= 0b000110;
+"192
+[e =| _PORTA -> -> 6 `i `uc ]
+[; ;Main.c: 193: PORTA|=0b001000;
+"193
+[e =| _PORTA -> -> 8 `i `uc ]
+[; ;Main.c: 194: PORTC|=0b00000011;
+"194
+[e =| _PORTC -> -> 3 `i `uc ]
+[; ;Main.c: 195: PORTB|=0b00010110;
+"195
+[e =| _PORTB -> -> 22 `i `uc ]
+[; ;Main.c: 196: _delay((unsigned long)((10)*(4000000/4000.0)));
+"196
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;Main.c: 197: PORTB|=0b00000110;
+"197
+[e =| _PORTB -> -> 6 `i `uc ]
 [; ;Main.c: 198: break;
 "198
 [e $U 98  ]
 [; ;Main.c: 199: case 7:
 "199
 [e :U 107 ]
-[; ;Main.c: 200: PORTA|= 0b000110;
+[; ;Main.c: 200: Apagar();
 "200
-[e =| _PORTA -> -> 6 `i `uc ]
-[; ;Main.c: 201: PORTA|=0b100000;
-"201
-[e =| _PORTA -> -> 32 `i `uc ]
-[; ;Main.c: 202: PORTC|=0b00000001;
-"202
-[e =| _PORTC -> -> 1 `i `uc ]
-[; ;Main.c: 203: PORTB|=0b00000110;
-"203
-[e =| _PORTB -> -> 6 `i `uc ]
-[; ;Main.c: 204: Apagar();
-"204
 [e ( _Apagar ..  ]
+[; ;Main.c: 201: PORTA|= 0b000110;
+"201
+[e =| _PORTA -> -> 6 `i `uc ]
+[; ;Main.c: 202: PORTA|=0b100000;
+"202
+[e =| _PORTA -> -> 32 `i `uc ]
+[; ;Main.c: 203: PORTC|=0b00000001;
+"203
+[e =| _PORTC -> -> 1 `i `uc ]
+[; ;Main.c: 204: PORTB|=0b00000110;
+"204
+[e =| _PORTB -> -> 6 `i `uc ]
 [; ;Main.c: 205: break;
 "205
 [e $U 98  ]
 [; ;Main.c: 206: case 8:
 "206
 [e :U 108 ]
-[; ;Main.c: 207: PORTA|= 0b000110;
+[; ;Main.c: 207: Apagar();
 "207
-[e =| _PORTA -> -> 6 `i `uc ]
-[; ;Main.c: 208: PORTA|=0b100000;
-"208
-[e =| _PORTA -> -> 32 `i `uc ]
-[; ;Main.c: 209: PORTC|=0b00000001;
-"209
-[e =| _PORTC -> -> 1 `i `uc ]
-[; ;Main.c: 210: PORTB|=0b00000110;
-"210
-[e =| _PORTB -> -> 6 `i `uc ]
-[; ;Main.c: 211: Apagar();
-"211
 [e ( _Apagar ..  ]
+[; ;Main.c: 208: PORTA|= 0b000110;
+"208
+[e =| _PORTA -> -> 6 `i `uc ]
+[; ;Main.c: 209: PORTA|=0b100000;
+"209
+[e =| _PORTA -> -> 32 `i `uc ]
+[; ;Main.c: 210: PORTC|=0b00000001;
+"210
+[e =| _PORTC -> -> 1 `i `uc ]
+[; ;Main.c: 211: PORTB|=0b00000110;
+"211
+[e =| _PORTB -> -> 6 `i `uc ]
 [; ;Main.c: 212: break;
 "212
 [e $U 98  ]

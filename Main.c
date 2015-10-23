@@ -44,27 +44,29 @@
 
 //Cilindro 3
 #define ROJO3  PORTA|=0b001000 //RA3
-#define CYAN3  PORTA|=0b110000//PORTAbits.RA4=1 , PORTAbits.RA5=1 //BIT 2
+#define CYAN3  PORTA|=0b110000//PORTAbits.RA4=1 , PORTAbits.RA5=1 //BIT 2  VERDE+AZUL
 #define AZUL3	PORTA|=0b100000 //RA5
-#define AMARILLO3  PORTA|=0b011000//PORTAbits.RA4=1 , PORTAbits.RA3=1
+#define AMARILLO3  PORTA|=0b011000//PORTAbits.RA4=1 , PORTAbits.RA3=1 VERDE + ROJO
 #define BLANCO3	 PORTA|=0b111000//PORTAbits.RA3=1 , (PORTAbits.RA4=1 , PORTAbits.RA5=1)
 
 //cilindro 5
 #define ROJO5  PORTC|=0b00000001 //RC0
-#define CYAN5  PORTC|=0b00000110//PORTCbits.RC1=1 , PORTCbits.RC2=1
+#define CYAN5  PORTC|=0b00000110//PORTCbits.RC1=1 , PORTCbits.RC2=1 VERDE+AZUL
 #define AZUL5	PORTC|=0b00000100 //RC2
-#define AMARILLO5 PORTC|=0b00000011//PORTCbits.RC1=1 , PORTCbits.RC0=1
+#define AMARILLO5 PORTC|=0b00000011//PORTCbits.RC1=1 , PORTCbits.RC0=1 VERDE + ROJO
 #define BLANCO5 PORTC|=0b00000111//PORTCbits.RC0=1 , (PORTCbits.RC1=1 , PORTCbits.RC2)
 
 //cilindro 7
 #define ROJO7  PORTB|=0b00000010 //RB1
-#define CYAN7  PORTB|=0b00010100//PORTBbits.RB2=1 , PORTBbits.RB4=1
+#define CYAN7  PORTB|=0b00010100//PORTBbits.RB2=1 , PORTBbits.RB4=1 VERDE+AZUL
 #define AZUL7	PORTB|=0b00010000 //RB4
-#define AMARILLO7 PORTB|=0b00000110//PORTBbits.RB1=1 , PORTBbits.RB2=1
+#define AMARILLO7 PORTB|=0b00000110//PORTBbits.RB1=1 , PORTBbits.RB2=1 VERDE + ROJO
 #define BLANCO7 PORTB|=0b00010110//PORTBbits.RB1=1 , (PORTBbits.RB2=1 , PORTBbits.RB4)
 
 #define ANTIREBOTE __delay_ms(50)//ANTI REBOTE, REVISAR SI EL TIEMPO ES MUY LARGO
 #define DELAY_FLASH __delay_ms(10) //establezco un delay para los flash
+#define RETARDO __delay_ms(100)
+
 
 void Apagar(void); //prototipado de la funcion apagar
 
@@ -122,93 +124,102 @@ void main(void) {
             if (SENSOR_AR == SI) {
 
                 inicio = SI;
-                //ANTIREBOTE;
+                ANTIREBOTE;
             }
         } while (inicio == 0);
 
         if (SENSOR_AR == SI) {
 
             contador = 0;
-            // ANTIREBOTE;
+             ANTIREBOTE;
 
         }
 
         if (SENSOR_CI == SI) {
 
             contador++;
-            // ANTIREBOTE;
+             ANTIREBOTE;
         }
         switch (contador) {
             case 0:
+                Apagar();
                 BLANCO1;
                 DELAY_FLASH;
                 AMARILLO1;
                 AZUL3;
                 ROJO5;
                 ROJO7;
-                Apagar();
+                RETARDO;
                 break;
             case 1:
+                Apagar();
                 AMARILLO1;
                 CYAN3;
                 AZUL5;
                 ROJO7;
-                Apagar();
+                RETARDO;
                 break;
             case 2:
+                Apagar();
                 ROJO1;
                 CYAN3;
                 AZUL5;
                 AZUL7;
-                Apagar();
+                RETARDO;
                 break;
             case 3:
+                Apagar();
                 ROJO1;
                 BLANCO3;
                 DELAY_FLASH;
                 AMARILLO3;
                 CYAN5;
                 AZUL7;
-                Apagar();
+                RETARDO;
                 break;
             case 4:
+                Apagar();
                 AZUL1;
                 AMARILLO3;
                 CYAN5;
                 CYAN7;
-                Apagar();
+                RETARDO;
                 break;
             case 5:
+                Apagar();
                 AZUL1;
                 ROJO3;
                 BLANCO5;
                 DELAY_FLASH;
                 AMARILLO5;
                 CYAN7;
-                Apagar();
+                RETARDO;
                 break;
             case 6:
+                Apagar();
                 CYAN1;
                 ROJO3;
                 AMARILLO5;
                 BLANCO7;
                 DELAY_FLASH;
                 AMARILLO7;
-                Apagar();
+                RETARDO;
                 break;
             case 7:
+                Apagar();
                 CYAN1;
                 AZUL3;
                 ROJO5;
                 AMARILLO7;
-                Apagar();
+                RETARDO;
                 break;
             case 8:
+                Apagar();
                 CYAN1;
                 AZUL3;
                 ROJO5;
                 AMARILLO7;
-                Apagar();
+                RETARDO;
                 break;
             default:
                 break;

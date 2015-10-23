@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC LITE Macro Assembler V1.33 build 59893 
-                                                                                               Thu Oct 22 21:45:01 2015
+                                                                                               Thu Oct 22 22:04:37 2015
 
 Microchip Technology Omniscient Code Generator (Lite mode) build 59893
      1  0000                     
@@ -232,7 +232,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
    225                           __CFG_WRT$OFF equ 0x0
    226  0000                     global __CFG_FOSC$XT
    227                           __CFG_FOSC$XT equ 0x0
-   228  0000                     	file	"/tmp/cgtm8sn1a"
+   228  0000                     	file	"/tmp/cgt0mfwFV"
    229                           	line	#
    230                           psect cinit,class=CODE,delta=2
    231                           global start_initialization
@@ -249,7 +249,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
    242  07FD                     __end_of__initialization:clrf status
    243  07FD                     ljmp _main	;jump to C main() function
       + 07FD  0183               	clrf	3
-   244  07FE  118A  2E9D         psect	cstackCOMMON,class=COMMON,space=1,noexec
+   244  07FE  118A  2E96         psect	cstackCOMMON,class=COMMON,space=1,noexec
    245                           global __pcstackCOMMON
    246                           __pcstackCOMMON:
    247  0000                     ??_Apagar:	; 0 bytes @ 0x0
@@ -385,912 +385,943 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
    377                           	line	71
    378                           global __pmaintext
    379                           __pmaintext:	;psect for function _main
-   380  069D                     psect	maintext
+   380  0696                     psect	maintext
    381                           	file	"Main.c"
    382                           	line	71
    383                           	global	__size_of_main
    384                           	__size_of_main	equ	__end_of_main-_main
-   385  0160                     	
+   385  0167                     	
    386                           _main:	
-   387  069D                     ;incstack = 0
+   387  0696                     ;incstack = 0
    388                           	opt	stack 5
    389                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0+btemp+1+pclath+cstack]
    390                           	line	76
    391                           	
-   392                           l719:	
-   393  069D                     ;Main.c: 76: PEIE = 0;
+   392                           l743:	
+   393  0696                     ;Main.c: 76: PEIE = 0;
    394                           	bcf	(94/8),(94)&7	;volatile
-   395  069D  130B               	line	77
+   395  0696  130B               	line	77
    396                           ;Main.c: 77: GIE = 0;
    397                           	bcf	(95/8),(95)&7	;volatile
-   398  069E  138B               	line	86
+   398  0697  138B               	line	86
    399                           	
-   400                           l721:	
-   401  069F                     ;Main.c: 81: int const SI = 1;
+   400                           l745:	
+   401  0698                     ;Main.c: 81: int const SI = 1;
    402                           ;Main.c: 82: int const NO = 0;
    403                           ;Main.c: 86: int contador = 4;
    404                           	movlw	low(04h)
-   405  069F  3004               	bcf	status, 5	;RP0=0, select bank0
-   406  06A0  1283               	bcf	status, 6	;RP1=0, select bank0
-   407  06A1  1303               	movwf	(main@contador)
-   408  06A2  00A7               	movlw	high(04h)
-   409  06A3  3000               	movwf	((main@contador))+1
-   410  06A4  00A8               	line	87
+   405  0698  3004               	bcf	status, 5	;RP0=0, select bank0
+   406  0699  1283               	bcf	status, 6	;RP1=0, select bank0
+   407  069A  1303               	movwf	(main@contador)
+   408  069B  00A7               	movlw	high(04h)
+   409  069C  3000               	movwf	((main@contador))+1
+   410  069D  00A8               	line	87
    411                           	
-   412                           l723:	
-   413  06A5                     ;Main.c: 87: int inicio = 0;
+   412                           l747:	
+   413  069E                     ;Main.c: 87: int inicio = 0;
    414                           	clrf	(main@inicio)
-   415  06A5  01A5               	clrf	(main@inicio+1)
-   416  06A6  01A6               	line	91
+   415  069E  01A5               	clrf	(main@inicio+1)
+   416  069F  01A6               	line	91
    417                           	
-   418                           l725:	
-   419  06A7                     ;Main.c: 91: TRISBbits.TRISB0 = 1;
+   418                           l749:	
+   419  06A0                     ;Main.c: 91: TRISBbits.TRISB0 = 1;
    420                           	bsf	status, 5	;RP0=1, select bank1
-   421  06A7  1683               	bcf	status, 6	;RP1=0, select bank1
-   422  06A8  1303               	bsf	(134)^080h,0	;volatile
-   423  06A9  1406               	line	92
+   421  06A0  1683               	bcf	status, 6	;RP1=0, select bank1
+   422  06A1  1303               	bsf	(134)^080h,0	;volatile
+   423  06A2  1406               	line	92
    424                           	
-   425                           l727:	
-   426  06AA                     ;Main.c: 92: TRISBbits.TRISB5 = 1;
+   425                           l751:	
+   426  06A3                     ;Main.c: 92: TRISBbits.TRISB5 = 1;
    427                           	bsf	(134)^080h,5	;volatile
-   428  06AA  1686               	line	95
+   428  06A3  1686               	line	95
    429                           	
-   430                           l729:	
-   431  06AB                     ;Main.c: 95: TRISAbits.TRISA2 = 0;
+   430                           l753:	
+   431  06A4                     ;Main.c: 95: TRISAbits.TRISA2 = 0;
    432                           	bcf	(133)^080h,2	;volatile
-   433  06AB  1105               	line	96
+   433  06A4  1105               	line	96
    434                           	
-   435                           l731:	
-   436  06AC                     ;Main.c: 96: TRISAbits.TRISA0 = 0;
+   435                           l755:	
+   436  06A5                     ;Main.c: 96: TRISAbits.TRISA0 = 0;
    437                           	bcf	(133)^080h,0	;volatile
-   438  06AC  1005               	line	97
+   438  06A5  1005               	line	97
    439                           	
-   440                           l733:	
-   441  06AD                     ;Main.c: 97: TRISAbits.TRISA1 = 0;
+   440                           l757:	
+   441  06A6                     ;Main.c: 97: TRISAbits.TRISA1 = 0;
    442                           	bcf	(133)^080h,1	;volatile
-   443  06AD  1085               	line	99
+   443  06A6  1085               	line	99
    444                           	
-   445                           l735:	
-   446  06AE                     ;Main.c: 99: TRISAbits.TRISA5 = 0;
+   445                           l759:	
+   446  06A7                     ;Main.c: 99: TRISAbits.TRISA5 = 0;
    447                           	bcf	(133)^080h,5	;volatile
-   448  06AE  1285               	line	100
+   448  06A7  1285               	line	100
    449                           	
-   450                           l737:	
-   451  06AF                     ;Main.c: 100: TRISAbits.TRISA3 = 0;
+   450                           l761:	
+   451  06A8                     ;Main.c: 100: TRISAbits.TRISA3 = 0;
    452                           	bcf	(133)^080h,3	;volatile
-   453  06AF  1185               	line	101
+   453  06A8  1185               	line	101
    454                           	
-   455                           l739:	
-   456  06B0                     ;Main.c: 101: TRISAbits.TRISA4 = 0;
+   455                           l763:	
+   456  06A9                     ;Main.c: 101: TRISAbits.TRISA4 = 0;
    457                           	bcf	(133)^080h,4	;volatile
-   458  06B0  1205               	line	103
+   458  06A9  1205               	line	103
    459                           	
-   460                           l741:	
-   461  06B1                     ;Main.c: 103: TRISCbits.TRISC2 = 0;
+   460                           l765:	
+   461  06AA                     ;Main.c: 103: TRISCbits.TRISC2 = 0;
    462                           	bcf	(135)^080h,2	;volatile
-   463  06B1  1107               	line	104
+   463  06AA  1107               	line	104
    464                           	
-   465                           l743:	
-   466  06B2                     ;Main.c: 104: TRISCbits.TRISC0 = 0;
+   465                           l767:	
+   466  06AB                     ;Main.c: 104: TRISCbits.TRISC0 = 0;
    467                           	bcf	(135)^080h,0	;volatile
-   468  06B2  1007               	line	105
+   468  06AB  1007               	line	105
    469                           	
-   470                           l745:	
-   471  06B3                     ;Main.c: 105: TRISCbits.TRISC1 = 0;
+   470                           l769:	
+   471  06AC                     ;Main.c: 105: TRISCbits.TRISC1 = 0;
    472                           	bcf	(135)^080h,1	;volatile
-   473  06B3  1087               	line	107
+   473  06AC  1087               	line	107
    474                           	
-   475                           l747:	
-   476  06B4                     ;Main.c: 107: TRISBbits.TRISB1 = 0;
+   475                           l771:	
+   476  06AD                     ;Main.c: 107: TRISBbits.TRISB1 = 0;
    477                           	bcf	(134)^080h,1	;volatile
-   478  06B4  1086               	line	108
+   478  06AD  1086               	line	108
    479                           	
-   480                           l749:	
-   481  06B5                     ;Main.c: 108: TRISBbits.TRISB2 = 0;
+   480                           l773:	
+   481  06AE                     ;Main.c: 108: TRISBbits.TRISB2 = 0;
    482                           	bcf	(134)^080h,2	;volatile
-   483  06B5  1106               	line	109
+   483  06AE  1106               	line	109
    484                           	
-   485                           l751:	
-   486  06B6                     ;Main.c: 109: TRISBbits.TRISB4 = 0;
+   485                           l775:	
+   486  06AF                     ;Main.c: 109: TRISBbits.TRISB4 = 0;
    487                           	bcf	(134)^080h,4	;volatile
-   488  06B6  1206               	goto	l753
-   489  06B7  2EB9               	line	119
+   488  06AF  1206               	goto	l777
+   489  06B0  2EB2               	line	119
    490                           ;Main.c: 119: while (1) {
    491                           	
    492                           l29:	
-   493  06B8                     	goto	l753
-   494  06B8  2EB9               	line	121
+   493  06B1                     	goto	l777
+   494  06B1  2EB2               	line	121
    495                           ;Main.c: 121: do {
    496                           	
    497                           l30:	
-   498  06B9                     	line	122
+   498  06B2                     	line	122
    499                           	
-   500                           l753:	
-   501  06B9                     ;Main.c: 122: if (PORTBbits.RB0 == SI) {
+   500                           l777:	
+   501  06B2                     ;Main.c: 122: if (PORTBbits.RB0 == SI) {
    502                           	movlw	(main@SI-__stringbase)
-   503  06B9  3003               	movwf	fsr0
-   504  06BA  0084               	fcall	stringdir
-   505  06BB  118A  2015  118A   	bcf	status, 5	;RP0=0, select bank0
-   506  06BE  1283               	bcf	status, 6	;RP1=0, select bank0
-   507  06BF  1303               	movwf	(??_main+0)+0
-   508  06C0  00A0               	fcall	stringdir
-   509  06C1  118A  2015  118A   	movwf	(??_main+0)+0+1
-   510  06C4  00A1               	movf	(6),w	;volatile
-   511  06C5  0806               	andlw	(1<<1)-1
-   512  06C6  3901               	movwf	(??_main+2)+0
-   513  06C7  00A2               	clrf	(??_main+2)+0+1
-   514  06C8  01A3               	movf	1+(??_main+0)+0,w
-   515  06C9  0821               	xorwf	1+(??_main+2)+0,w
-   516  06CA  0623               	skipz
-   517  06CB  1D03               	goto	u55
-   518  06CC  2ECF               	movf	0+(??_main+0)+0,w
-   519  06CD  0820               	xorwf	0+(??_main+2)+0,w
-   520  06CE  0622               u55:
-   521  06CF                     
-   522                           	skipz
-   523  06CF  1D03               	goto	u51
-   524  06D0  2ED2               	goto	u50
-   525  06D1  2ED3               u51:
-   526  06D2                     	goto	l757
-   527  06D2  2EDE               u50:
-   528  06D3                     	line	124
-   529                           	
-   530                           l755:	
-   531  06D3                     ;Main.c: 124: inicio = SI;
-   532                           	movlw	(main@SI-__stringbase)
-   533  06D3  3003               	movwf	fsr0
-   534  06D4  0084               	fcall	stringdir
-   535  06D5  118A  2015  118A   	movwf	(main@inicio)
-   536  06D8  00A5               	fcall	stringdir
-   537  06D9  118A  2015  118A   	movwf	(main@inicio+1)
-   538  06DC  00A6               	goto	l757
-   539  06DD  2EDE               	line	126
-   540                           	
-   541                           l31:	
-   542  06DE                     	line	127
-   543                           	
-   544                           l757:	
-   545  06DE                     ;Main.c: 126: }
-   546                           ;Main.c: 127: } while (inicio == 0);
-   547                           	movf	(main@inicio+1),w
-   548  06DE  0826               	iorwf	(main@inicio),w
-   549  06DF  0425               	skipnz
-   550  06E0  1903               	goto	u61
-   551  06E1  2EE3               	goto	u60
-   552  06E2  2EE4               u61:
-   553  06E3                     	goto	l753
-   554  06E3  2EB9               u60:
-   555  06E4                     	goto	l759
-   556  06E4  2EE5               	
-   557                           l32:	
-   558  06E5                     	line	129
-   559                           	
-   560                           l759:	
-   561  06E5                     ;Main.c: 129: if (PORTBbits.RB0 == SI) {
-   562                           	movlw	(main@SI-__stringbase)
-   563  06E5  3003               	movwf	fsr0
-   564  06E6  0084               	fcall	stringdir
-   565  06E7  118A  2015  118A   	movwf	(??_main+0)+0
-   566  06EA  00A0               	fcall	stringdir
-   567  06EB  118A  2015  118A   	movwf	(??_main+0)+0+1
-   568  06EE  00A1               	movf	(6),w	;volatile
-   569  06EF  0806               	andlw	(1<<1)-1
-   570  06F0  3901               	movwf	(??_main+2)+0
-   571  06F1  00A2               	clrf	(??_main+2)+0+1
-   572  06F2  01A3               	movf	1+(??_main+0)+0,w
-   573  06F3  0821               	xorwf	1+(??_main+2)+0,w
-   574  06F4  0623               	skipz
-   575  06F5  1D03               	goto	u75
-   576  06F6  2EF9               	movf	0+(??_main+0)+0,w
-   577  06F7  0820               	xorwf	0+(??_main+2)+0,w
-   578  06F8  0622               u75:
-   579  06F9                     
-   580                           	skipz
-   581  06F9  1D03               	goto	u71
-   582  06FA  2EFC               	goto	u70
-   583  06FB  2EFD               u71:
-   584  06FC                     	goto	l763
-   585  06FC  2F00               u70:
-   586  06FD                     	line	131
-   587                           	
-   588                           l761:	
-   589  06FD                     ;Main.c: 131: contador = 0;
-   590                           	clrf	(main@contador)
-   591  06FD  01A7               	clrf	(main@contador+1)
-   592  06FE  01A8               	goto	l763
-   593  06FF  2F00               	line	134
-   594                           	
-   595                           l33:	
-   596  0700                     	line	136
-   597                           	
-   598                           l763:	
-   599  0700                     ;Main.c: 134: }
-   600                           ;Main.c: 136: if (PORTBbits.RB5 == SI) {
-   601                           	movlw	(main@SI-__stringbase)
-   602  0700  3003               	movwf	fsr0
-   603  0701  0084               	fcall	stringdir
-   604  0702  118A  2015  118A   	movwf	(??_main+0)+0
-   605  0705  00A0               	fcall	stringdir
-   606  0706  118A  2015  118A   	movwf	(??_main+0)+0+1
-   607  0709  00A1               	swapf	(6),w	;volatile
-   608  070A  0E06               	movwf	(??_main+2)+0
-   609  070B  00A2               	rrf	(??_main+2)+0,w
-   610  070C  0C22               	andlw	(1<<1)-1
-   611  070D  3901               	movwf	(??_main+3)+0
-   612  070E  00A3               	clrf	(??_main+3)+0+1
-   613  070F  01A4               	movf	1+(??_main+0)+0,w
-   614  0710  0821               	xorwf	1+(??_main+3)+0,w
-   615  0711  0624               	skipz
-   616  0712  1D03               	goto	u85
-   617  0713  2F16               	movf	0+(??_main+0)+0,w
-   618  0714  0820               	xorwf	0+(??_main+3)+0,w
-   619  0715  0623               u85:
-   620  0716                     
-   621                           	skipz
-   622  0716  1D03               	goto	u81
-   623  0717  2F19               	goto	u80
-   624  0718  2F1A               u81:
-   625  0719                     	goto	l851
-   626  0719  2FE6               u80:
-   627  071A                     	line	138
-   628                           	
-   629                           l765:	
-   630  071A                     ;Main.c: 138: contador++;
-   631                           	movlw	low(01h)
-   632  071A  3001               	addwf	(main@contador),f
-   633  071B  07A7               	skipnc
-   634  071C  1803               	incf	(main@contador+1),f
-   635  071D  0AA8               	movlw	high(01h)
-   636  071E  3000               	addwf	(main@contador+1),f
-   637  071F  07A8               	goto	l851
-   638  0720  2FE6               	line	140
-   639                           	
-   640                           l34:	
-   641  0721                     	line	141
-   642                           ;Main.c: 140: }
-   643                           ;Main.c: 141: switch (contador) {
-   644                           	goto	l851
-   645  0721  2FE6               	line	142
-   646                           ;Main.c: 142: case 0:
-   647                           	
-   648                           l36:	
-   649  0722                     	line	143
-   650                           	
-   651                           l767:	
-   652  0722                     ;Main.c: 143: PORTA|=0b000111;
-   653                           	movlw	(07h)
-   654  0722  3007               	movwf	(??_main+0)+0
-   655  0723  00A0               	movf	(??_main+0)+0,w
-   656  0724  0820               	iorwf	(5),f	;volatile
-   657  0725  0485               	line	144
-   658                           	
-   659                           l769:	
-   660  0726                     ;Main.c: 144: _delay((unsigned long)((10)*(4000000/4000.0)));
-   661                           	opt asmopt_off
-   662                           movlw	13
-   663  0726  300D               movwf	((??_main+0)+0+1),f
-   664  0727  00A1               	movlw	251
-   665  0728  30FB               movwf	((??_main+0)+0),f
-   666  0729  00A0               u97:
-   667  072A                     	decfsz	((??_main+0)+0),f
-   668  072A  0BA0               	goto	u97
-   669  072B  2F2A               	decfsz	((??_main+0)+0+1),f
-   670  072C  0BA1               	goto	u97
-   671  072D  2F2A               	nop2
-   672  072E  2F2F               opt asmopt_on
-   673                           
-   674                           	line	145
-   675                           	
-   676                           l771:	
-   677  072F                     ;Main.c: 145: PORTA|= 0b000011;
-   678                           	movlw	(03h)
-   679  072F  3003               	bcf	status, 5	;RP0=0, select bank0
-   680  0730  1283               	bcf	status, 6	;RP1=0, select bank0
-   681  0731  1303               	movwf	(??_main+0)+0
-   682  0732  00A0               	movf	(??_main+0)+0,w
-   683  0733  0820               	iorwf	(5),f	;volatile
-   684  0734  0485               	line	146
-   685                           	
-   686                           l773:	
-   687  0735                     ;Main.c: 146: PORTA|=0b100000;
-   688                           	bsf	(5)+(5/8),(5)&7	;volatile
-   689  0735  1685               	line	147
-   690                           	
-   691                           l775:	
-   692  0736                     ;Main.c: 147: PORTC|=0b00000001;
-   693                           	bsf	(7)+(0/8),(0)&7	;volatile
-   694  0736  1407               	line	148
-   695                           	
-   696                           l777:	
-   697  0737                     ;Main.c: 148: PORTB|=0b00000010;
-   698                           	bsf	(6)+(1/8),(1)&7	;volatile
-   699  0737  1486               	line	149
-   700                           	
-   701                           l779:	
-   702  0738                     ;Main.c: 149: Apagar();
-   703                           	fcall	_Apagar
-   704  0738  118A  2697  118A   	line	150
-   705                           ;Main.c: 150: break;
-   706                           	goto	l753
-   707  073B  2EB9               	line	151
-   708                           ;Main.c: 151: case 1:
-   709                           	
-   710                           l38:	
-   711  073C                     	line	152
-   712                           	
-   713                           l781:	
-   714  073C                     ;Main.c: 152: PORTA|= 0b000011;
-   715                           	movlw	(03h)
-   716  073C  3003               	bcf	status, 5	;RP0=0, select bank0
-   717  073D  1283               	bcf	status, 6	;RP1=0, select bank0
-   718  073E  1303               	movwf	(??_main+0)+0
-   719  073F  00A0               	movf	(??_main+0)+0,w
-   720  0740  0820               	iorwf	(5),f	;volatile
-   721  0741  0485               	line	153
-   722                           ;Main.c: 153: PORTA|=0b110000;
-   723                           	movlw	(030h)
-   724  0742  3030               	movwf	(??_main+0)+0
-   725  0743  00A0               	movf	(??_main+0)+0,w
-   726  0744  0820               	iorwf	(5),f	;volatile
-   727  0745  0485               	line	154
+   503  06B2  3003               	movwf	fsr0
+   504  06B3  0084               	fcall	stringdir
+   505  06B4  118A  2015  118A   	bcf	status, 5	;RP0=0, select bank0
+   506  06B7  1283               	movwf	(??_main+0)+0
+   507  06B8  00A0               	fcall	stringdir
+   508  06B9  118A  2015  118A   	movwf	(??_main+0)+0+1
+   509  06BC  00A1               	movf	(6),w	;volatile
+   510  06BD  0806               	andlw	(1<<1)-1
+   511  06BE  3901               	movwf	(??_main+2)+0
+   512  06BF  00A2               	clrf	(??_main+2)+0+1
+   513  06C0  01A3               	movf	1+(??_main+0)+0,w
+   514  06C1  0821               	xorwf	1+(??_main+2)+0,w
+   515  06C2  0623               	skipz
+   516  06C3  1D03               	goto	u55
+   517  06C4  2EC7               	movf	0+(??_main+0)+0,w
+   518  06C5  0820               	xorwf	0+(??_main+2)+0,w
+   519  06C6  0622               u55:
+   520  06C7                     
+   521                           	skipz
+   522  06C7  1D03               	goto	u51
+   523  06C8  2ECA               	goto	u50
+   524  06C9  2ECB               u51:
+   525  06CA                     	goto	l781
+   526  06CA  2ED6               u50:
+   527  06CB                     	line	124
+   528                           	
+   529                           l779:	
+   530  06CB                     ;Main.c: 124: inicio = SI;
+   531                           	movlw	(main@SI-__stringbase)
+   532  06CB  3003               	movwf	fsr0
+   533  06CC  0084               	fcall	stringdir
+   534  06CD  118A  2015  118A   	movwf	(main@inicio)
+   535  06D0  00A5               	fcall	stringdir
+   536  06D1  118A  2015  118A   	movwf	(main@inicio+1)
+   537  06D4  00A6               	goto	l781
+   538  06D5  2ED6               	line	126
+   539                           	
+   540                           l31:	
+   541  06D6                     	line	127
+   542                           	
+   543                           l781:	
+   544  06D6                     ;Main.c: 126: }
+   545                           ;Main.c: 127: } while (inicio == 0);
+   546                           	movf	(main@inicio+1),w
+   547  06D6  0826               	iorwf	(main@inicio),w
+   548  06D7  0425               	skipnz
+   549  06D8  1903               	goto	u61
+   550  06D9  2EDB               	goto	u60
+   551  06DA  2EDC               u61:
+   552  06DB                     	goto	l777
+   553  06DB  2EB2               u60:
+   554  06DC                     	goto	l783
+   555  06DC  2EDD               	
+   556                           l32:	
+   557  06DD                     	line	129
+   558                           	
+   559                           l783:	
+   560  06DD                     ;Main.c: 129: if (PORTBbits.RB0 == SI) {
+   561                           	movlw	(main@SI-__stringbase)
+   562  06DD  3003               	movwf	fsr0
+   563  06DE  0084               	fcall	stringdir
+   564  06DF  118A  2015  118A   	movwf	(??_main+0)+0
+   565  06E2  00A0               	fcall	stringdir
+   566  06E3  118A  2015  118A   	movwf	(??_main+0)+0+1
+   567  06E6  00A1               	movf	(6),w	;volatile
+   568  06E7  0806               	andlw	(1<<1)-1
+   569  06E8  3901               	movwf	(??_main+2)+0
+   570  06E9  00A2               	clrf	(??_main+2)+0+1
+   571  06EA  01A3               	movf	1+(??_main+0)+0,w
+   572  06EB  0821               	xorwf	1+(??_main+2)+0,w
+   573  06EC  0623               	skipz
+   574  06ED  1D03               	goto	u75
+   575  06EE  2EF1               	movf	0+(??_main+0)+0,w
+   576  06EF  0820               	xorwf	0+(??_main+2)+0,w
+   577  06F0  0622               u75:
+   578  06F1                     
+   579                           	skipz
+   580  06F1  1D03               	goto	u71
+   581  06F2  2EF4               	goto	u70
+   582  06F3  2EF5               u71:
+   583  06F4                     	goto	l787
+   584  06F4  2EF8               u70:
+   585  06F5                     	line	131
+   586                           	
+   587                           l785:	
+   588  06F5                     ;Main.c: 131: contador = 0;
+   589                           	clrf	(main@contador)
+   590  06F5  01A7               	clrf	(main@contador+1)
+   591  06F6  01A8               	goto	l787
+   592  06F7  2EF8               	line	134
+   593                           	
+   594                           l33:	
+   595  06F8                     	line	136
+   596                           	
+   597                           l787:	
+   598  06F8                     ;Main.c: 134: }
+   599                           ;Main.c: 136: if (PORTBbits.RB5 == SI) {
+   600                           	movlw	(main@SI-__stringbase)
+   601  06F8  3003               	movwf	fsr0
+   602  06F9  0084               	fcall	stringdir
+   603  06FA  118A  2015  118A   	movwf	(??_main+0)+0
+   604  06FD  00A0               	fcall	stringdir
+   605  06FE  118A  2015  118A   	movwf	(??_main+0)+0+1
+   606  0701  00A1               	swapf	(6),w	;volatile
+   607  0702  0E06               	movwf	(??_main+2)+0
+   608  0703  00A2               	rrf	(??_main+2)+0,w
+   609  0704  0C22               	andlw	(1<<1)-1
+   610  0705  3901               	movwf	(??_main+3)+0
+   611  0706  00A3               	clrf	(??_main+3)+0+1
+   612  0707  01A4               	movf	1+(??_main+0)+0,w
+   613  0708  0821               	xorwf	1+(??_main+3)+0,w
+   614  0709  0624               	skipz
+   615  070A  1D03               	goto	u85
+   616  070B  2F0E               	movf	0+(??_main+0)+0,w
+   617  070C  0820               	xorwf	0+(??_main+3)+0,w
+   618  070D  0623               u85:
+   619  070E                     
+   620                           	skipz
+   621  070E  1D03               	goto	u81
+   622  070F  2F11               	goto	u80
+   623  0710  2F12               u81:
+   624  0711                     	goto	l899
+   625  0711  2FE8               u80:
+   626  0712                     	line	138
+   627                           	
+   628                           l789:	
+   629  0712                     ;Main.c: 138: contador++;
+   630                           	movlw	low(01h)
+   631  0712  3001               	addwf	(main@contador),f
+   632  0713  07A7               	skipnc
+   633  0714  1803               	incf	(main@contador+1),f
+   634  0715  0AA8               	movlw	high(01h)
+   635  0716  3000               	addwf	(main@contador+1),f
+   636  0717  07A8               	goto	l899
+   637  0718  2FE8               	line	140
+   638                           	
+   639                           l34:	
+   640  0719                     	line	141
+   641                           ;Main.c: 140: }
+   642                           ;Main.c: 141: switch (contador) {
+   643                           	goto	l899
+   644  0719  2FE8               	line	142
+   645                           ;Main.c: 142: case 0:
+   646                           	
+   647                           l36:	
+   648  071A                     	line	143
+   649                           	
+   650                           l791:	
+   651  071A                     ;Main.c: 143: Apagar();
+   652                           	fcall	_Apagar
+   653  071A  118A  2690  118A   	line	144
+   654                           	
+   655                           l793:	
+   656  071D                     ;Main.c: 144: PORTA|=0b000111;
+   657                           	movlw	(07h)
+   658  071D  3007               	bcf	status, 5	;RP0=0, select bank0
+   659  071E  1283               	bcf	status, 6	;RP1=0, select bank0
+   660  071F  1303               	movwf	(??_main+0)+0
+   661  0720  00A0               	movf	(??_main+0)+0,w
+   662  0721  0820               	iorwf	(5),f	;volatile
+   663  0722  0485               	line	145
+   664                           	
+   665                           l795:	
+   666  0723                     ;Main.c: 145: _delay((unsigned long)((10)*(4000000/4000.0)));
+   667                           	opt asmopt_off
+   668                           movlw	13
+   669  0723  300D               movwf	((??_main+0)+0+1),f
+   670  0724  00A1               	movlw	251
+   671  0725  30FB               movwf	((??_main+0)+0),f
+   672  0726  00A0               u97:
+   673  0727                     	decfsz	((??_main+0)+0),f
+   674  0727  0BA0               	goto	u97
+   675  0728  2F27               	decfsz	((??_main+0)+0+1),f
+   676  0729  0BA1               	goto	u97
+   677  072A  2F27               	nop2
+   678  072B  2F2C               opt asmopt_on
+   679                           
+   680                           	line	146
+   681                           	
+   682                           l797:	
+   683  072C                     ;Main.c: 146: PORTA|= 0b000011;
+   684                           	movlw	(03h)
+   685  072C  3003               	bcf	status, 5	;RP0=0, select bank0
+   686  072D  1283               	bcf	status, 6	;RP1=0, select bank0
+   687  072E  1303               	movwf	(??_main+0)+0
+   688  072F  00A0               	movf	(??_main+0)+0,w
+   689  0730  0820               	iorwf	(5),f	;volatile
+   690  0731  0485               	line	147
+   691                           	
+   692                           l799:	
+   693  0732                     ;Main.c: 147: PORTA|=0b100000;
+   694                           	bsf	(5)+(5/8),(5)&7	;volatile
+   695  0732  1685               	line	148
+   696                           	
+   697                           l801:	
+   698  0733                     ;Main.c: 148: PORTC|=0b00000001;
+   699                           	bsf	(7)+(0/8),(0)&7	;volatile
+   700  0733  1407               	line	149
+   701                           	
+   702                           l803:	
+   703  0734                     ;Main.c: 149: PORTB|=0b00000010;
+   704                           	bsf	(6)+(1/8),(1)&7	;volatile
+   705  0734  1486               	line	150
+   706                           ;Main.c: 150: break;
+   707                           	goto	l777
+   708  0735  2EB2               	line	151
+   709                           ;Main.c: 151: case 1:
+   710                           	
+   711                           l38:	
+   712  0736                     	line	152
+   713                           	
+   714                           l805:	
+   715  0736                     ;Main.c: 152: Apagar();
+   716                           	fcall	_Apagar
+   717  0736  118A  2690  118A   	line	153
+   718                           	
+   719                           l807:	
+   720  0739                     ;Main.c: 153: PORTA|= 0b000011;
+   721                           	movlw	(03h)
+   722  0739  3003               	bcf	status, 5	;RP0=0, select bank0
+   723  073A  1283               	bcf	status, 6	;RP1=0, select bank0
+   724  073B  1303               	movwf	(??_main+0)+0
+   725  073C  00A0               	movf	(??_main+0)+0,w
+   726  073D  0820               	iorwf	(5),f	;volatile
+   727  073E  0485               	line	154
    728                           	
-   729                           l783:	
-   730  0746                     ;Main.c: 154: PORTC|=0b00000100;
-   731                           	bsf	(7)+(2/8),(2)&7	;volatile
-   732  0746  1507               	line	155
-   733                           	
-   734                           l785:	
-   735  0747                     ;Main.c: 155: PORTB|=0b00000010;
-   736                           	bsf	(6)+(1/8),(1)&7	;volatile
-   737  0747  1486               	line	156
-   738                           	
-   739                           l787:	
-   740  0748                     ;Main.c: 156: Apagar();
-   741                           	fcall	_Apagar
-   742  0748  118A  2697  118A   	line	157
-   743                           ;Main.c: 157: break;
-   744                           	goto	l753
-   745  074B  2EB9               	line	158
-   746                           ;Main.c: 158: case 2:
-   747                           	
-   748                           l39:	
-   749  074C                     	line	159
-   750                           ;Main.c: 159: PORTA|=0b000001;
-   751                           	bsf	(5)+(0/8),(0)&7	;volatile
-   752  074C  1405               	line	160
+   729                           l809:	
+   730  073F                     ;Main.c: 154: PORTA|=0b110000;
+   731                           	movlw	(030h)
+   732  073F  3030               	movwf	(??_main+0)+0
+   733  0740  00A0               	movf	(??_main+0)+0,w
+   734  0741  0820               	iorwf	(5),f	;volatile
+   735  0742  0485               	line	155
+   736                           	
+   737                           l811:	
+   738  0743                     ;Main.c: 155: PORTC|=0b00000100;
+   739                           	bsf	(7)+(2/8),(2)&7	;volatile
+   740  0743  1507               	line	156
+   741                           	
+   742                           l813:	
+   743  0744                     ;Main.c: 156: PORTB|=0b00000010;
+   744                           	bsf	(6)+(1/8),(1)&7	;volatile
+   745  0744  1486               	line	157
+   746                           ;Main.c: 157: break;
+   747                           	goto	l777
+   748  0745  2EB2               	line	158
+   749                           ;Main.c: 158: case 2:
+   750                           	
+   751                           l39:	
+   752  0746                     	line	159
    753                           	
-   754                           l789:	
-   755  074D                     ;Main.c: 160: PORTA|=0b110000;
-   756                           	movlw	(030h)
-   757  074D  3030               	movwf	(??_main+0)+0
-   758  074E  00A0               	movf	(??_main+0)+0,w
-   759  074F  0820               	iorwf	(5),f	;volatile
-   760  0750  0485               	line	161
-   761                           	
-   762                           l791:	
-   763  0751                     ;Main.c: 161: PORTC|=0b00000100;
-   764                           	bsf	(7)+(2/8),(2)&7	;volatile
-   765  0751  1507               	line	162
-   766                           	
-   767                           l793:	
-   768  0752                     ;Main.c: 162: PORTB|=0b00010000;
-   769                           	bsf	(6)+(4/8),(4)&7	;volatile
-   770  0752  1606               	line	163
-   771                           	
-   772                           l795:	
-   773  0753                     ;Main.c: 163: Apagar();
-   774                           	fcall	_Apagar
-   775  0753  118A  2697  118A   	line	164
-   776                           ;Main.c: 164: break;
-   777                           	goto	l753
-   778  0756  2EB9               	line	165
-   779                           ;Main.c: 165: case 3:
-   780                           	
-   781                           l40:	
-   782  0757                     	line	166
-   783                           ;Main.c: 166: PORTA|=0b000001;
-   784                           	bsf	(5)+(0/8),(0)&7	;volatile
-   785  0757  1405               	line	167
-   786                           	
-   787                           l797:	
-   788  0758                     ;Main.c: 167: PORTA|=0b111000;
-   789                           	movlw	(038h)
-   790  0758  3038               	movwf	(??_main+0)+0
-   791  0759  00A0               	movf	(??_main+0)+0,w
-   792  075A  0820               	iorwf	(5),f	;volatile
-   793  075B  0485               	line	168
-   794                           	
-   795                           l799:	
-   796  075C                     ;Main.c: 168: _delay((unsigned long)((10)*(4000000/4000.0)));
-   797                           	opt asmopt_off
-   798                           movlw	13
-   799  075C  300D               movwf	((??_main+0)+0+1),f
-   800  075D  00A1               	movlw	251
-   801  075E  30FB               movwf	((??_main+0)+0),f
-   802  075F  00A0               u107:
-   803  0760                     	decfsz	((??_main+0)+0),f
-   804  0760  0BA0               	goto	u107
-   805  0761  2F60               	decfsz	((??_main+0)+0+1),f
-   806  0762  0BA1               	goto	u107
-   807  0763  2F60               	nop2
-   808  0764  2F65               opt asmopt_on
-   809                           
-   810                           	line	169
-   811                           	
-   812                           l801:	
-   813  0765                     ;Main.c: 169: PORTA|=0b011000;
-   814                           	movlw	(018h)
-   815  0765  3018               	bcf	status, 5	;RP0=0, select bank0
-   816  0766  1283               	bcf	status, 6	;RP1=0, select bank0
-   817  0767  1303               	movwf	(??_main+0)+0
-   818  0768  00A0               	movf	(??_main+0)+0,w
-   819  0769  0820               	iorwf	(5),f	;volatile
-   820  076A  0485               	line	170
-   821                           	
-   822                           l803:	
-   823  076B                     ;Main.c: 170: PORTC|=0b00000110;
-   824                           	movlw	(06h)
-   825  076B  3006               	movwf	(??_main+0)+0
-   826  076C  00A0               	movf	(??_main+0)+0,w
-   827  076D  0820               	iorwf	(7),f	;volatile
-   828  076E  0487               	line	171
-   829                           	
-   830                           l805:	
-   831  076F                     ;Main.c: 171: PORTB|=0b00010000;
-   832                           	bsf	(6)+(4/8),(4)&7	;volatile
-   833  076F  1606               	line	172
-   834                           	
-   835                           l807:	
-   836  0770                     ;Main.c: 172: Apagar();
-   837                           	fcall	_Apagar
-   838  0770  118A  2697  118A   	line	173
-   839                           ;Main.c: 173: break;
-   840                           	goto	l753
-   841  0773  2EB9               	line	174
-   842                           ;Main.c: 174: case 4:
-   843                           	
-   844                           l41:	
-   845  0774                     	line	175
-   846                           ;Main.c: 175: PORTA|= 0b000100;
-   847                           	bsf	(5)+(2/8),(2)&7	;volatile
-   848  0774  1505               	line	176
-   849                           	
-   850                           l809:	
-   851  0775                     ;Main.c: 176: PORTA|=0b011000;
-   852                           	movlw	(018h)
-   853  0775  3018               	movwf	(??_main+0)+0
-   854  0776  00A0               	movf	(??_main+0)+0,w
-   855  0777  0820               	iorwf	(5),f	;volatile
-   856  0778  0485               	line	177
-   857                           ;Main.c: 177: PORTC|=0b00000110;
-   858                           	movlw	(06h)
-   859  0779  3006               	movwf	(??_main+0)+0
-   860  077A  00A0               	movf	(??_main+0)+0,w
-   861  077B  0820               	iorwf	(7),f	;volatile
-   862  077C  0487               	line	178
-   863                           ;Main.c: 178: PORTB|=0b00010100;
-   864                           	movlw	(014h)
-   865  077D  3014               	movwf	(??_main+0)+0
-   866  077E  00A0               	movf	(??_main+0)+0,w
-   867  077F  0820               	iorwf	(6),f	;volatile
-   868  0780  0486               	line	179
+   754                           l815:	
+   755  0746                     ;Main.c: 159: Apagar();
+   756                           	fcall	_Apagar
+   757  0746  118A  2690  118A   	line	160
+   758                           	
+   759                           l817:	
+   760  0749                     ;Main.c: 160: PORTA|=0b000001;
+   761                           	bcf	status, 5	;RP0=0, select bank0
+   762  0749  1283               	bcf	status, 6	;RP1=0, select bank0
+   763  074A  1303               	bsf	(5)+(0/8),(0)&7	;volatile
+   764  074B  1405               	line	161
+   765                           	
+   766                           l819:	
+   767  074C                     ;Main.c: 161: PORTA|=0b110000;
+   768                           	movlw	(030h)
+   769  074C  3030               	movwf	(??_main+0)+0
+   770  074D  00A0               	movf	(??_main+0)+0,w
+   771  074E  0820               	iorwf	(5),f	;volatile
+   772  074F  0485               	line	162
+   773                           	
+   774                           l821:	
+   775  0750                     ;Main.c: 162: PORTC|=0b00000100;
+   776                           	bsf	(7)+(2/8),(2)&7	;volatile
+   777  0750  1507               	line	163
+   778                           	
+   779                           l823:	
+   780  0751                     ;Main.c: 163: PORTB|=0b00010000;
+   781                           	bsf	(6)+(4/8),(4)&7	;volatile
+   782  0751  1606               	line	164
+   783                           ;Main.c: 164: break;
+   784                           	goto	l777
+   785  0752  2EB2               	line	165
+   786                           ;Main.c: 165: case 3:
+   787                           	
+   788                           l40:	
+   789  0753                     	line	166
+   790                           	
+   791                           l825:	
+   792  0753                     ;Main.c: 166: Apagar();
+   793                           	fcall	_Apagar
+   794  0753  118A  2690  118A   	line	167
+   795                           	
+   796                           l827:	
+   797  0756                     ;Main.c: 167: PORTA|=0b000001;
+   798                           	bcf	status, 5	;RP0=0, select bank0
+   799  0756  1283               	bcf	status, 6	;RP1=0, select bank0
+   800  0757  1303               	bsf	(5)+(0/8),(0)&7	;volatile
+   801  0758  1405               	line	168
+   802                           	
+   803                           l829:	
+   804  0759                     ;Main.c: 168: PORTA|=0b111000;
+   805                           	movlw	(038h)
+   806  0759  3038               	movwf	(??_main+0)+0
+   807  075A  00A0               	movf	(??_main+0)+0,w
+   808  075B  0820               	iorwf	(5),f	;volatile
+   809  075C  0485               	line	169
+   810                           	
+   811                           l831:	
+   812  075D                     ;Main.c: 169: _delay((unsigned long)((10)*(4000000/4000.0)));
+   813                           	opt asmopt_off
+   814                           movlw	13
+   815  075D  300D               movwf	((??_main+0)+0+1),f
+   816  075E  00A1               	movlw	251
+   817  075F  30FB               movwf	((??_main+0)+0),f
+   818  0760  00A0               u107:
+   819  0761                     	decfsz	((??_main+0)+0),f
+   820  0761  0BA0               	goto	u107
+   821  0762  2F61               	decfsz	((??_main+0)+0+1),f
+   822  0763  0BA1               	goto	u107
+   823  0764  2F61               	nop2
+   824  0765  2F66               opt asmopt_on
+   825                           
+   826                           	line	170
+   827                           	
+   828                           l833:	
+   829  0766                     ;Main.c: 170: PORTA|=0b011000;
+   830                           	movlw	(018h)
+   831  0766  3018               	bcf	status, 5	;RP0=0, select bank0
+   832  0767  1283               	bcf	status, 6	;RP1=0, select bank0
+   833  0768  1303               	movwf	(??_main+0)+0
+   834  0769  00A0               	movf	(??_main+0)+0,w
+   835  076A  0820               	iorwf	(5),f	;volatile
+   836  076B  0485               	line	171
+   837                           	
+   838                           l835:	
+   839  076C                     ;Main.c: 171: PORTC|=0b00000110;
+   840                           	movlw	(06h)
+   841  076C  3006               	movwf	(??_main+0)+0
+   842  076D  00A0               	movf	(??_main+0)+0,w
+   843  076E  0820               	iorwf	(7),f	;volatile
+   844  076F  0487               	line	172
+   845                           	
+   846                           l837:	
+   847  0770                     ;Main.c: 172: PORTB|=0b00010000;
+   848                           	bsf	(6)+(4/8),(4)&7	;volatile
+   849  0770  1606               	line	173
+   850                           ;Main.c: 173: break;
+   851                           	goto	l777
+   852  0771  2EB2               	line	174
+   853                           ;Main.c: 174: case 4:
+   854                           	
+   855                           l41:	
+   856  0772                     	line	175
+   857                           	
+   858                           l839:	
+   859  0772                     ;Main.c: 175: Apagar();
+   860                           	fcall	_Apagar
+   861  0772  118A  2690  118A   	line	176
+   862                           	
+   863                           l841:	
+   864  0775                     ;Main.c: 176: PORTA|= 0b000100;
+   865                           	bcf	status, 5	;RP0=0, select bank0
+   866  0775  1283               	bcf	status, 6	;RP1=0, select bank0
+   867  0776  1303               	bsf	(5)+(2/8),(2)&7	;volatile
+   868  0777  1505               	line	177
    869                           	
-   870                           l811:	
-   871  0781                     ;Main.c: 179: Apagar();
-   872                           	fcall	_Apagar
-   873  0781  118A  2697  118A   	line	180
-   874                           ;Main.c: 180: break;
-   875                           	goto	l753
-   876  0784  2EB9               	line	181
-   877                           ;Main.c: 181: case 5:
-   878                           	
-   879                           l42:	
-   880  0785                     	line	182
-   881                           ;Main.c: 182: PORTA|= 0b000100;
-   882                           	bsf	(5)+(2/8),(2)&7	;volatile
-   883  0785  1505               	line	183
-   884                           ;Main.c: 183: PORTA|=0b001000;
-   885                           	bsf	(5)+(3/8),(3)&7	;volatile
-   886  0786  1585               	line	184
-   887                           	
-   888                           l813:	
-   889  0787                     ;Main.c: 184: PORTC|=0b00000111;
-   890                           	movlw	(07h)
-   891  0787  3007               	movwf	(??_main+0)+0
-   892  0788  00A0               	movf	(??_main+0)+0,w
-   893  0789  0820               	iorwf	(7),f	;volatile
-   894  078A  0487               	line	185
-   895                           	
-   896                           l815:	
-   897  078B                     ;Main.c: 185: _delay((unsigned long)((10)*(4000000/4000.0)));
-   898                           	opt asmopt_off
-   899                           movlw	13
-   900  078B  300D               movwf	((??_main+0)+0+1),f
-   901  078C  00A1               	movlw	251
-   902  078D  30FB               movwf	((??_main+0)+0),f
-   903  078E  00A0               u117:
-   904  078F                     	decfsz	((??_main+0)+0),f
-   905  078F  0BA0               	goto	u117
-   906  0790  2F8F               	decfsz	((??_main+0)+0+1),f
-   907  0791  0BA1               	goto	u117
-   908  0792  2F8F               	nop2
-   909  0793  2F94               opt asmopt_on
-   910                           
-   911                           	line	186
+   870                           l843:	
+   871  0778                     ;Main.c: 177: PORTA|=0b011000;
+   872                           	movlw	(018h)
+   873  0778  3018               	movwf	(??_main+0)+0
+   874  0779  00A0               	movf	(??_main+0)+0,w
+   875  077A  0820               	iorwf	(5),f	;volatile
+   876  077B  0485               	line	178
+   877                           	
+   878                           l845:	
+   879  077C                     ;Main.c: 178: PORTC|=0b00000110;
+   880                           	movlw	(06h)
+   881  077C  3006               	movwf	(??_main+0)+0
+   882  077D  00A0               	movf	(??_main+0)+0,w
+   883  077E  0820               	iorwf	(7),f	;volatile
+   884  077F  0487               	line	179
+   885                           	
+   886                           l847:	
+   887  0780                     ;Main.c: 179: PORTB|=0b00010100;
+   888                           	movlw	(014h)
+   889  0780  3014               	movwf	(??_main+0)+0
+   890  0781  00A0               	movf	(??_main+0)+0,w
+   891  0782  0820               	iorwf	(6),f	;volatile
+   892  0783  0486               	line	180
+   893                           ;Main.c: 180: break;
+   894                           	goto	l777
+   895  0784  2EB2               	line	181
+   896                           ;Main.c: 181: case 5:
+   897                           	
+   898                           l42:	
+   899  0785                     	line	182
+   900                           	
+   901                           l849:	
+   902  0785                     ;Main.c: 182: Apagar();
+   903                           	fcall	_Apagar
+   904  0785  118A  2690  118A   	line	183
+   905                           	
+   906                           l851:	
+   907  0788                     ;Main.c: 183: PORTA|= 0b000100;
+   908                           	bcf	status, 5	;RP0=0, select bank0
+   909  0788  1283               	bcf	status, 6	;RP1=0, select bank0
+   910  0789  1303               	bsf	(5)+(2/8),(2)&7	;volatile
+   911  078A  1505               	line	184
    912                           	
-   913                           l817:	
-   914  0794                     ;Main.c: 186: PORTC|=0b00000011;
-   915                           	movlw	(03h)
-   916  0794  3003               	bcf	status, 5	;RP0=0, select bank0
-   917  0795  1283               	bcf	status, 6	;RP1=0, select bank0
-   918  0796  1303               	movwf	(??_main+0)+0
-   919  0797  00A0               	movf	(??_main+0)+0,w
-   920  0798  0820               	iorwf	(7),f	;volatile
-   921  0799  0487               	line	187
-   922                           	
-   923                           l819:	
-   924  079A                     ;Main.c: 187: PORTB|=0b00010100;
-   925                           	movlw	(014h)
-   926  079A  3014               	movwf	(??_main+0)+0
-   927  079B  00A0               	movf	(??_main+0)+0,w
-   928  079C  0820               	iorwf	(6),f	;volatile
-   929  079D  0486               	line	188
-   930                           	
-   931                           l821:	
-   932  079E                     ;Main.c: 188: Apagar();
-   933                           	fcall	_Apagar
-   934  079E  118A  2697  118A   	line	189
-   935                           ;Main.c: 189: break;
-   936                           	goto	l753
-   937  07A1  2EB9               	line	190
-   938                           ;Main.c: 190: case 6:
-   939                           	
-   940                           l43:	
-   941  07A2                     	line	191
+   913                           l853:	
+   914  078B                     ;Main.c: 184: PORTA|=0b001000;
+   915                           	bsf	(5)+(3/8),(3)&7	;volatile
+   916  078B  1585               	line	185
+   917                           	
+   918                           l855:	
+   919  078C                     ;Main.c: 185: PORTC|=0b00000111;
+   920                           	movlw	(07h)
+   921  078C  3007               	movwf	(??_main+0)+0
+   922  078D  00A0               	movf	(??_main+0)+0,w
+   923  078E  0820               	iorwf	(7),f	;volatile
+   924  078F  0487               	line	186
+   925                           	
+   926                           l857:	
+   927  0790                     ;Main.c: 186: _delay((unsigned long)((10)*(4000000/4000.0)));
+   928                           	opt asmopt_off
+   929                           movlw	13
+   930  0790  300D               movwf	((??_main+0)+0+1),f
+   931  0791  00A1               	movlw	251
+   932  0792  30FB               movwf	((??_main+0)+0),f
+   933  0793  00A0               u117:
+   934  0794                     	decfsz	((??_main+0)+0),f
+   935  0794  0BA0               	goto	u117
+   936  0795  2F94               	decfsz	((??_main+0)+0+1),f
+   937  0796  0BA1               	goto	u117
+   938  0797  2F94               	nop2
+   939  0798  2F99               opt asmopt_on
+   940                           
+   941                           	line	187
    942                           	
-   943                           l823:	
-   944  07A2                     ;Main.c: 191: PORTA|= 0b000110;
-   945                           	movlw	(06h)
-   946  07A2  3006               	bcf	status, 5	;RP0=0, select bank0
-   947  07A3  1283               	bcf	status, 6	;RP1=0, select bank0
-   948  07A4  1303               	movwf	(??_main+0)+0
-   949  07A5  00A0               	movf	(??_main+0)+0,w
-   950  07A6  0820               	iorwf	(5),f	;volatile
-   951  07A7  0485               	line	192
+   943                           l859:	
+   944  0799                     ;Main.c: 187: PORTC|=0b00000011;
+   945                           	movlw	(03h)
+   946  0799  3003               	bcf	status, 5	;RP0=0, select bank0
+   947  079A  1283               	bcf	status, 6	;RP1=0, select bank0
+   948  079B  1303               	movwf	(??_main+0)+0
+   949  079C  00A0               	movf	(??_main+0)+0,w
+   950  079D  0820               	iorwf	(7),f	;volatile
+   951  079E  0487               	line	188
    952                           	
-   953                           l825:	
-   954  07A8                     ;Main.c: 192: PORTA|=0b001000;
-   955                           	bsf	(5)+(3/8),(3)&7	;volatile
-   956  07A8  1585               	line	193
-   957                           ;Main.c: 193: PORTC|=0b00000011;
-   958                           	movlw	(03h)
-   959  07A9  3003               	movwf	(??_main+0)+0
-   960  07AA  00A0               	movf	(??_main+0)+0,w
-   961  07AB  0820               	iorwf	(7),f	;volatile
-   962  07AC  0487               	line	194
-   963                           ;Main.c: 194: PORTB|=0b00010110;
-   964                           	movlw	(016h)
-   965  07AD  3016               	movwf	(??_main+0)+0
-   966  07AE  00A0               	movf	(??_main+0)+0,w
-   967  07AF  0820               	iorwf	(6),f	;volatile
-   968  07B0  0486               	line	195
-   969                           	
-   970                           l827:	
-   971  07B1                     ;Main.c: 195: _delay((unsigned long)((10)*(4000000/4000.0)));
-   972                           	opt asmopt_off
-   973                           movlw	13
-   974  07B1  300D               movwf	((??_main+0)+0+1),f
-   975  07B2  00A1               	movlw	251
-   976  07B3  30FB               movwf	((??_main+0)+0),f
-   977  07B4  00A0               u127:
-   978  07B5                     	decfsz	((??_main+0)+0),f
-   979  07B5  0BA0               	goto	u127
-   980  07B6  2FB5               	decfsz	((??_main+0)+0+1),f
-   981  07B7  0BA1               	goto	u127
-   982  07B8  2FB5               	nop2
-   983  07B9  2FBA               opt asmopt_on
-   984                           
-   985                           	line	196
-   986                           	
-   987                           l829:	
-   988  07BA                     ;Main.c: 196: PORTB|=0b00000110;
-   989                           	movlw	(06h)
-   990  07BA  3006               	bcf	status, 5	;RP0=0, select bank0
-   991  07BB  1283               	bcf	status, 6	;RP1=0, select bank0
-   992  07BC  1303               	movwf	(??_main+0)+0
-   993  07BD  00A0               	movf	(??_main+0)+0,w
-   994  07BE  0820               	iorwf	(6),f	;volatile
-   995  07BF  0486               	line	197
-   996                           	
-   997                           l831:	
-   998  07C0                     ;Main.c: 197: Apagar();
-   999                           	fcall	_Apagar
-  1000  07C0  118A  2697  118A   	line	198
-  1001                           ;Main.c: 198: break;
-  1002                           	goto	l753
-  1003  07C3  2EB9               	line	199
-  1004                           ;Main.c: 199: case 7:
-  1005                           	
-  1006                           l44:	
-  1007  07C4                     	line	200
-  1008                           	
-  1009                           l833:	
-  1010  07C4                     ;Main.c: 200: PORTA|= 0b000110;
-  1011                           	movlw	(06h)
-  1012  07C4  3006               	bcf	status, 5	;RP0=0, select bank0
-  1013  07C5  1283               	bcf	status, 6	;RP1=0, select bank0
-  1014  07C6  1303               	movwf	(??_main+0)+0
-  1015  07C7  00A0               	movf	(??_main+0)+0,w
-  1016  07C8  0820               	iorwf	(5),f	;volatile
-  1017  07C9  0485               	line	201
-  1018                           	
-  1019                           l835:	
-  1020  07CA                     ;Main.c: 201: PORTA|=0b100000;
-  1021                           	bsf	(5)+(5/8),(5)&7	;volatile
-  1022  07CA  1685               	line	202
-  1023                           	
-  1024                           l837:	
-  1025  07CB                     ;Main.c: 202: PORTC|=0b00000001;
-  1026                           	bsf	(7)+(0/8),(0)&7	;volatile
-  1027  07CB  1407               	line	203
-  1028                           ;Main.c: 203: PORTB|=0b00000110;
-  1029                           	movlw	(06h)
-  1030  07CC  3006               	movwf	(??_main+0)+0
-  1031  07CD  00A0               	movf	(??_main+0)+0,w
-  1032  07CE  0820               	iorwf	(6),f	;volatile
-  1033  07CF  0486               	line	204
+   953                           l861:	
+   954  079F                     ;Main.c: 188: PORTB|=0b00010100;
+   955                           	movlw	(014h)
+   956  079F  3014               	movwf	(??_main+0)+0
+   957  07A0  00A0               	movf	(??_main+0)+0,w
+   958  07A1  0820               	iorwf	(6),f	;volatile
+   959  07A2  0486               	line	189
+   960                           ;Main.c: 189: break;
+   961                           	goto	l777
+   962  07A3  2EB2               	line	190
+   963                           ;Main.c: 190: case 6:
+   964                           	
+   965                           l43:	
+   966  07A4                     	line	191
+   967                           	
+   968                           l863:	
+   969  07A4                     ;Main.c: 191: Apagar();
+   970                           	fcall	_Apagar
+   971  07A4  118A  2690  118A   	line	192
+   972                           	
+   973                           l865:	
+   974  07A7                     ;Main.c: 192: PORTA|= 0b000110;
+   975                           	movlw	(06h)
+   976  07A7  3006               	bcf	status, 5	;RP0=0, select bank0
+   977  07A8  1283               	bcf	status, 6	;RP1=0, select bank0
+   978  07A9  1303               	movwf	(??_main+0)+0
+   979  07AA  00A0               	movf	(??_main+0)+0,w
+   980  07AB  0820               	iorwf	(5),f	;volatile
+   981  07AC  0485               	line	193
+   982                           	
+   983                           l867:	
+   984  07AD                     ;Main.c: 193: PORTA|=0b001000;
+   985                           	bsf	(5)+(3/8),(3)&7	;volatile
+   986  07AD  1585               	line	194
+   987                           	
+   988                           l869:	
+   989  07AE                     ;Main.c: 194: PORTC|=0b00000011;
+   990                           	movlw	(03h)
+   991  07AE  3003               	movwf	(??_main+0)+0
+   992  07AF  00A0               	movf	(??_main+0)+0,w
+   993  07B0  0820               	iorwf	(7),f	;volatile
+   994  07B1  0487               	line	195
+   995                           	
+   996                           l871:	
+   997  07B2                     ;Main.c: 195: PORTB|=0b00010110;
+   998                           	movlw	(016h)
+   999  07B2  3016               	movwf	(??_main+0)+0
+  1000  07B3  00A0               	movf	(??_main+0)+0,w
+  1001  07B4  0820               	iorwf	(6),f	;volatile
+  1002  07B5  0486               	line	196
+  1003                           	
+  1004                           l873:	
+  1005  07B6                     ;Main.c: 196: _delay((unsigned long)((10)*(4000000/4000.0)));
+  1006                           	opt asmopt_off
+  1007                           movlw	13
+  1008  07B6  300D               movwf	((??_main+0)+0+1),f
+  1009  07B7  00A1               	movlw	251
+  1010  07B8  30FB               movwf	((??_main+0)+0),f
+  1011  07B9  00A0               u127:
+  1012  07BA                     	decfsz	((??_main+0)+0),f
+  1013  07BA  0BA0               	goto	u127
+  1014  07BB  2FBA               	decfsz	((??_main+0)+0+1),f
+  1015  07BC  0BA1               	goto	u127
+  1016  07BD  2FBA               	nop2
+  1017  07BE  2FBF               opt asmopt_on
+  1018                           
+  1019                           	line	197
+  1020                           	
+  1021                           l875:	
+  1022  07BF                     ;Main.c: 197: PORTB|=0b00000110;
+  1023                           	movlw	(06h)
+  1024  07BF  3006               	bcf	status, 5	;RP0=0, select bank0
+  1025  07C0  1283               	bcf	status, 6	;RP1=0, select bank0
+  1026  07C1  1303               	movwf	(??_main+0)+0
+  1027  07C2  00A0               	movf	(??_main+0)+0,w
+  1028  07C3  0820               	iorwf	(6),f	;volatile
+  1029  07C4  0486               	line	198
+  1030                           ;Main.c: 198: break;
+  1031                           	goto	l777
+  1032  07C5  2EB2               	line	199
+  1033                           ;Main.c: 199: case 7:
   1034                           	
-  1035                           l839:	
-  1036  07D0                     ;Main.c: 204: Apagar();
-  1037                           	fcall	_Apagar
-  1038  07D0  118A  2697  118A   	line	205
-  1039                           ;Main.c: 205: break;
-  1040                           	goto	l753
-  1041  07D3  2EB9               	line	206
-  1042                           ;Main.c: 206: case 8:
-  1043                           	
-  1044                           l45:	
-  1045  07D4                     	line	207
-  1046                           	
-  1047                           l841:	
-  1048  07D4                     ;Main.c: 207: PORTA|= 0b000110;
-  1049                           	movlw	(06h)
-  1050  07D4  3006               	bcf	status, 5	;RP0=0, select bank0
-  1051  07D5  1283               	bcf	status, 6	;RP1=0, select bank0
-  1052  07D6  1303               	movwf	(??_main+0)+0
-  1053  07D7  00A0               	movf	(??_main+0)+0,w
-  1054  07D8  0820               	iorwf	(5),f	;volatile
-  1055  07D9  0485               	line	208
-  1056                           	
-  1057                           l843:	
-  1058  07DA                     ;Main.c: 208: PORTA|=0b100000;
-  1059                           	bsf	(5)+(5/8),(5)&7	;volatile
-  1060  07DA  1685               	line	209
-  1061                           	
-  1062                           l845:	
-  1063  07DB                     ;Main.c: 209: PORTC|=0b00000001;
-  1064                           	bsf	(7)+(0/8),(0)&7	;volatile
-  1065  07DB  1407               	line	210
-  1066                           ;Main.c: 210: PORTB|=0b00000110;
-  1067                           	movlw	(06h)
-  1068  07DC  3006               	movwf	(??_main+0)+0
-  1069  07DD  00A0               	movf	(??_main+0)+0,w
-  1070  07DE  0820               	iorwf	(6),f	;volatile
-  1071  07DF  0486               	line	211
-  1072                           	
-  1073                           l847:	
-  1074  07E0                     ;Main.c: 211: Apagar();
-  1075                           	fcall	_Apagar
-  1076  07E0  118A  2697  118A   	line	212
-  1077                           ;Main.c: 212: break;
-  1078                           	goto	l753
-  1079  07E3  2EB9               	line	213
-  1080                           ;Main.c: 213: default:
-  1081                           	
-  1082                           l46:	
-  1083  07E4                     	line	214
-  1084                           ;Main.c: 214: break;
-  1085                           	goto	l753
-  1086  07E4  2EB9               	line	215
-  1087                           	
-  1088                           l849:	
-  1089  07E5                     ;Main.c: 215: }
-  1090                           	goto	l753
-  1091  07E5  2EB9               	line	141
+  1035                           l44:	
+  1036  07C6                     	line	200
+  1037                           	
+  1038                           l877:	
+  1039  07C6                     ;Main.c: 200: Apagar();
+  1040                           	fcall	_Apagar
+  1041  07C6  118A  2690  118A   	line	201
+  1042                           	
+  1043                           l879:	
+  1044  07C9                     ;Main.c: 201: PORTA|= 0b000110;
+  1045                           	movlw	(06h)
+  1046  07C9  3006               	bcf	status, 5	;RP0=0, select bank0
+  1047  07CA  1283               	bcf	status, 6	;RP1=0, select bank0
+  1048  07CB  1303               	movwf	(??_main+0)+0
+  1049  07CC  00A0               	movf	(??_main+0)+0,w
+  1050  07CD  0820               	iorwf	(5),f	;volatile
+  1051  07CE  0485               	line	202
+  1052                           	
+  1053                           l881:	
+  1054  07CF                     ;Main.c: 202: PORTA|=0b100000;
+  1055                           	bsf	(5)+(5/8),(5)&7	;volatile
+  1056  07CF  1685               	line	203
+  1057                           	
+  1058                           l883:	
+  1059  07D0                     ;Main.c: 203: PORTC|=0b00000001;
+  1060                           	bsf	(7)+(0/8),(0)&7	;volatile
+  1061  07D0  1407               	line	204
+  1062                           	
+  1063                           l885:	
+  1064  07D1                     ;Main.c: 204: PORTB|=0b00000110;
+  1065                           	movlw	(06h)
+  1066  07D1  3006               	movwf	(??_main+0)+0
+  1067  07D2  00A0               	movf	(??_main+0)+0,w
+  1068  07D3  0820               	iorwf	(6),f	;volatile
+  1069  07D4  0486               	line	205
+  1070                           ;Main.c: 205: break;
+  1071                           	goto	l777
+  1072  07D5  2EB2               	line	206
+  1073                           ;Main.c: 206: case 8:
+  1074                           	
+  1075                           l45:	
+  1076  07D6                     	line	207
+  1077                           	
+  1078                           l887:	
+  1079  07D6                     ;Main.c: 207: Apagar();
+  1080                           	fcall	_Apagar
+  1081  07D6  118A  2690  118A   	line	208
+  1082                           	
+  1083                           l889:	
+  1084  07D9                     ;Main.c: 208: PORTA|= 0b000110;
+  1085                           	movlw	(06h)
+  1086  07D9  3006               	bcf	status, 5	;RP0=0, select bank0
+  1087  07DA  1283               	bcf	status, 6	;RP1=0, select bank0
+  1088  07DB  1303               	movwf	(??_main+0)+0
+  1089  07DC  00A0               	movf	(??_main+0)+0,w
+  1090  07DD  0820               	iorwf	(5),f	;volatile
+  1091  07DE  0485               	line	209
   1092                           	
-  1093                           l35:	
-  1094  07E6                     	
-  1095                           l851:	
-  1096  07E6                     	; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-s
+  1093                           l891:	
+  1094  07DF                     ;Main.c: 209: PORTA|=0b100000;
+  1095                           	bsf	(5)+(5/8),(5)&7	;volatile
+  1096  07DF  1685               	line	210
+  1097                           	
+  1098                           l893:	
+  1099  07E0                     ;Main.c: 210: PORTC|=0b00000001;
+  1100                           	bsf	(7)+(0/8),(0)&7	;volatile
+  1101  07E0  1407               	line	211
+  1102                           	
+  1103                           l895:	
+  1104  07E1                     ;Main.c: 211: PORTB|=0b00000110;
+  1105                           	movlw	(06h)
+  1106  07E1  3006               	movwf	(??_main+0)+0
+  1107  07E2  00A0               	movf	(??_main+0)+0,w
+  1108  07E3  0820               	iorwf	(6),f	;volatile
+  1109  07E4  0486               	line	212
+  1110                           ;Main.c: 212: break;
+  1111                           	goto	l777
+  1112  07E5  2EB2               	line	213
+  1113                           ;Main.c: 213: default:
+  1114                           	
+  1115                           l46:	
+  1116  07E6                     	line	214
+  1117                           ;Main.c: 214: break;
+  1118                           	goto	l777
+  1119  07E6  2EB2               	line	215
+  1120                           	
+  1121                           l897:	
+  1122  07E7                     ;Main.c: 215: }
+  1123                           	goto	l777
+  1124  07E7  2EB2               	line	141
+  1125                           	
+  1126                           l35:	
+  1127  07E8                     	
+  1128                           l899:	
+  1129  07E8                     	; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-s
                                  witches
-  1097                           ; Switch size 1, requested type "space"
-  1098                           ; Number of cases is 1, Range of values is 0 to 0
-  1099                           ; switch strategies available:
-  1100                           ; Name         Instructions Cycles
-  1101                           ; simple_byte            4     3 (average)
-  1102                           ; direct_byte            9     7 (fixed)
-  1103                           ; jumptable            260     6 (fixed)
-  1104                           ;	Chosen strategy is simple_byte
-  1105                           
-  1106                           	bcf	status, 5	;RP0=0, select bank0
-  1107  07E6  1283               	bcf	status, 6	;RP1=0, select bank0
-  1108  07E7  1303               	movf (main@contador+1),w
-  1109  07E8  0828               	opt asmopt_off
-  1110                           	xorlw	0^0	; case 0
-  1111  07E9  3A00               	skipnz
-  1112  07EA  1903               	goto	l925
-  1113  07EB  2FED               	goto	l753
-  1114  07EC  2EB9               	opt asmopt_on
-  1115                           	
-  1116                           l925:	
-  1117  07ED                     ; Switch size 1, requested type "space"
-  1118                           ; Number of cases is 9, Range of values is 0 to 8
-  1119                           ; switch strategies available:
-  1120                           ; Name         Instructions Cycles
-  1121                           ; direct_byte           25     7 (fixed)
-  1122                           ; simple_byte           28    15 (average)
-  1123                           ; jumptable            260     6 (fixed)
-  1124                           ;	Chosen strategy is direct_byte
-  1125                           
-  1126                           	movf (main@contador),w
-  1127  07ED  0827               	movwf fsr
-  1128  07EE  0084               	movlw	9
-  1129  07EF  3009               	subwf	fsr,w
-  1130  07F0  0204               skipnc
-  1131  07F1  1803               goto l753
-  1132  07F2  2EB9               movlw high(S927)
-  1133  07F3  3000               movwf pclath
-  1134  07F4  008A               	clrc
-  1135  07F5  1003               	rlf fsr,w
-  1136  07F6  0D04               	addlw low(S927)
-  1137  07F7  3E03               	movwf pc
-  1138  07F8  0082               psect	swtext1,local,class=CONST,delta=2
-  1139                           global __pswtext1
-  1140                           __pswtext1:
-  1141  0003                     S927:
-  1142  0003                     	ljmp	l767
-  1143  0003  118A  2F22         	ljmp	l781
-  1144  0005  118A  2F3C         	ljmp	l39
-  1145  0007  118A  2F4C         	ljmp	l40
-  1146  0009  118A  2F57         	ljmp	l41
-  1147  000B  118A  2F74         	ljmp	l42
-  1148  000D  118A  2F85         	ljmp	l823
-  1149  000F  118A  2FA2         	ljmp	l833
-  1150  0011  118A  2FC4         	ljmp	l841
-  1151  0013  118A  2FD4         psect	maintext
-  1152                           
-  1153                           	line	215
-  1154                           	
-  1155                           l37:	
-  1156  07F9                     	goto	l753
-  1157  07F9  2EB9               	line	217
-  1158                           	
-  1159                           l47:	
-  1160  07FA                     	line	119
-  1161                           	goto	l753
-  1162  07FA  2EB9               	
-  1163                           l48:	
-  1164  07FB                     	line	222
-  1165                           ;Main.c: 217: }
-  1166                           ;Main.c: 221: return;
-  1167                           	
-  1168                           l49:	
-  1169  07FB                     	global	start
-  1170                           	ljmp	start
-  1171  07FB  118A  2801         	opt stack 0
-  1172                           GLOBAL	__end_of_main
-  1173                           	__end_of_main:
-  1174  07FD                     	signat	_main,88
-  1175                           	global	_Apagar
-  1176                           
-  1177 ;; *************** function _Apagar *****************
-  1178 ;; Defined at:
-  1179 ;;		line 224 in file "Main.c"
-  1180 ;; Parameters:    Size  Location     Type
-  1181 ;;		None
-  1182 ;; Auto vars:     Size  Location     Type
-  1183 ;;		None
-  1184 ;; Return value:  Size  Location     Type
-  1185 ;;		None               void
-  1186 ;; Registers used:
-  1187 ;;		status,2
-  1188 ;; Tracked objects:
-  1189 ;;		On entry : 0/0
-  1190 ;;		On exit  : 0/0
-  1191 ;;		Unchanged: 0/0
-  1192 ;; Data sizes:     COMMON   BANK0   BANK1
-  1193 ;;      Params:         0       0       0
-  1194 ;;      Locals:         0       0       0
-  1195 ;;      Temps:          0       0       0
-  1196 ;;      Totals:         0       0       0
-  1197 ;;Total ram usage:        0 bytes
-  1198 ;; Hardware stack levels used:    1
-  1199 ;; This function calls:
-  1200 ;;		Nothing
-  1201 ;; This function is called by:
-  1202 ;;		_main
-  1203 ;; This function uses a non-reentrant model
-  1204 ;;
-  1205                           psect	text1,local,class=CODE,delta=2,merge=1
-  1206                           	line	224
-  1207                           global __ptext1
-  1208                           __ptext1:	;psect for function _Apagar
-  1209  0697                     psect	text1
-  1210                           	file	"Main.c"
-  1211                           	line	224
-  1212                           	global	__size_of_Apagar
-  1213                           	__size_of_Apagar	equ	__end_of_Apagar-_Apagar
-  1214  0006                     	
-  1215                           _Apagar:	
-  1216  0697                     ;incstack = 0
-  1217                           	opt	stack 5
-  1218                           ; Regs used in _Apagar: [status,2]
-  1219                           	line	225
-  1220                           	
-  1221                           l717:	
-  1222  0697                     ;Main.c: 225: PORTA = 0;
-  1223                           	bcf	status, 5	;RP0=0, select bank0
-  1224  0697  1283               	bcf	status, 6	;RP1=0, select bank0
-  1225  0698  1303               	clrf	(5)	;volatile
-  1226  0699  0185               	line	226
-  1227                           ;Main.c: 226: PORTB = 0;
-  1228                           	clrf	(6)	;volatile
-  1229  069A  0186               	line	227
-  1230                           ;Main.c: 227: PORTC = 0;
-  1231                           	clrf	(7)	;volatile
-  1232  069B  0187               	line	229
-  1233                           	
-  1234                           l52:	
-  1235  069C                     	return
-  1236  069C  0008               	opt stack 0
-  1237                           GLOBAL	__end_of_Apagar
-  1238                           	__end_of_Apagar:
-  1239  069D                     	signat	_Apagar,88
-  1240                           global	___latbits
-  1241                           ___latbits	equ	1
-  1242  0001                     	global	btemp
-  1243                           	btemp set 07Ch
-  1244  007C                     
-  1245                           	DABS	1,124,2	;btemp
-  1246                           	global	wtemp
-  1247                           	global	wtemp0
-  1248                           	wtemp set btemp
-  1249  007C                     	wtemp0 set btemp
-  1250  007C                     	global	wtemp1
-  1251                           	wtemp1 set btemp+2
-  1252  007E                     	global	wtemp2
-  1253                           	wtemp2 set btemp+4
-  1254  0080                     	global	wtemp3
-  1255                           	wtemp3 set btemp+6
-  1256  0082                     	global	wtemp4
-  1257                           	wtemp4 set btemp+8
-  1258  0084                     	global	wtemp5
-  1259                           	wtemp5 set btemp+10
-  1260  0086                     	global	wtemp6
-  1261                           	wtemp6 set btemp+1
-  1262  007D                     	global	ttemp
-  1263                           	global	ttemp0
-  1264                           	ttemp set btemp
-  1265  007C                     	ttemp0 set btemp
-  1266  007C                     	global	ttemp1
-  1267                           	ttemp1 set btemp+3
-  1268  007F                     	global	ttemp2
-  1269                           	ttemp2 set btemp+6
-  1270  0082                     	global	ttemp3
-  1271                           	ttemp3 set btemp+9
-  1272  0085                     	global	ttemp4
-  1273                           	ttemp4 set btemp+1
-  1274  007D                     	global	ltemp
-  1275                           	global	ltemp0
-  1276                           	ltemp set btemp
-  1277  007C                     	ltemp0 set btemp
-  1278  007C                     	global	ltemp1
-  1279                           	ltemp1 set btemp+4
-  1280  0080                     	global	ltemp2
-  1281                           	ltemp2 set btemp+8
-  1282  0084                     	global	ltemp3
-  1283                           	ltemp3 set btemp+2
-  1284  007E                     	end
+  1130                           ; Switch size 1, requested type "space"
+  1131                           ; Number of cases is 1, Range of values is 0 to 0
+  1132                           ; switch strategies available:
+  1133                           ; Name         Instructions Cycles
+  1134                           ; simple_byte            4     3 (average)
+  1135                           ; direct_byte            9     7 (fixed)
+  1136                           ; jumptable            260     6 (fixed)
+  1137                           ;	Chosen strategy is simple_byte
+  1138                           
+  1139                           	movf (main@contador+1),w
+  1140  07E8  0828               	opt asmopt_off
+  1141                           	xorlw	0^0	; case 0
+  1142  07E9  3A00               	skipnz
+  1143  07EA  1903               	goto	l973
+  1144  07EB  2FED               	goto	l777
+  1145  07EC  2EB2               	opt asmopt_on
+  1146                           	
+  1147                           l973:	
+  1148  07ED                     ; Switch size 1, requested type "space"
+  1149                           ; Number of cases is 9, Range of values is 0 to 8
+  1150                           ; switch strategies available:
+  1151                           ; Name         Instructions Cycles
+  1152                           ; direct_byte           25     7 (fixed)
+  1153                           ; simple_byte           28    15 (average)
+  1154                           ; jumptable            260     6 (fixed)
+  1155                           ;	Chosen strategy is direct_byte
+  1156                           
+  1157                           	movf (main@contador),w
+  1158  07ED  0827               	movwf fsr
+  1159  07EE  0084               	movlw	9
+  1160  07EF  3009               	subwf	fsr,w
+  1161  07F0  0204               skipnc
+  1162  07F1  1803               goto l777
+  1163  07F2  2EB2               movlw high(S975)
+  1164  07F3  3000               movwf pclath
+  1165  07F4  008A               	clrc
+  1166  07F5  1003               	rlf fsr,w
+  1167  07F6  0D04               	addlw low(S975)
+  1168  07F7  3E03               	movwf pc
+  1169  07F8  0082               psect	swtext1,local,class=CONST,delta=2
+  1170                           global __pswtext1
+  1171                           __pswtext1:
+  1172  0003                     S975:
+  1173  0003                     	ljmp	l791
+  1174  0003  118A  2F1A         	ljmp	l805
+  1175  0005  118A  2F36         	ljmp	l815
+  1176  0007  118A  2F46         	ljmp	l825
+  1177  0009  118A  2F53         	ljmp	l839
+  1178  000B  118A  2F72         	ljmp	l849
+  1179  000D  118A  2F85         	ljmp	l863
+  1180  000F  118A  2FA4         	ljmp	l877
+  1181  0011  118A  2FC6         	ljmp	l887
+  1182  0013  118A  2FD6         psect	maintext
+  1183                           
+  1184                           	line	215
+  1185                           	
+  1186                           l37:	
+  1187  07F9                     	goto	l777
+  1188  07F9  2EB2               	line	217
+  1189                           	
+  1190                           l47:	
+  1191  07FA                     	line	119
+  1192                           	goto	l777
+  1193  07FA  2EB2               	
+  1194                           l48:	
+  1195  07FB                     	line	222
+  1196                           ;Main.c: 217: }
+  1197                           ;Main.c: 221: return;
+  1198                           	
+  1199                           l49:	
+  1200  07FB                     	global	start
+  1201                           	ljmp	start
+  1202  07FB  118A  2801         	opt stack 0
+  1203                           GLOBAL	__end_of_main
+  1204                           	__end_of_main:
+  1205  07FD                     	signat	_main,88
+  1206                           	global	_Apagar
+  1207                           
+  1208 ;; *************** function _Apagar *****************
+  1209 ;; Defined at:
+  1210 ;;		line 224 in file "Main.c"
+  1211 ;; Parameters:    Size  Location     Type
+  1212 ;;		None
+  1213 ;; Auto vars:     Size  Location     Type
+  1214 ;;		None
+  1215 ;; Return value:  Size  Location     Type
+  1216 ;;		None               void
+  1217 ;; Registers used:
+  1218 ;;		status,2
+  1219 ;; Tracked objects:
+  1220 ;;		On entry : 0/0
+  1221 ;;		On exit  : 0/0
+  1222 ;;		Unchanged: 0/0
+  1223 ;; Data sizes:     COMMON   BANK0   BANK1
+  1224 ;;      Params:         0       0       0
+  1225 ;;      Locals:         0       0       0
+  1226 ;;      Temps:          0       0       0
+  1227 ;;      Totals:         0       0       0
+  1228 ;;Total ram usage:        0 bytes
+  1229 ;; Hardware stack levels used:    1
+  1230 ;; This function calls:
+  1231 ;;		Nothing
+  1232 ;; This function is called by:
+  1233 ;;		_main
+  1234 ;; This function uses a non-reentrant model
+  1235 ;;
+  1236                           psect	text1,local,class=CODE,delta=2,merge=1
+  1237                           	line	224
+  1238                           global __ptext1
+  1239                           __ptext1:	;psect for function _Apagar
+  1240  0690                     psect	text1
+  1241                           	file	"Main.c"
+  1242                           	line	224
+  1243                           	global	__size_of_Apagar
+  1244                           	__size_of_Apagar	equ	__end_of_Apagar-_Apagar
+  1245  0006                     	
+  1246                           _Apagar:	
+  1247  0690                     ;incstack = 0
+  1248                           	opt	stack 5
+  1249                           ; Regs used in _Apagar: [status,2]
+  1250                           	line	225
+  1251                           	
+  1252                           l741:	
+  1253  0690                     ;Main.c: 225: PORTA = 0;
+  1254                           	bcf	status, 5	;RP0=0, select bank0
+  1255  0690  1283               	bcf	status, 6	;RP1=0, select bank0
+  1256  0691  1303               	clrf	(5)	;volatile
+  1257  0692  0185               	line	226
+  1258                           ;Main.c: 226: PORTB = 0;
+  1259                           	clrf	(6)	;volatile
+  1260  0693  0186               	line	227
+  1261                           ;Main.c: 227: PORTC = 0;
+  1262                           	clrf	(7)	;volatile
+  1263  0694  0187               	line	229
+  1264                           	
+  1265                           l52:	
+  1266  0695                     	return
+  1267  0695  0008               	opt stack 0
+  1268                           GLOBAL	__end_of_Apagar
+  1269                           	__end_of_Apagar:
+  1270  0696                     	signat	_Apagar,88
+  1271                           global	___latbits
+  1272                           ___latbits	equ	1
+  1273  0001                     	global	btemp
+  1274                           	btemp set 07Ch
+  1275  007C                     
+  1276                           	DABS	1,124,2	;btemp
+  1277                           	global	wtemp
+  1278                           	global	wtemp0
+  1279                           	wtemp set btemp
+  1280  007C                     	wtemp0 set btemp
+  1281  007C                     	global	wtemp1
+  1282                           	wtemp1 set btemp+2
+  1283  007E                     	global	wtemp2
+  1284                           	wtemp2 set btemp+4
+  1285  0080                     	global	wtemp3
+  1286                           	wtemp3 set btemp+6
+  1287  0082                     	global	wtemp4
+  1288                           	wtemp4 set btemp+8
+  1289  0084                     	global	wtemp5
+  1290                           	wtemp5 set btemp+10
+  1291  0086                     	global	wtemp6
+  1292                           	wtemp6 set btemp+1
+  1293  007D                     	global	ttemp
+  1294                           	global	ttemp0
+  1295                           	ttemp set btemp
+  1296  007C                     	ttemp0 set btemp
+  1297  007C                     	global	ttemp1
+  1298                           	ttemp1 set btemp+3
+  1299  007F                     	global	ttemp2
+  1300                           	ttemp2 set btemp+6
+  1301  0082                     	global	ttemp3
+  1302                           	ttemp3 set btemp+9
+  1303  0085                     	global	ttemp4
+  1304                           	ttemp4 set btemp+1
+  1305  007D                     	global	ltemp
+  1306                           	global	ltemp0
+  1307                           	ltemp set btemp
+  1308  007C                     	ltemp0 set btemp
+  1309  007C                     	global	ltemp1
+  1310                           	ltemp1 set btemp+4
+  1311  0080                     	global	ltemp2
+  1312                           	ltemp2 set btemp+8
+  1313  0084                     	global	ltemp3
+  1314                           	ltemp3 set btemp+2
+  1315  007E                     	end
 
 
 Data Sizes:
@@ -1367,48 +1398,52 @@ DATA                 0      0       0       8        0.0%
 
 
 Microchip Technology PIC Macro Assembler V1.33 build 59893 
-Symbol Table                                                                                   Thu Oct 22 21:45:01 2015
+Symbol Table                                                                                   Thu Oct 22 22:04:37 2015
 
-                      pc 0002              __CFG_CP$OFF 0000                       l30 06B9  
-                     l31 06DE                       l40 0757                       l32 06E5  
-                     l41 0774                       l33 0700                       l42 0785  
-                     l34 0721                       l35 07E6                       l43 07A2  
-                     l52 069C                       l44 07C4                       l36 0722  
-                     l37 07F9                       l45 07D4                       l29 06B8  
-                     l46 07E4                       l38 073C                       l47 07FA  
-                     l39 074C                       l48 07FB                       l49 07FB  
-                     u50 06D3                       u51 06D2                       u60 06E4  
-                     u61 06E3                       u70 06FD                       u71 06FC  
-                     u55 06CF                       u80 071A                       u81 0719  
-                     u75 06F9                       u85 0716                       u97 072A  
-                     fsr 0004                      S927 0003              __CFG_LVP$ON 0000  
-                    l801 0765                      l721 069F                      l811 0781  
-                    l803 076B                      l731 06AC                      l723 06A5  
-                    l717 0697                      l821 079E                      l813 0787  
-                    l805 076F                      l741 06B1                      l733 06AD  
-                    l725 06A7                      l831 07C0                      l823 07A2  
-                    l815 078B                      l807 0770                      l751 06B6  
-                    l743 06B2                      l735 06AE                      l727 06AA  
-                    l719 069D                      l841 07D4                      l833 07C4  
-                    l825 07A8                      l817 0794                      l809 0775  
-                    l761 06FD                      l753 06B9                      l745 06B3  
-                    l737 06AF                      l729 06AB                      l843 07DA  
-                    l835 07CA                      l827 07B1                      l819 079A  
-                    l771 072F                      l851 07E6                      l763 0700  
-                    l755 06D3                      l747 06B4                      l739 06B0  
-                    l925 07ED                      l845 07DB                      l837 07CB  
-                    l829 07BA                      l781 073C                      l773 0735  
-                    l765 071A                      l757 06DE                      l749 06B5  
-                    l847 07E0                      l839 07D0                      l791 0751  
-                    l783 0746                      l775 0736                      l767 0722  
-                    l759 06E5                      l849 07E5                      l793 0752  
-                    l785 0747                      l777 0737                      l769 0726  
-                    l795 0753                      l787 0748                      l779 0738  
-                    l797 0758                      l789 074D                      l799 075C  
-                    _GIE 005F                      u107 0760                      u117 078F  
-                    u127 07B5             __CFG_CPD$OFF 0000                      fsr0 0004  
+                      pc 0002              __CFG_CP$OFF 0000                       l30 06B2  
+                     l31 06D6                       l40 0753                       l32 06DD  
+                     l41 0772                       l33 06F8                       l42 0785  
+                     l34 0719                       l35 07E8                       l43 07A4  
+                     l52 0695                       l44 07C6                       l36 071A  
+                     l37 07F9                       l45 07D6                       l29 06B1  
+                     l46 07E6                       l38 0736                       l47 07FA  
+                     l39 0746                       l48 07FB                       l49 07FB  
+                     u50 06CB                       u51 06CA                       u60 06DC  
+                     u61 06DB                       u70 06F5                       u71 06F4  
+                     u55 06C7                       u80 0712                       u81 0711  
+                     u75 06F1                       u85 070E                       u97 0727  
+                     fsr 0004                      S975 0003              __CFG_LVP$ON 0000  
+                    l801 0733                      l811 0743                      l803 0734  
+                    l741 0690                      l821 0750                      l813 0744  
+                    l805 0736                      l831 075D                      l823 0751  
+                    l815 0746                      l807 0739                      l751 06A3  
+                    l743 0696                      l841 0775                      l833 0766  
+                    l825 0753                      l817 0749                      l809 073F  
+                    l761 06A8                      l753 06A4                      l745 0698  
+                    l851 0788                      l843 0778                      l835 076C  
+                    l827 0756                      l819 074C                      l771 06AD  
+                    l763 06A9                      l755 06A5                      l747 069E  
+                    l861 079F                      l853 078B                      l845 077C  
+                    l837 0770                      l829 0759                      l781 06D6  
+                    l773 06AE                      l765 06AA                      l757 06A6  
+                    l749 06A0                      l871 07B2                      l863 07A4  
+                    l855 078C                      l847 0780                      l839 0772  
+                    l791 071A                      l783 06DD                      l775 06AF  
+                    l767 06AB                      l759 06A7                      l881 07CF  
+                    l873 07B6                      l865 07A7                      l857 0790  
+                    l849 0785                      l793 071D                      l785 06F5  
+                    l777 06B2                      l769 06AC                      l891 07DF  
+                    l883 07D0                      l875 07BF                      l867 07AD  
+                    l859 0799                      l795 0723                      l787 06F8  
+                    l779 06CB                      l973 07ED                      l893 07E0  
+                    l885 07D1                      l877 07C6                      l869 07AE  
+                    l797 072C                      l789 0712                      l895 07E1  
+                    l887 07D6                      l879 07C9                      l799 0732  
+                    l897 07E7                      l889 07D9                      l899 07E8  
+                    _GIE 005F                      u107 0761                      u117 0794  
+                    u127 07BA             __CFG_CPD$OFF 0000                      fsr0 0004  
            __CFG_FOSC$XT 0000                     _PEIE 005E             __CFG_WRT$OFF 0000  
-                   _main 069D                     btemp 007C            __CFG_BOREN$ON 0000  
+                   _main 0696                     btemp 007C            __CFG_BOREN$ON 0000  
                    ltemp 007C                     start 0001                     ttemp 007C  
                    wtemp 007C             main@contador 0027                    ?_main 0020  
           __CFG_WDTE$OFF 0000                    _PORTA 0005                    _PORTB 0006  
@@ -1419,14 +1454,14 @@ Symbol Table                                                                    
                   wtemp0 007C                    wtemp1 007E                    wtemp2 0080  
                   wtemp3 0082                    wtemp4 0084                    wtemp5 0086  
                   wtemp6 007D          __initialization 07FD             __end_of_main 07FD  
-                 ??_main 0020                   _Apagar 0697           __CFG_PWRTE$OFF 0000  
+                 ??_main 0020                   _Apagar 0690           __CFG_PWRTE$OFF 0000  
                  main@NO 001B                   main@SI 001D  __end_of__initialization 07FD  
-         __pcstackCOMMON 0000                  ?_Apagar 0020               __pmaintext 069D  
-             __stringtab 0015          __size_of_Apagar 0006                  __ptext1 0697  
+         __pcstackCOMMON 0000                  ?_Apagar 0020               __pmaintext 0696  
+             __stringtab 0015          __size_of_Apagar 0006                  __ptext1 0690  
    end_of_initialization 07FD                _PORTBbits 0006                _TRISAbits 0085  
               _TRISBbits 0086                _TRISCbits 0087               main@inicio 0025  
-         __end_of_Apagar 069D           __end_ofmain@NO 001D           __end_ofmain@SI 001F  
+         __end_of_Apagar 0696           __end_ofmain@NO 001D           __end_ofmain@SI 001F  
     start_initialization 07FD                 ??_Apagar 0000                ___latbits 0001  
           __pcstackBANK0 0020                __pstrings 0015                __pswtext1 0003  
-            __stringbase 001A       __end_of__stringtab 001B            __size_of_main 0160  
+            __stringbase 001A       __end_of__stringtab 001B            __size_of_main 0167  
               stringcode 0015                 stringdir 0015                 stringtab 0015  

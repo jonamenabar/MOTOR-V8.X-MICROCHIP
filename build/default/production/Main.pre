@@ -1303,7 +1303,7 @@ extern __nonreentrant void _delay(unsigned long);
 #pragma config WRT = OFF
 #pragma config CP = OFF
 
-# 69
+# 71
 void Apagar(void);
 
 void main(void) {
@@ -1346,100 +1346,109 @@ TRISBbits.TRISB1 = 0;
 TRISBbits.TRISB2 = 0;
 TRISBbits.TRISB4 = 0;
 
-# 119
+# 121
 while (1) {
 
 do {
 if (PORTBbits.RB0 == SI) {
 
 inicio = SI;
-
+_delay((unsigned long)((50)*(4000000/4000.0)));
 }
 } while (inicio == 0);
 
 if (PORTBbits.RB0 == SI) {
 
 contador = 0;
-
+_delay((unsigned long)((50)*(4000000/4000.0)));
 
 }
 
 if (PORTBbits.RB5 == SI) {
 
 contador++;
-
+_delay((unsigned long)((50)*(4000000/4000.0)));
 }
 switch (contador) {
 case 0:
+Apagar();
 PORTA|=0b000111;
 _delay((unsigned long)((10)*(4000000/4000.0)));
 PORTA|= 0b000011;
 PORTA|=0b100000;
 PORTC|=0b00000001;
 PORTB|=0b00000010;
-Apagar();
+_delay((unsigned long)((100)*(4000000/4000.0)));
 break;
 case 1:
+Apagar();
 PORTA|= 0b000011;
 PORTA|=0b110000;
 PORTC|=0b00000100;
 PORTB|=0b00000010;
-Apagar();
+_delay((unsigned long)((100)*(4000000/4000.0)));
 break;
 case 2:
+Apagar();
 PORTA|=0b000001;
 PORTA|=0b110000;
 PORTC|=0b00000100;
 PORTB|=0b00010000;
-Apagar();
+_delay((unsigned long)((100)*(4000000/4000.0)));
 break;
 case 3:
+Apagar();
 PORTA|=0b000001;
 PORTA|=0b111000;
 _delay((unsigned long)((10)*(4000000/4000.0)));
 PORTA|=0b011000;
 PORTC|=0b00000110;
 PORTB|=0b00010000;
-Apagar();
+_delay((unsigned long)((100)*(4000000/4000.0)));
 break;
 case 4:
+Apagar();
 PORTA|= 0b000100;
 PORTA|=0b011000;
 PORTC|=0b00000110;
 PORTB|=0b00010100;
-Apagar();
+_delay((unsigned long)((100)*(4000000/4000.0)));
 break;
 case 5:
+Apagar();
 PORTA|= 0b000100;
 PORTA|=0b001000;
 PORTC|=0b00000111;
 _delay((unsigned long)((10)*(4000000/4000.0)));
 PORTC|=0b00000011;
 PORTB|=0b00010100;
-Apagar();
+_delay((unsigned long)((100)*(4000000/4000.0)));
 break;
 case 6:
+Apagar();
 PORTA|= 0b000110;
 PORTA|=0b001000;
 PORTC|=0b00000011;
 PORTB|=0b00010110;
 _delay((unsigned long)((10)*(4000000/4000.0)));
 PORTB|=0b00000110;
-Apagar();
+_delay((unsigned long)((100)*(4000000/4000.0)));
 break;
 case 7:
+Apagar();
 PORTA|= 0b000110;
 PORTA|=0b100000;
 PORTC|=0b00000001;
 PORTB|=0b00000110;
-Apagar();
+_delay((unsigned long)((100)*(4000000/4000.0)));
 break;
 case 8:
+Apagar();
 PORTA|= 0b000110;
 PORTA|=0b100000;
 PORTC|=0b00000001;
 PORTB|=0b00000110;
-Apagar();
+_delay((unsigned long)((100)*(4000000/4000.0)));
 break;
 default:
 break;
