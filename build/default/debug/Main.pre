@@ -1303,7 +1303,9 @@ extern __nonreentrant void _delay(unsigned long);
 #pragma config WRT = OFF
 #pragma config CP = OFF
 
-# 68
+# 69
+void Apagar(void);
+
 void main(void) {
 
 
@@ -1344,7 +1346,7 @@ TRISBbits.TRISB1 = 0;
 TRISBbits.TRISB2 = 0;
 TRISBbits.TRISB4 = 0;
 
-# 116
+# 119
 while (1) {
 
 do {
@@ -1369,62 +1371,75 @@ contador++;
 }
 switch (contador) {
 case 0:
-PORTA=0b000111;
-PORTA=0b000011;
-PORTAbits.RA5=1;
-PORTCbits.RC0=1;
-PORTBbits.RB1=1;
+PORTA|=0b000111;
+_delay((unsigned long)((10)*(4000000/4000.0)));
+PORTA|= 0b000011;
+PORTA|=0b100000;
+PORTC|=0b00000001;
+PORTB|=0b00000010;
+Apagar();
 break;
 case 1:
-PORTA=0b000011;
-PORTA=0b110000;
-PORTCbits.RC2=1;
-PORTBbits.RB1=1;
+PORTA|= 0b000011;
+PORTA|=0b110000;
+PORTC|=0b00000100;
+PORTB|=0b00000010;
+Apagar();
 break;
 case 2:
-PORTAbits.RA0=1;
-PORTA=0b110000;
-PORTCbits.RC2=1;
-PORTBbits.RB4=1;
+PORTA|=0b000001;
+PORTA|=0b110000;
+PORTC|=0b00000100;
+PORTB|=0b00010000;
+Apagar();
 break;
 case 3:
-PORTAbits.RA0=1;
-PORTA=0b111000;
-PORTA=0b011000;
-PORTC=0b00000110;
-PORTBbits.RB4=1;
+PORTA|=0b000001;
+PORTA|=0b111000;
+_delay((unsigned long)((10)*(4000000/4000.0)));
+PORTA|=0b011000;
+PORTC|=0b00000110;
+PORTB|=0b00010000;
+Apagar();
 break;
 case 4:
-PORTAbits.RA2=1;
-PORTA=0b011000;
-PORTC=0b00000110;
-PORTB=0b00010100;
+PORTA|= 0b000100;
+PORTA|=0b011000;
+PORTC|=0b00000110;
+PORTB|=0b00010100;
+Apagar();
 break;
 case 5:
-PORTAbits.RA2=1;
-PORTAbits.RA3=1;
-PORTC=0b00000111;
-PORTC=0b00000011;
-PORTB=0b00010100;
+PORTA|= 0b000100;
+PORTA|=0b001000;
+PORTC|=0b00000111;
+_delay((unsigned long)((10)*(4000000/4000.0)));
+PORTC|=0b00000011;
+PORTB|=0b00010100;
+Apagar();
 break;
 case 6:
-PORTA=0b000110;
-PORTAbits.RA3=1;
-PORTC=0b00000011;
-PORTB=0b00010110;
-PORTB=0b00000110;
+PORTA|= 0b000110;
+PORTA|=0b001000;
+PORTC|=0b00000011;
+PORTB|=0b00010110;
+_delay((unsigned long)((10)*(4000000/4000.0)));
+PORTB|=0b00000110;
+Apagar();
 break;
 case 7:
-PORTA=0b000110;
-PORTAbits.RA5=1;
-PORTCbits.RC0=1;
-PORTB=0b00000110;
+PORTA|= 0b000110;
+PORTA|=0b100000;
+PORTC|=0b00000001;
+PORTB|=0b00000110;
+Apagar();
 break;
 case 8:
-PORTA=0b000110;
-PORTAbits.RA5=1;
-PORTCbits.RC0=1;
-PORTB=0b00000110;
+PORTA|= 0b000110;
+PORTA|=0b100000;
+PORTC|=0b00000001;
+PORTB|=0b00000110;
+Apagar();
 break;
 default:
 break;
@@ -1435,4 +1450,11 @@ break;
 
 
 return;
+}
+
+void Apagar(void) {
+PORTA = 0;
+PORTB = 0;
+PORTC = 0;
+
 }
