@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC LITE Macro Assembler V1.33 build 59893 
-                                                                                               Thu Oct 22 22:24:48 2015
+                                                                                               Fri Oct 23 10:23:34 2015
 
 Microchip Technology Omniscient Code Generator (Lite mode) build 59893
      1  0000                     
@@ -232,7 +232,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
    225                           __CFG_WRT$OFF equ 0x0
    226  0000                     global __CFG_FOSC$XT
    227                           __CFG_FOSC$XT equ 0x0
-   228  0000                     	file	"/tmp/cgtZX41B4"
+   228  0000                     	file	"/tmp/cgtvDDv94"
    229                           	line	#
    230                           psect cinit,class=CODE,delta=2
    231                           global start_initialization
@@ -1607,7 +1607,7 @@ DATA                 0      0       0       8        0.0%
 
 
 Microchip Technology PIC Macro Assembler V1.33 build 59893 
-Symbol Table                                                                                   Thu Oct 22 22:24:48 2015
+Symbol Table                                                                                   Fri Oct 23 10:23:34 2015
 
                       pc 0002              __CFG_CP$OFF 0000                       l30 063F  
                      l31 066D                       l40 071B                       l32 0676  

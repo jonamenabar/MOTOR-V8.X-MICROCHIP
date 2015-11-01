@@ -11,15 +11,15 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$/tmp/cgtPBOy9o.obj
+$/tmp/cgtskwdsO.obj
 end_init CODE 0 1 1 2 2
 reset_vec CODE 0 0 0 1 2
 config CONFIG 0 2007 2007 1 2
 $dist/default/debug/MOTOR_V8.X.debug.obj
 cinit CODE 0 7FD 7FD 3 2
-text1 CODE 0 690 690 6 2
+text1 CODE 0 61D 61D 6 2
 swtext1 CONST 0 3 3 12 2
-maintext CODE 0 696 696 167 2
+maintext CODE 0 623 623 1DA 2
 cstackBANK0 BANK0 1 20 20 9 1
 strings STRING 0 15 15 A 2
 # %UNUSED Section
@@ -30,12 +30,12 @@ strings STRING 0 15 15 A 2
 %UNUSED
 BANK0 0029-007B 1
 BANK1 00A0-00F3 1
-CODE 001F-068F 2
+CODE 001F-061C 2
 CODE 0800-0EFF 2
-CONST 001F-068F 2
+CONST 001F-061C 2
 CONST 0800-0EFF 2
 EEDATA 2100-217F 2
-ENTRY 001F-068F 2
+ENTRY 001F-061C 2
 ENTRY 0800-0EFF 2
 IDLOC 2000-2003 2
 RAM 0029-007B 1
@@ -45,9 +45,9 @@ SFR1 0080-009F 1
 SFR2 0100-017B 1
 SFR3 0180-01FB 1
 STACK 00A0-00F3 1
-STRCODE 001F-068F 2
+STRCODE 001F-061C 2
 STRCODE 0800-0EFF 2
-STRING 001F-068F 2
+STRING 001F-061C 2
 STRING 0800-0EFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
@@ -63,128 +63,140 @@ STRING 0800-0EFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/debug/MOTOR_V8.X.debug.obj
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":141 3 swtext1 CONST
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":224 690 text1 CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":225 690 text1 CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":226 693 text1 CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":227 694 text1 CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":229 695 text1 CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":71 696 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":76 696 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":77 697 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":86 698 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":87 69E maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":91 6A0 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":92 6A3 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":95 6A4 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":96 6A5 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":97 6A6 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":99 6A7 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":100 6A8 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":101 6A9 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":103 6AA maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":104 6AB maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":105 6AC maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":107 6AD maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":108 6AE maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":109 6AF maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":119 6B1 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":121 6B2 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":122 6B2 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":124 6CB maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":126 6D6 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":127 6D6 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":129 6DD maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":131 6F5 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":134 6F8 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":136 6F8 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":138 712 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":140 719 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":141 719 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":142 71A maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":143 71A maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":144 71D maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":145 723 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":146 72C maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":147 732 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":148 733 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":149 734 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":150 735 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":151 736 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":152 736 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":153 739 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":154 73F maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":155 743 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":156 744 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":157 745 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":158 746 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":159 746 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":160 749 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":161 74C maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":162 750 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":163 751 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":164 752 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":165 753 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":166 753 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":167 756 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":168 759 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":169 75D maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":170 766 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":171 76C maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":172 770 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":173 771 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":174 772 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":175 772 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":176 775 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":177 778 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":178 77C maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":179 780 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":180 784 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":181 785 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":182 785 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":183 788 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":184 78B maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":185 78C maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":186 790 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":187 799 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":188 79F maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":189 7A3 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":190 7A4 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":191 7A4 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":192 7A7 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":193 7AD maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":194 7AE maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":195 7B2 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":196 7B6 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":197 7BF maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":198 7C5 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":199 7C6 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":200 7C6 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":201 7C9 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":202 7CF maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":203 7D0 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":204 7D1 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":205 7D5 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":206 7D6 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":207 7D6 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":208 7D9 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":209 7DF maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":210 7E0 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":211 7E1 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":212 7E5 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":213 7E6 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":214 7E6 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":215 7E7 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":141 7E8 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":215 7F9 maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":119 7FA maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":217 7FA maintext CODE
-"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":222 7FB maintext CODE
-"/tmp/cgt0mfwFV":233 7FD cinit CODE
-"/tmp/cgt0mfwFV":236 7FD cinit CODE
-"/tmp/cgt0mfwFV":242 7FD cinit CODE
-"/tmp/cgt0mfwFV":243 7FD cinit CODE
-"/tmp/cgt0mfwFV":244 7FE cinit CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":143 3 swtext1 CONST
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":235 61D text1 CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":236 61D text1 CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":237 620 text1 CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":238 621 text1 CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":240 622 text1 CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":73 623 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":78 623 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":79 624 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":88 625 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":89 62B maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":93 62D maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":94 630 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":97 631 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":98 632 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":99 633 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":101 634 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":102 635 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":103 636 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":105 637 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":106 638 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":107 639 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":109 63A maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":110 63B maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":111 63C maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":121 63E maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":123 63F maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":124 63F maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":126 659 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":127 663 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":128 66D maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":129 66D maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":131 676 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":133 68E maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":134 690 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":136 69A maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":138 69A maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":140 6B6 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":141 6BC maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":142 6C6 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":143 6C6 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":144 6C7 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":145 6C7 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":146 6CA maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":147 6D0 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":148 6D9 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":149 6DF maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":150 6E0 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":151 6E1 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":152 6E2 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":153 6EB maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":154 6EC maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":155 6EC maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":156 6EF maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":157 6F5 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":158 6F9 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":159 6FA maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":160 6FB maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":161 704 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":162 705 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":163 705 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":164 708 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":165 70B maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":166 70F maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":167 710 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":168 711 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":169 71A maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":170 71B maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":171 71B maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":172 71E maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":173 721 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":174 725 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":175 72E maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":176 734 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":177 738 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":178 739 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":179 742 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":180 743 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":181 743 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":182 746 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":183 749 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":184 74D maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":185 751 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":186 755 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":187 75E maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":188 75F maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":189 75F maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":190 762 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":191 765 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":192 766 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":193 76A maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":194 773 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":195 779 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":196 77D maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":197 786 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":198 787 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":199 787 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":200 78A maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":201 790 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":202 791 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":203 795 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":204 799 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":205 7A2 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":206 7A8 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":207 7B1 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":208 7B2 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":209 7B2 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":210 7B5 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":211 7BB maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":212 7BC maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":213 7BD maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":214 7C1 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":215 7CA maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":216 7CB maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":217 7CB maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":218 7CE maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":219 7D4 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":220 7D5 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":221 7D6 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":222 7DA maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":223 7E3 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":224 7E4 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":225 7E4 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":226 7E5 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":143 7E6 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":226 7F9 maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":121 7FA maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":228 7FA maintext CODE
+"/Users/amenabarjonathan/MPLABXProjects/MOTOR V8.X/Main.c":233 7FB maintext CODE
+"/tmp/cgtxp4L2J":233 7FD cinit CODE
+"/tmp/cgtxp4L2J":236 7FD cinit CODE
+"/tmp/cgtxp4L2J":242 7FD cinit CODE
+"/tmp/cgtxp4L2J":243 7FD cinit CODE
+"/tmp/cgtxp4L2J":244 7FE cinit CODE
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -208,17 +220,17 @@ __Lintentry 2 0 CODE 0 intentry -
 __CFG_BOREN$ON 0 0 ABS 0 - dist/default/debug/MOTOR_V8.X.debug.obj
 _PEIE 5E 0 ABS 0 - dist/default/debug/MOTOR_V8.X.debug.obj
 __end_ofmain@SI 3E 0 STRING 0 strings dist/default/debug/MOTOR_V8.X.debug.obj
-_main D2C 0 CODE 0 maintext dist/default/debug/MOTOR_V8.X.debug.obj
-___sp 0 0 STACK 2 stack /tmp/cgtPBOy9o.obj
+_main C46 0 CODE 0 maintext dist/default/debug/MOTOR_V8.X.debug.obj
+___sp 0 0 STACK 2 stack /tmp/cgtskwdsO.obj
 btemp 7C 0 ABS 0 - dist/default/debug/MOTOR_V8.X.debug.obj
 ltemp 7C 0 ABS 0 - dist/default/debug/MOTOR_V8.X.debug.obj
 ttemp 7C 0 ABS 0 - dist/default/debug/MOTOR_V8.X.debug.obj
 wtemp 7C 0 ABS 0 - dist/default/debug/MOTOR_V8.X.debug.obj
-start 2 0 CODE 0 init /tmp/cgtPBOy9o.obj
+start 2 0 CODE 0 init /tmp/cgtskwdsO.obj
 _PORTA 5 0 ABS 0 - dist/default/debug/MOTOR_V8.X.debug.obj
-reset_vec 0 0 CODE 0 reset_vec /tmp/cgtPBOy9o.obj
+reset_vec 0 0 CODE 0 reset_vec /tmp/cgtskwdsO.obj
 _PORTB 6 0 ABS 0 - dist/default/debug/MOTOR_V8.X.debug.obj
-__end_of_Apagar D2C 0 CODE 0 text1 dist/default/debug/MOTOR_V8.X.debug.obj
+__end_of_Apagar C46 0 CODE 0 text1 dist/default/debug/MOTOR_V8.X.debug.obj
 _PORTC 7 0 ABS 0 - dist/default/debug/MOTOR_V8.X.debug.obj
 ltemp0 7C 0 ABS 0 - dist/default/debug/MOTOR_V8.X.debug.obj
 ttemp0 7C 0 ABS 0 - dist/default/debug/MOTOR_V8.X.debug.obj
@@ -247,7 +259,7 @@ __Hcommon 0 0 ABS 0 common -
 __Lcommon 0 0 ABS 0 common -
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
-___int_sp 0 0 STACK 2 stack /tmp/cgtPBOy9o.obj
+___int_sp 0 0 STACK 2 stack /tmp/cgtskwdsO.obj
 __Habs1 0 0 ABS 0 abs1 -
 __Labs1 0 0 ABS 0 abs1 -
 __size_of_Apagar 0 0 ABS 0 - dist/default/debug/MOTOR_V8.X.debug.obj
@@ -263,12 +275,12 @@ __Lsfr3 0 0 ABS 0 sfr3 -
 __end_ofmain@NO 3A 0 STRING 0 strings dist/default/debug/MOTOR_V8.X.debug.obj
 __Hcode 0 0 ABS 0 code -
 __Lcode 0 0 ABS 0 code -
-stackhi 0 0 ABS 0 - /tmp/cgtPBOy9o.obj
+stackhi 0 0 ABS 0 - /tmp/cgtskwdsO.obj
 __HcstackBANK0 0 0 ABS 0 cstackBANK0 -
-_Apagar D20 0 CODE 0 text1 dist/default/debug/MOTOR_V8.X.debug.obj
+_Apagar C3A 0 CODE 0 text1 dist/default/debug/MOTOR_V8.X.debug.obj
 __LcstackBANK0 0 0 ABS 0 cstackBANK0 -
 __pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/debug/MOTOR_V8.X.debug.obj
-stacklo 0 0 ABS 0 - /tmp/cgtPBOy9o.obj
+stacklo 0 0 ABS 0 - /tmp/cgtskwdsO.obj
 __Hinit 2 0 CODE 0 init -
 __Linit 2 0 CODE 0 init -
 __end_of_main FFA 0 CODE 0 maintext dist/default/debug/MOTOR_V8.X.debug.obj
@@ -296,7 +308,7 @@ __Lbank3 0 0 BANK3 1 bank3 -
 ___latbits 1 0 ABS 0 - dist/default/debug/MOTOR_V8.X.debug.obj
 __Hpowerup 0 0 CODE 0 powerup -
 __Lpowerup 0 0 CODE 0 powerup -
-__ptext1 D20 0 CODE 0 text1 dist/default/debug/MOTOR_V8.X.debug.obj
+__ptext1 C3A 0 CODE 0 text1 dist/default/debug/MOTOR_V8.X.debug.obj
 __Hclrtext 0 0 ABS 0 clrtext -
 __Lclrtext 0 0 ABS 0 clrtext -
 __end_of__initialization FFA 0 CODE 0 cinit dist/default/debug/MOTOR_V8.X.debug.obj
@@ -322,13 +334,13 @@ __Lend_init 2 0 CODE 0 end_init -
 __pswtext1 6 0 CONST 0 swtext1 dist/default/debug/MOTOR_V8.X.debug.obj
 __Hreset_vec 2 0 CODE 0 reset_vec -
 __Lreset_vec 0 0 CODE 0 reset_vec -
-intlevel0 0 0 CODE 0 functab /tmp/cgtPBOy9o.obj
+intlevel0 0 0 CODE 0 functab /tmp/cgtskwdsO.obj
 __CFG_WDTE$OFF 0 0 ABS 0 - dist/default/debug/MOTOR_V8.X.debug.obj
-intlevel1 0 0 CODE 0 functab /tmp/cgtPBOy9o.obj
-intlevel2 0 0 CODE 0 functab /tmp/cgtPBOy9o.obj
-intlevel3 0 0 CODE 0 functab /tmp/cgtPBOy9o.obj
-intlevel4 0 0 CODE 0 functab /tmp/cgtPBOy9o.obj
-intlevel5 0 0 CODE 0 functab /tmp/cgtPBOy9o.obj
+intlevel1 0 0 CODE 0 functab /tmp/cgtskwdsO.obj
+intlevel2 0 0 CODE 0 functab /tmp/cgtskwdsO.obj
+intlevel3 0 0 CODE 0 functab /tmp/cgtskwdsO.obj
+intlevel4 0 0 CODE 0 functab /tmp/cgtskwdsO.obj
+intlevel5 0 0 CODE 0 functab /tmp/cgtskwdsO.obj
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 __pcstackCOMMON 0 0 COMMON 1 cstackCOMMON dist/default/debug/MOTOR_V8.X.debug.obj
@@ -336,7 +348,7 @@ __CFG_CPD$OFF 0 0 ABS 0 - dist/default/debug/MOTOR_V8.X.debug.obj
 start_initialization FFA 0 CODE 0 cinit dist/default/debug/MOTOR_V8.X.debug.obj
 __Hmaintext 0 0 ABS 0 maintext -
 __Lmaintext 0 0 ABS 0 maintext -
-__pmaintext D2C 0 CODE 0 maintext dist/default/debug/MOTOR_V8.X.debug.obj
+__pmaintext C46 0 CODE 0 maintext dist/default/debug/MOTOR_V8.X.debug.obj
 __initialization FFA 0 CODE 0 cinit dist/default/debug/MOTOR_V8.X.debug.obj
 __stringbase 34 0 STRING 0 strings dist/default/debug/MOTOR_V8.X.debug.obj
 main@contador 27 0 BANK0 1 cstackBANK0 dist/default/debug/MOTOR_V8.X.debug.obj
@@ -370,7 +382,7 @@ reset_vec 0 0 0 3 2
 cinit 0 7FD FFA 3 2
 config 0 2007 400E 1 2
 cstackBANK0 1 20 20 9 1
-maintext 0 696 D2C 167 2
+maintext 0 623 C46 1DA 2
 swtext1 0 3 6 12 2
 strings 0 15 2A A 2
-text1 0 690 D20 6 2
+text1 0 61D C3A 6 2

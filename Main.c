@@ -131,14 +131,14 @@ void main(void) {
         if (SENSOR_AR == SI) {
 
             contador = 0;
-             ANTIREBOTE;
+            ANTIREBOTE;
 
         }
 
         if (SENSOR_CI == SI) {
 
             contador++;
-             ANTIREBOTE;
+            ANTIREBOTE;
         }
         switch (contador) {
             case 0:
