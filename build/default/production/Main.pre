@@ -1,13 +1,17 @@
 
 # 1 "Main.c"
 
-# 21 "/Applications/microchip/xc8/v1.33/include/htc.h"
+# 26 "/Applications/microchip/xc8/v1.37/include/htc.h"
 extern const char __xc8_OPTIM_SPEED;
 
+extern double __fpnormalize(double);
+
+
+# 13 "/Applications/microchip/xc8/v1.37/include/xc8debug.h"
 #pragma intrinsic(__builtin_software_breakpoint)
 extern void __builtin_software_breakpoint(void);
 
-# 47 "/Applications/microchip/xc8/v1.33/include/pic16f873a.h"
+# 49 "/Applications/microchip/xc8/v1.37/include/pic16f873a.h"
 extern volatile unsigned char INDF @ 0x000;
 
 asm("INDF equ 00h");
@@ -56,7 +60,7 @@ unsigned ZERO :1;
 } STATUSbits_t;
 extern volatile STATUSbits_t STATUSbits @ 0x003;
 
-# 152
+# 154
 extern volatile unsigned char FSR @ 0x004;
 
 asm("FSR equ 04h");
@@ -80,7 +84,7 @@ unsigned RA5 :1;
 } PORTAbits_t;
 extern volatile PORTAbits_t PORTAbits @ 0x005;
 
-# 207
+# 209
 extern volatile unsigned char PORTB @ 0x006;
 
 asm("PORTB equ 06h");
@@ -100,7 +104,7 @@ unsigned RB7 :1;
 } PORTBbits_t;
 extern volatile PORTBbits_t PORTBbits @ 0x006;
 
-# 268
+# 270
 extern volatile unsigned char PORTC @ 0x007;
 
 asm("PORTC equ 07h");
@@ -120,7 +124,7 @@ unsigned RC7 :1;
 } PORTCbits_t;
 extern volatile PORTCbits_t PORTCbits @ 0x007;
 
-# 329
+# 331
 extern volatile unsigned char PCLATH @ 0x00A;
 
 asm("PCLATH equ 0Ah");
@@ -133,7 +137,7 @@ unsigned PCLATH :5;
 } PCLATHbits_t;
 extern volatile PCLATHbits_t PCLATHbits @ 0x00A;
 
-# 348
+# 350
 extern volatile unsigned char INTCON @ 0x00B;
 
 asm("INTCON equ 0Bh");
@@ -159,7 +163,7 @@ unsigned T0IE :1;
 } INTCONbits_t;
 extern volatile INTCONbits_t INTCONbits @ 0x00B;
 
-# 425
+# 427
 extern volatile unsigned char PIR1 @ 0x00C;
 
 asm("PIR1 equ 0Ch");
@@ -178,7 +182,7 @@ unsigned ADIF :1;
 } PIR1bits_t;
 extern volatile PIR1bits_t PIR1bits @ 0x00C;
 
-# 480
+# 482
 extern volatile unsigned char PIR2 @ 0x00D;
 
 asm("PIR2 equ 0Dh");
@@ -196,7 +200,7 @@ unsigned CMIF :1;
 } PIR2bits_t;
 extern volatile PIR2bits_t PIR2bits @ 0x00D;
 
-# 519
+# 521
 extern volatile unsigned short TMR1 @ 0x00E;
 
 asm("TMR1 equ 0Eh");
@@ -242,7 +246,7 @@ unsigned T1INSYNC :1;
 } T1CONbits_t;
 extern volatile T1CONbits_t T1CONbits @ 0x010;
 
-# 611
+# 613
 extern volatile unsigned char TMR2 @ 0x011;
 
 asm("TMR2 equ 011h");
@@ -272,7 +276,7 @@ unsigned TOUTPS3 :1;
 } T2CONbits_t;
 extern volatile T2CONbits_t T2CONbits @ 0x012;
 
-# 687
+# 689
 extern volatile unsigned char SSPBUF @ 0x013;
 
 asm("SSPBUF equ 013h");
@@ -301,7 +305,7 @@ unsigned SSPM3 :1;
 } SSPCONbits_t;
 extern volatile SSPCONbits_t SSPCONbits @ 0x014;
 
-# 762
+# 764
 extern volatile unsigned short CCPR1 @ 0x015;
 
 asm("CCPR1 equ 015h");
@@ -340,7 +344,7 @@ unsigned CCP1M3 :1;
 } CCP1CONbits_t;
 extern volatile CCP1CONbits_t CCP1CONbits @ 0x017;
 
-# 837
+# 839
 extern volatile unsigned char RCSTA @ 0x018;
 
 asm("RCSTA equ 018h");
@@ -373,7 +377,7 @@ unsigned RC8_9 :1;
 } RCSTAbits_t;
 extern volatile RCSTAbits_t RCSTAbits @ 0x018;
 
-# 931
+# 933
 extern volatile unsigned char TXREG @ 0x019;
 
 asm("TXREG equ 019h");
@@ -424,7 +428,7 @@ unsigned CCP2M3 :1;
 } CCP2CONbits_t;
 extern volatile CCP2CONbits_t CCP2CONbits @ 0x01D;
 
-# 1018
+# 1020
 extern volatile unsigned char ADRESH @ 0x01E;
 
 asm("ADRESH equ 01Eh");
@@ -464,7 +468,7 @@ unsigned GO_DONE :1;
 } ADCON0bits_t;
 extern volatile ADCON0bits_t ADCON0bits @ 0x01F;
 
-# 1119
+# 1121
 extern volatile unsigned char OPTION_REG @ 0x081;
 
 asm("OPTION_REG equ 081h");
@@ -487,7 +491,7 @@ unsigned PS2 :1;
 } OPTION_REGbits_t;
 extern volatile OPTION_REGbits_t OPTION_REGbits @ 0x081;
 
-# 1188
+# 1190
 extern volatile unsigned char TRISA @ 0x085;
 
 asm("TRISA equ 085h");
@@ -505,7 +509,7 @@ unsigned TRISA5 :1;
 } TRISAbits_t;
 extern volatile TRISAbits_t TRISAbits @ 0x085;
 
-# 1237
+# 1239
 extern volatile unsigned char TRISB @ 0x086;
 
 asm("TRISB equ 086h");
@@ -525,7 +529,7 @@ unsigned TRISB7 :1;
 } TRISBbits_t;
 extern volatile TRISBbits_t TRISBbits @ 0x086;
 
-# 1298
+# 1300
 extern volatile unsigned char TRISC @ 0x087;
 
 asm("TRISC equ 087h");
@@ -545,7 +549,7 @@ unsigned TRISC7 :1;
 } TRISCbits_t;
 extern volatile TRISCbits_t TRISCbits @ 0x087;
 
-# 1359
+# 1361
 extern volatile unsigned char PIE1 @ 0x08C;
 
 asm("PIE1 equ 08Ch");
@@ -564,7 +568,7 @@ unsigned ADIE :1;
 } PIE1bits_t;
 extern volatile PIE1bits_t PIE1bits @ 0x08C;
 
-# 1414
+# 1416
 extern volatile unsigned char PIE2 @ 0x08D;
 
 asm("PIE2 equ 08Dh");
@@ -582,7 +586,7 @@ unsigned CMIE :1;
 } PIE2bits_t;
 extern volatile PIE2bits_t PIE2bits @ 0x08D;
 
-# 1453
+# 1455
 extern volatile unsigned char PCON @ 0x08E;
 
 asm("PCON equ 08Eh");
@@ -599,7 +603,7 @@ unsigned nBO :1;
 } PCONbits_t;
 extern volatile PCONbits_t PCONbits @ 0x08E;
 
-# 1486
+# 1488
 extern volatile unsigned char SSPCON2 @ 0x091;
 
 asm("SSPCON2 equ 091h");
@@ -619,7 +623,7 @@ unsigned GCEN :1;
 } SSPCON2bits_t;
 extern volatile SSPCON2bits_t SSPCON2bits @ 0x091;
 
-# 1547
+# 1549
 extern volatile unsigned char PR2 @ 0x092;
 
 asm("PR2 equ 092h");
@@ -688,7 +692,7 @@ unsigned DATA_ADDRESS :1;
 } SSPSTATbits_t;
 extern volatile SSPSTATbits_t SSPSTATbits @ 0x094;
 
-# 1727
+# 1729
 extern volatile unsigned char TXSTA @ 0x098;
 
 asm("TXSTA equ 098h");
@@ -717,7 +721,7 @@ unsigned TX8_9 :1;
 } TXSTAbits_t;
 extern volatile TXSTAbits_t TXSTAbits @ 0x098;
 
-# 1807
+# 1809
 extern volatile unsigned char SPBRG @ 0x099;
 
 asm("SPBRG equ 099h");
@@ -746,7 +750,7 @@ unsigned CM2 :1;
 } CMCONbits_t;
 extern volatile CMCONbits_t CMCONbits @ 0x09C;
 
-# 1882
+# 1884
 extern volatile unsigned char CVRCON @ 0x09D;
 
 asm("CVRCON equ 09Dh");
@@ -769,7 +773,7 @@ unsigned CVR3 :1;
 } CVRCONbits_t;
 extern volatile CVRCONbits_t CVRCONbits @ 0x09D;
 
-# 1946
+# 1948
 extern volatile unsigned char ADRESL @ 0x09E;
 
 asm("ADRESL equ 09Eh");
@@ -797,7 +801,7 @@ unsigned PCFG3 :1;
 } ADCON1bits_t;
 extern volatile ADCON1bits_t ADCON1bits @ 0x09F;
 
-# 2010
+# 2012
 extern volatile unsigned char EEDATA @ 0x10C;
 
 asm("EEDATA equ 010Ch");
@@ -839,12 +843,12 @@ unsigned EEPGD :1;
 } EECON1bits_t;
 extern volatile EECON1bits_t EECON1bits @ 0x18C;
 
-# 2078
+# 2080
 extern volatile unsigned char EECON2 @ 0x18D;
 
 asm("EECON2 equ 018Dh");
 
-# 2090
+# 2092
 extern volatile __bit ACKDT @ (((unsigned) &SSPCON2)*8) + 5;
 
 extern volatile __bit ACKEN @ (((unsigned) &SSPCON2)*8) + 4;
@@ -1274,37 +1278,43 @@ extern volatile __bit nW @ (((unsigned) &SSPSTAT)*8) + 2;
 extern volatile __bit nWRITE @ (((unsigned) &SSPSTAT)*8) + 2;
 
 
-# 27 "/Applications/microchip/xc8/v1.33/include/pic.h"
+# 27 "/Applications/microchip/xc8/v1.37/include/pic.h"
 #pragma intrinsic(__nop)
 extern void __nop(void);
 
-# 80
+# 77
 extern unsigned int flash_read(unsigned short addr);
 
-# 41 "/Applications/microchip/xc8/v1.33/include/eeprom_routines.h"
+# 114 "/Applications/microchip/xc8/v1.37/include/eeprom_routines.h"
 extern void eeprom_write(unsigned char addr, unsigned char value);
 extern unsigned char eeprom_read(unsigned char addr);
 extern void eecpymem(volatile unsigned char *to, __eeprom unsigned char *from, unsigned char size);
 extern void memcpyee(__eeprom unsigned char *to, const unsigned char *from, unsigned char size);
 
 
-# 153 "/Applications/microchip/xc8/v1.33/include/pic.h"
+# 151 "/Applications/microchip/xc8/v1.37/include/pic.h"
 #pragma intrinsic(_delay)
 extern __nonreentrant void _delay(unsigned long);
+
+# 186
+extern unsigned char __resetbits;
+extern __bit __powerdown;
+extern __bit __timeout;
 
 
 # 22 "Main.c"
 #pragma config FOSC = XT
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
-#pragma config BOREN = ON
+#pragma config BOREN = OFF
 #pragma config LVP = ON
 #pragma config CPD = OFF
 #pragma config WRT = OFF
 #pragma config CP = OFF
 
-# 71
+# 72
 void Apagar(void);
+void prueba(void);
 
 void main(void) {
 
@@ -1323,6 +1333,7 @@ int const NO = 0;
 
 int contador = 4;
 int inicio = 0;
+int UNAVEZ = 0;
 
 
 
@@ -1346,109 +1357,133 @@ TRISBbits.TRISB1 = 0;
 TRISBbits.TRISB2 = 0;
 TRISBbits.TRISB4 = 0;
 
-# 121
+# 124
+prueba();
+
 while (1) {
 
 do {
 if (PORTBbits.RB0 == SI) {
 
 inicio = SI;
-_delay((unsigned long)((50)*(4000000/4000.0)));
+_delay((unsigned long)((500)*(4000000/4000.0)));
 }
 } while (inicio == 0);
 
 if (PORTBbits.RB0 == SI) {
 
 contador = 0;
-_delay((unsigned long)((50)*(4000000/4000.0)));
-
+_delay((unsigned long)((500)*(4000000/4000.0)));
+Apagar();
+UNAVEZ = 1;
 }
 
 if (PORTBbits.RB5 == SI) {
 
 contador++;
-_delay((unsigned long)((50)*(4000000/4000.0)));
+_delay((unsigned long)((500)*(4000000/4000.0)));
+if(contador>=9)
+contador=0;
 }
 switch (contador) {
 case 0:
-Apagar();
+if (UNAVEZ == 1) {
 PORTA|=0b000111;
-_delay((unsigned long)((10)*(4000000/4000.0)));
-PORTA|= 0b000011;
-PORTA|=0b100000;
-PORTC|=0b00000001;
-PORTB|=0b00000010;
 _delay((unsigned long)((100)*(4000000/4000.0)));
+}
+PORTA = 0b100011;
+
+# 162
+PORTC=0b00000001;
+PORTB=0b00000010;
+UNAVEZ = 0;
 break;
 case 1:
-Apagar();
-PORTA|= 0b000011;
-PORTA|=0b110000;
-PORTC|=0b00000100;
-PORTB|=0b00000010;
-_delay((unsigned long)((100)*(4000000/4000.0)));
+PORTA = 0b110011;
+
+# 171
+PORTC=0b00000100;
+PORTB=0b00000010;
+
 break;
 case 2:
-Apagar();
-PORTA|=0b000001;
-PORTA|=0b110000;
-PORTC|=0b00000100;
-PORTB|=0b00010000;
-_delay((unsigned long)((100)*(4000000/4000.0)));
+PORTA = 0b110001;
+
+# 179
+PORTC=0b00000100;
+PORTB=0b00010000;
+
 break;
 case 3:
-Apagar();
-PORTA|=0b000001;
+
+
+if (UNAVEZ == 1) {
 PORTA|=0b111000;
-_delay((unsigned long)((10)*(4000000/4000.0)));
-PORTA|=0b011000;
-PORTC|=0b00000110;
-PORTB|=0b00010000;
 _delay((unsigned long)((100)*(4000000/4000.0)));
+}
+PORTA = 0b011001;
+
+# 193
+PORTC=0b00000110;
+PORTB=0b00010000;
+UNAVEZ = 0;
+
 break;
 case 4:
-Apagar();
-PORTA|= 0b000100;
-PORTA|=0b011000;
-PORTC|=0b00000110;
-PORTB|=0b00010100;
-_delay((unsigned long)((100)*(4000000/4000.0)));
+PORTA = 0b011100;
+
+# 204
+PORTC=0b00000110;
+PORTB=0b00010100;
+
 break;
 case 5:
-Apagar();
-PORTA|= 0b000100;
-PORTA|=0b001000;
-PORTC|=0b00000111;
-_delay((unsigned long)((10)*(4000000/4000.0)));
-PORTC|=0b00000011;
-PORTB|=0b00010100;
+
+
+if (UNAVEZ == 1) {
+PORTC=0b00000111;
 _delay((unsigned long)((100)*(4000000/4000.0)));
+}
+PORTA = 0b001100;
+
+# 218
+PORTC=0b00000011;
+PORTB=0b00010100;
+UNAVEZ = 0;
+
 break;
 case 6:
-Apagar();
-PORTA|= 0b000110;
-PORTA|=0b001000;
-PORTC|=0b00000011;
-PORTB|=0b00010110;
-_delay((unsigned long)((10)*(4000000/4000.0)));
-PORTB|=0b00000110;
+
+PORTA = 0b001110;
+
+# 228
+PORTC=0b00000011;
+if (UNAVEZ == 1) {
+PORTB=0b00010110;
 _delay((unsigned long)((100)*(4000000/4000.0)));
+}
+PORTB=0b00000110;
+UNAVEZ = 0;
+
 break;
 case 7:
-Apagar();
-PORTA|= 0b000110;
-PORTA|=0b100000;
-PORTC|=0b00000001;
-PORTB|=0b00000110;
-_delay((unsigned long)((100)*(4000000/4000.0)));
+PORTA |= 0b100110;
+
+# 241
+PORTC=0b00000001;
+PORTB=0b00000110;
+
+
 break;
 case 8:
-Apagar();
-PORTA|= 0b000110;
-PORTA|=0b100000;
-PORTC|=0b00000001;
-PORTB|=0b00000110;
-_delay((unsigned long)((100)*(4000000/4000.0)));
+
+PORTA |= 0b100110;
+
+# 251
+PORTC=0b00000001;
+PORTB=0b00000110;
+
+
 break;
 default:
 break;
@@ -1466,4 +1501,16 @@ PORTA = 0;
 PORTB = 0;
 PORTC = 0;
 
+}
+
+void prueba(void) {
+
+PORTA|=0b000111;
+_delay((unsigned long)((2000)*(4000000/4000.0)));;
+PORTA|=0b111000;
+_delay((unsigned long)((2000)*(4000000/4000.0)));;
+PORTC=0b00000111;
+_delay((unsigned long)((2000)*(4000000/4000.0)));;
+PORTB=0b00010110;
+_delay((unsigned long)((2000)*(4000000/4000.0)));;
 }
