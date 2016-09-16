@@ -1,17 +1,17 @@
 
 # 1 "Main.c"
 
-# 26 "/Applications/microchip/xc8/v1.37/include/htc.h"
+# 26 "/Applications/microchip/xc8/v1.38/include/htc.h"
 extern const char __xc8_OPTIM_SPEED;
 
 extern double __fpnormalize(double);
 
 
-# 13 "/Applications/microchip/xc8/v1.37/include/xc8debug.h"
+# 13 "/Applications/microchip/xc8/v1.38/include/xc8debug.h"
 #pragma intrinsic(__builtin_software_breakpoint)
 extern void __builtin_software_breakpoint(void);
 
-# 49 "/Applications/microchip/xc8/v1.37/include/pic16f873a.h"
+# 49 "/Applications/microchip/xc8/v1.38/include/pic16f873a.h"
 extern volatile unsigned char INDF @ 0x000;
 
 asm("INDF equ 00h");
@@ -1278,21 +1278,21 @@ extern volatile __bit nW @ (((unsigned) &SSPSTAT)*8) + 2;
 extern volatile __bit nWRITE @ (((unsigned) &SSPSTAT)*8) + 2;
 
 
-# 27 "/Applications/microchip/xc8/v1.37/include/pic.h"
+# 27 "/Applications/microchip/xc8/v1.38/include/pic.h"
 #pragma intrinsic(__nop)
 extern void __nop(void);
 
 # 77
 extern unsigned int flash_read(unsigned short addr);
 
-# 114 "/Applications/microchip/xc8/v1.37/include/eeprom_routines.h"
+# 114 "/Applications/microchip/xc8/v1.38/include/eeprom_routines.h"
 extern void eeprom_write(unsigned char addr, unsigned char value);
 extern unsigned char eeprom_read(unsigned char addr);
 extern void eecpymem(volatile unsigned char *to, __eeprom unsigned char *from, unsigned char size);
 extern void memcpyee(__eeprom unsigned char *to, const unsigned char *from, unsigned char size);
 
 
-# 151 "/Applications/microchip/xc8/v1.37/include/pic.h"
+# 151 "/Applications/microchip/xc8/v1.38/include/pic.h"
 #pragma intrinsic(_delay)
 extern __nonreentrant void _delay(unsigned long);
 
@@ -1337,25 +1337,25 @@ int UNAVEZ = 0;
 
 
 
-TRISBbits.TRISB0 = 1;
-TRISBbits.TRISB5 = 1;
+TRISB0 = 1;
+TRISB5 = 1;
 
 
-TRISAbits.TRISA2 = 0;
-TRISAbits.TRISA0 = 0;
-TRISAbits.TRISA1 = 0;
+TRISA2 = 0;
+TRISA0 = 0;
+TRISA1 = 0;
 
-TRISAbits.TRISA5 = 0;
-TRISAbits.TRISA3 = 0;
-TRISAbits.TRISA4 = 0;
+TRISA5 = 0;
+TRISA3 = 0;
+TRISC3 = 0;
 
-TRISCbits.TRISC2 = 0;
-TRISCbits.TRISC0 = 0;
-TRISCbits.TRISC1 = 0;
+TRISC2 = 0;
+TRISC0 = 0;
+TRISC1 = 0;
 
-TRISBbits.TRISB1 = 0;
-TRISBbits.TRISB2 = 0;
-TRISBbits.TRISB4 = 0;
+TRISB1 = 0;
+TRISB2 = 0;
+TRISB4 = 0;
 
 # 124
 prueba();
@@ -1372,120 +1372,144 @@ _delay((unsigned long)((500)*(4000000/4000.0)));
 
 if (PORTBbits.RB0 == SI) {
 
-contador = 0;
+contador = 4;
 _delay((unsigned long)((500)*(4000000/4000.0)));
 Apagar();
-UNAVEZ = 1;
+
 }
 
 if (PORTBbits.RB5 == SI) {
 
 contador++;
+UNAVEZ = 1;
 _delay((unsigned long)((500)*(4000000/4000.0)));
 if(contador>=9)
 contador=0;
 }
 switch (contador) {
+
 case 0:
-if (UNAVEZ == 1) {
-PORTA|=0b000111;
-_delay((unsigned long)((100)*(4000000/4000.0)));
-}
+Apagar();
 PORTA = 0b100011;
 
-# 162
-PORTC=0b00000001;
-PORTB=0b00000010;
+# 160
+RC0=1;
+RB1=1;
+if (UNAVEZ == 1) {
+PORTA=0b100111;
+_delay((unsigned long)((80)*(4000000/4000.0)));
+PORTA=0b100000;;
+_delay((unsigned long)((80)*(4000000/4000.0)));
+PORTA=0b100111;
+_delay((unsigned long)((80)*(4000000/4000.0)));
+}
 UNAVEZ = 0;
 break;
+
 case 1:
+Apagar();
 PORTA = 0b110011;
+RC3=1;
 
-# 171
-PORTC=0b00000100;
-PORTB=0b00000010;
-
+# 180
+RC2=1;
+RB1=1;
 break;
+
 case 2:
-PORTA = 0b110001;
+Apagar();
+PORTA = 0b100001;
+RC3=1;
 
-# 179
-PORTC=0b00000100;
-PORTB=0b00010000;
-
+# 190
+RC2=1;
+RB4=1;
 break;
+
 case 3:
+Apagar();
+PORTA = 0b001001;
+RC3=1;
 
-
+# 200
+RC1=1 ; RC2=1;
+RB4=1;
 if (UNAVEZ == 1) {
-PORTA|=0b111000;
-_delay((unsigned long)((100)*(4000000/4000.0)));
+PORTA=0b101001;
+RC3=1;
+_delay((unsigned long)((80)*(4000000/4000.0)));
+PORTA=0b000001;
+RC3=0;
+_delay((unsigned long)((80)*(4000000/4000.0)));
+PORTA=0b101001;
+RC3=1;
+_delay((unsigned long)((80)*(4000000/4000.0)));
 }
-PORTA = 0b011001;
-
-# 193
-PORTC=0b00000110;
-PORTB=0b00010000;
 UNAVEZ = 0;
-
 break;
+
 case 4:
-PORTA = 0b011100;
+Apagar();
+PORTA = 0b001100;
+RC3=1;
 
-# 204
-PORTC=0b00000110;
-PORTB=0b00010100;
-
+# 224
+RC1=1 ; RC2=1;
+RB2=1 ; RB4=1;
 break;
+
 case 5:
-
-
-if (UNAVEZ == 1) {
-PORTC=0b00000111;
-_delay((unsigned long)((100)*(4000000/4000.0)));
-}
+Apagar();
 PORTA = 0b001100;
 
-# 218
-PORTC=0b00000011;
-PORTB=0b00010100;
+# 233
+RC1=1 ; RC0=1;
+RB2=1 ; RB4=1;
+if (UNAVEZ == 1) {
+RC0=1 ; RC1=1 ; RC2=1;
+_delay((unsigned long)((80)*(4000000/4000.0)));
+RC0=0;RC1=0;RC2=0;
+_delay((unsigned long)((80)*(4000000/4000.0)));
+RC0=1 ; RC1=1 ; RC2=1;
+_delay((unsigned long)((80)*(4000000/4000.0)));
+}
 UNAVEZ = 0;
-
 break;
-case 6:
 
+case 6:
+Apagar();
 PORTA = 0b001110;
 
-# 228
-PORTC=0b00000011;
+# 251
+RC1=1 ; RC0=1;
+RB1=1 ; RB2=1;
 if (UNAVEZ == 1) {
-PORTB=0b00010110;
-_delay((unsigned long)((100)*(4000000/4000.0)));
+RB1=1 ; RB2=1 ; RB4=1;
+_delay((unsigned long)((80)*(4000000/4000.0)));
+RB0=0;RB2=0;RB4=0;
+_delay((unsigned long)((80)*(4000000/4000.0)));
+RB1=1 ; RB2=1 ; RB4=1;
+_delay((unsigned long)((80)*(4000000/4000.0)));
 }
-PORTB=0b00000110;
 UNAVEZ = 0;
-
 break;
+
 case 7:
-PORTA |= 0b100110;
+Apagar();
+PORTA = 0b100110;
 
-# 241
-PORTC=0b00000001;
-PORTB=0b00000110;
-
-
+# 269
+RC0=1;
+RB1=1 ; RB2=1;
 break;
+
 case 8:
 
-PORTA |= 0b100110;
-
-# 251
-PORTC=0b00000001;
-PORTB=0b00000110;
-
-
+# 280
+contador = 0;
 break;
 default:
+contador = 4;
 break;
 }
 
@@ -1505,12 +1529,8 @@ PORTC = 0;
 
 void prueba(void) {
 
-PORTA|=0b000111;
-_delay((unsigned long)((2000)*(4000000/4000.0)));;
-PORTA|=0b111000;
-_delay((unsigned long)((2000)*(4000000/4000.0)));;
-PORTC=0b00000111;
-_delay((unsigned long)((2000)*(4000000/4000.0)));;
-PORTB=0b00010110;
-_delay((unsigned long)((2000)*(4000000/4000.0)));;
+PORTA=47;
+PORTB=22;
+PORTC=15;
+
 }
