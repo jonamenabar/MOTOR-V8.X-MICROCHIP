@@ -6,14 +6,16 @@
             <url>Main.c</url>
             <bookmark id="1">
                 <name/>
-                <line>229</line>
+                <line>121</line>
                 <key/>
             </bookmark>
         </file>
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/Users/amenabarjonathan/MPLABXProjects/MOTOR%20V8.X/bsp/bsp.c</file>
             <file>file:/Users/amenabarjonathan/MPLABXProjects/MOTOR%20V8.X/Main.c</file>
+            <file>file:/Users/amenabarjonathan/MPLABXProjects/MOTOR%20V8.X/bsp/bsp.h</file>
         </group>
     </open-files>
 </project-private>
