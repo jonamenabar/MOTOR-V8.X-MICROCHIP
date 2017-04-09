@@ -5,7 +5,7 @@
  * Created on September 17, 2016, 1:52 PM
  */
 #include <xc.h>
-
+//#include <pic16f873a.h>
 #include "bsp.h"
 
 /*--------------------------ROJO1, VERDE1,AZUL1, ROJO3, VERDE3,AZUL3, ROJO5, VERDE5,AZUL5, ROJO7, VERDE7,AZUL7*/
@@ -14,12 +14,14 @@ unsigned char leds[] =     {0x00,  0x01,  0X02,  0x03,  0x03,  0x05,  0x00,  0x0
 unsigned char color;
 /*----------------------     0      1      2      3      4      5      6      7       8      9     10      11  */
 
-/*Prototipos de funciones de iniciarlizacion de hardware*/
+/*Prototipos de funciones para iniciarlizacion de hardware y varias*/
 void bsp_hardware_init(void);
 void bsp_led_init(void);
 void bsp_sw_init(void);
 void color_set(char color);
 void delay(int tiempo);
+void apagar();
+void prueba(void);
 
 
 /*Funcion principal que inicializa el hardware*/
@@ -80,125 +82,125 @@ void led_set(char led, char estado){
     
 }
 
-void color_set(char color){
+void color_set(unsigned int color){
     
     switch (color){
         
-        case "ROJO1":
+        case ROJO1:
             led_set(rojo1,ENCENDER);
             break;
             
-        case "CYAN1":
+        case CYAN1:
             led_set(verde1,ENCENDER); //verde1
             led_set(azul1,ENCENDER);  //azul1
             break;
             
-        case "AZUL1":
+        case AZUL1:
             led_set(azul1,ENCENDER); //azul1
             break;
             
-        case "AMARILLO1":
+        case AMARILLO1:
             led_set(verde1,ENCENDER); //verde1
             led_set(rojo1,ENCENDER);  //rojo1
             break;
         
-        case "BLANCO1":
+        case BLANCO1:
             led_set(rojo1,ENCENDER);  //rojo1
             led_set(verde1,ENCENDER); //verde1
             led_set(azul1,ENCENDER);  //azul1
             break;
             
-        case "BLANCO1OFF":
+        case BLANCO1OFF:
             led_set(rojo1,APAGAR);  //rojo1
             led_set(verde1,APAGAR); //verde1
             led_set(azul1,APAGAR);  //azul1
             break;
        
-        case "ROJO3":
+        case ROJO3:
             led_set(rojo3,ENCENDER);  //rojo3
             break;
             
-        case "CYAN3":
+        case CYAN3:
             led_set(verde3,ENCENDER); //verde3
             led_set(azul3,ENCENDER);  //azul3
             break;
             
-        case "AZUL3":
+        case AZUL3:
             led_set(azul5,ENCENDER); //azul3
             break;
             
-        case "AMARILLO3":
+        case AMARILLO3:
             led_set(verde3,ENCENDER); //verde3
             led_set(rojo3,ENCENDER);  //rojo3
             break;
         
-        case "BLANCO3":
+        case BLANCO3:
             led_set(rojo3,ENCENDER);  //rojo3
             led_set(verde3,ENCENDER); //verde3
             led_set(azul5,ENCENDER);  //azul3
             break;
             
-        case "BLANCO3OFF":
+        case BLANCO3OFF:
             led_set(rojo3,APAGAR);  //rojo3
             led_set(verde3,APAGAR); //verde3
             led_set(azul5,APAGAR);  //azul3
             break;
             
-        case "ROJO5":
+        case ROJO5:
             led_set(rojo5,ENCENDER); //rojo5
             break;
             
-        case "CYAN5":
+        case CYAN5:
             led_set(verde5,ENCENDER); //verde5
             led_set(azul5,ENCENDER);  //azul5
             break;
             
-        case "AZUL5":
+        case AZUL5:
             led_set(azul5,ENCENDER); //azul5
             break;
             
-        case "AMARILLO5":
+        case AMARILLO5:
             led_set(verde5,ENCENDER); //verde5
             led_set(rojo5,ENCENDER);  //rojo5
             break;
         
-        case "BLANCO5":
+        case BLANCO5:
             led_set(rojo5,ENCENDER);  //rojo5
             led_set(verde5,ENCENDER); //verde5
             led_set(azul5,ENCENDER);  //azul5
             break;
             
-        case "BLANCO5OFF":
+        case BLANCO5OFF:
             led_set(rojo5,APAGAR);   //rojo5
             led_set(verde5,APAGAR);  //verde5
             led_set(azul5,APAGAR);   //azul5
             break;
             
-        case "ROJO7":
+        case ROJO7:
             led_set(rojo7,ENCENDER); //rojo7
             break;
             
-        case "CYAN7":
+        case CYAN7:
             led_set(verde7,ENCENDER); //verde7
             led_set(azul7,ENCENDER);  //azul7
             break;
             
-        case "AZUL7":
+        case AZUL7:
             led_set(azul7,ENCENDER); //azul7
             break;
             
-        case "AMARILLO7":
+        case AMARILLO7:
             led_set(verde7,ENCENDER); //verde7
             led_set(rojo7,ENCENDER);  //rojo7
             break;
         
-        case "BLANCO7":
+        case BLANCO7:
             led_set(rojo7,ENCENDER);  //rojo7
             led_set(verde7,ENCENDER); //verde7
             led_set(azul7,ENCENDER);  //azul7
             break;
             
-        case "BLANCO7OFF":
+        case BLANCO7OFF:
             led_set(rojo7,APAGAR);  //rojo7
             led_set(verde7,APAGAR); //verde7
             led_set(azul7,APAGAR);  //azul7
@@ -207,4 +209,16 @@ void color_set(char color){
 }
 void delay(int tiempo){
     __delay_ms(tiempo);
+}
+
+void apagar(void){ //deberia reemplazarlo con algo por estar en .c?
+    PORTA = 0; //OJO REVISAR PORQUE NO SE QUE OCURRIRIA AL TRATAR DE ESCRIBIR UN PUERTO DE ENTRADA
+    PORTB = 0;
+    PORTC = 0;
+}
+
+void prueba(void){
+    PORTA=47;
+    PORTB=22;
+    PORTC=15;
 }

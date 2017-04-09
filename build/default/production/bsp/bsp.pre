@@ -1316,6 +1316,8 @@ void bsp_led_init(void);
 void bsp_sw_init(void);
 void color_set(char color);
 void delay(int tiempo);
+void apagar();
+void prueba(void);
 
 
 
@@ -1376,125 +1378,125 @@ leds_port[led] |= ~leds[led];
 
 }
 
-void color_set(char color){
+void color_set(unsigned int color){
 
 switch (color){
 
-case "ROJO1":
+case 1:
 led_set(0,1);
 break;
 
-case "CYAN1":
+case 2:
 led_set(1,1);
 led_set(2,1);
 break;
 
-case "AZUL1":
+case 3:
 led_set(2,1);
 break;
 
-case "AMARILLO1":
+case 4:
 led_set(1,1);
 led_set(0,1);
 break;
 
-case "BLANCO1":
+case 5:
 led_set(0,1);
 led_set(1,1);
 led_set(2,1);
 break;
 
-case "BLANCO1OFF":
+case 6:
 led_set(0,0);
 led_set(1,0);
 led_set(2,0);
 break;
 
-case "ROJO3":
+case 7:
 led_set(3,1);
 break;
 
-case "CYAN3":
+case 8:
 led_set(4,1);
 led_set(5,1);
 break;
 
-case "AZUL3":
+case 9:
 led_set(8,1);
 break;
 
-case "AMARILLO3":
+case 10:
 led_set(4,1);
 led_set(3,1);
 break;
 
-case "BLANCO3":
+case 11:
 led_set(3,1);
 led_set(4,1);
 led_set(8,1);
 break;
 
-case "BLANCO3OFF":
+case 12:
 led_set(3,0);
 led_set(4,0);
 led_set(8,0);
 break;
 
-case "ROJO5":
+case 13:
 led_set(6,1);
 break;
 
-case "CYAN5":
+case 14:
 led_set(7,1);
 led_set(8,1);
 break;
 
-case "AZUL5":
+case 15:
 led_set(8,1);
 break;
 
-case "AMARILLO5":
+case 16:
 led_set(7,1);
 led_set(6,1);
 break;
 
-case "BLANCO5":
+case 17:
 led_set(6,1);
 led_set(7,1);
 led_set(8,1);
 break;
 
-case "BLANCO5OFF":
+case 18:
 led_set(6,0);
 led_set(7,0);
 led_set(8,0);
 break;
 
-case "ROJO7":
+case 19:
 led_set(9,1);
 break;
 
-case "CYAN7":
+case 20:
 led_set(10,1);
 led_set(11,1);
 break;
 
-case "AZUL7":
+case 21:
 led_set(11,1);
 break;
 
-case "AMARILLO7":
+case 22:
 led_set(10,1);
 led_set(9,1);
 break;
 
-case "BLANCO7":
+case 23:
 led_set(9,1);
 led_set(10,1);
 led_set(11,1);
 break;
 
-case "BLANCO7OFF":
+case 24:
 led_set(9,0);
 led_set(10,0);
 led_set(11,0);
@@ -1503,4 +1505,16 @@ break;
 }
 void delay(int tiempo){
 _delay((unsigned long)((tiempo)*(4000000/4000.0)));
+}
+
+void apagar(void){
+PORTA = 0;
+PORTB = 0;
+PORTC = 0;
+}
+
+void prueba(void){
+PORTA=47;
+PORTB=22;
+PORTC=15;
 }

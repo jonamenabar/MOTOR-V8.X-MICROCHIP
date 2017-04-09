@@ -10,10 +10,6 @@
 
 
 
-
-void Apagar(void); //prototipado de la funcion apagar
-void prueba(void); //prototipado de la funcion prueba
-
 void main(void) {
 
     int const SI = 1;
@@ -41,7 +37,7 @@ void main(void) {
 
             contador = 4; //ARRANCA EN EL PISTON 4
             ANTIREBOTE;
-            Apagar();
+            apagar();
             
         }
 
@@ -56,99 +52,99 @@ void main(void) {
         switch (contador) {
             
             case 0:
-                Apagar();
-                color_set("AMARILLO1");
-                color_set("AZUL3");
-                color_set("ROJO5");
-                color_set("ROJO7");
+                apagar();
+                color_set(AMARILLO1);
+                color_set(AZUL3);
+                color_set(ROJO5);
+                color_set(ROJO7);
                 if (UNAVEZ == 1) { //ESTO ES PARA GENERAR UN DOBLE DESTELLO
-                    color_set("BLANCO1");
+                    color_set(BLANCO1);
                     DELAY_FLASH;
-                    color_set("BLANCO1OFF");
+                    color_set(BLANCO1OFF);
                     DELAY_FLASH;
-                    color_set("BLANCO1");
+                    color_set(BLANCO1);
                     DELAY_FLASH;
                 }
                 UNAVEZ = 0;
                 break;
             
             case 1:
-                Apagar();
-                color_set("AMARILLO1");
-                color_set("CYAN3");
-                color_set("AZUL5");
-                color_set("ROJO7");
+                apagar();
+                color_set(AMARILLO1);
+                color_set(CYAN3);
+                color_set(AZUL5);
+                color_set(ROJO7);
                 break;
             
             case 2:
-                Apagar();
-                color_set("ROJO1");
-                color_set("CYAN3");
-                color_set("AZUL5");
-                color_set("AZUL7");
+                apagar();
+                color_set(ROJO1);
+                color_set(CYAN3);
+                color_set(AZUL5);
+                color_set(AZUL7);
                 break;
             
             case 3:
-                Apagar();
-                color_set("ROJO1");
-                color_set("AMARILLO3");
-                color_set("CYAN5");
-                color_set("AZUL7");
+                apagar();
+                color_set(ROJO1);
+                color_set(AMARILLO3);
+                color_set(CYAN5);
+                color_set(AZUL7);
                 if (UNAVEZ == 1) {
-                    color_set("BLANCO3"); //BLANCO3 //ESTO ES PARA GENERAR UN DOBLE DESTELLO
+                    color_set(BLANCO3); //BLANCO3 //ESTO ES PARA GENERAR UN DOBLE DESTELLO
                     DELAY_FLASH;
-                    color_set("BLANCO3OFF"); //apago solo BLANCO3, dejo prendido el rojo1
+                    color_set(BLANCO3OFF); //apago solo BLANCO3, dejo prendido el rojo1
                     DELAY_FLASH;
-                    color_set("BLANCO3"); //BLANCO3
+                    color_set(BLANCO3); //BLANCO3
                     DELAY_FLASH;
                 }
                 UNAVEZ = 0;
                 break;
             
             case 4:
-                Apagar();
-                color_set("AZUL1");
-                color_set("AMARILLO3");
-                color_set("CYAN5");
-                color_set("CYAN7");
+                apagar();
+                color_set(AZUL1);
+                color_set(AMARILLO3);
+                color_set(CYAN5);
+                color_set(CYAN7);
                 break;
             
             case 5:
-                Apagar();
-                color_set("AZUL1");
-                color_set("ROJO3");
-                color_set("AMARILLO5");
-                color_set("CYAN7");
+                apagar();
+                color_set(AZUL1);
+                color_set(ROJO3);
+                color_set(AMARILLO5);
+                color_set(CYAN7);
                 if (UNAVEZ == 1) {     //ESTO ES PARA GENERAR UN DOBLE DESTELLO
-                    color_set("BLANCO5");
+                    color_set(BLANCO5);
                     DELAY_FLASH;
-                    color_set("BLANCO5OFF"); //APAGO EL BLANCO 5
+                    color_set(BLANCO5OFF); //APAGO EL BLANCO 5
                     DELAY_FLASH;
-                    color_set("BLANCO5");
+                    color_set(BLANCO5);
                     DELAY_FLASH;
                 }
                 UNAVEZ = 0;
                 break;
             
             case 6:
-                Apagar();
-                color_set("CYAN1");
-                color_set("ROJO3");
-                color_set("AMARILLO5");
-                color_set("AMARILLO7");
+                apagar();
+                color_set(CYAN1);
+                color_set(ROJO3);
+                color_set(AMARILLO5);
+                color_set(AMARILLO7);
                 if (UNAVEZ == 1) {     //ESTO ES PARA GENERAR UN DOBLE DESTELLO
-                    color_set("BLANCO7");
+                    color_set(BLANCO7);
                     DELAY_FLASH;
-                    color_set("BLANCO7OFF");
+                    color_set(BLANCO7OFF);
                     DELAY_FLASH;
-                    color_set("BLANCO7");
+                    color_set(BLANCO7);
                     DELAY_FLASH;    
                 }
                 UNAVEZ = 0;
                 break;
             
             case 7:
-                Apagar();
+                apagar();
                 color_set(CYAN1);
                 color_set(AZUL3);
                 color_set(ROJO5);
@@ -170,17 +166,4 @@ void main(void) {
     return;
 }
 
-void Apagar(void) {
-    PORTA = 0; //OJO REVISAR PORQUE NO SE QUE OCURRIRIA AL TRATAR DE ESCRIBIR UN PUERTO DE ENTRADA
-    PORTB = 0;
-    PORTC = 0;
 
-}
-
-void prueba(void) {
-//pongo todos los leds en 1
-    PORTA=47;
-    PORTB=22;
-    PORTC=15;
-    //TIEMPO_PRUEBA;
-}

@@ -4,10 +4,7 @@
 # 16 "bsp/bsp.h"
 void bsp_init();
 
-# 14 "Main.c"
-void Apagar(void);
-void prueba(void);
-
+# 13 "Main.c"
 void main(void) {
 
 int const SI = 1;
@@ -35,7 +32,7 @@ if (PORTBbits.RB0 == SI) {
 
 contador = 4;
 __delay_ms(500);
-Apagar();
+apagar();
 
 }
 
@@ -50,103 +47,103 @@ contador=0;
 switch (contador) {
 
 case 0:
-Apagar();
-color_set("AMARILLO1");
-color_set("AZUL3");
-color_set("ROJO5");
-color_set("ROJO7");
+apagar();
+color_set(4);
+color_set(9);
+color_set(13);
+color_set(19);
 if (UNAVEZ == 1) {
-color_set("BLANCO1");
+color_set(5);
 __delay_ms(80);
-color_set("BLANCO1OFF");
+color_set(6);
 __delay_ms(80);
-color_set("BLANCO1");
+color_set(5);
 __delay_ms(80);
 }
 UNAVEZ = 0;
 break;
 
 case 1:
-Apagar();
-color_set("AMARILLO1");
-color_set("CYAN3");
-color_set("AZUL5");
-color_set("ROJO7");
+apagar();
+color_set(4);
+color_set(8);
+color_set(15);
+color_set(19);
 break;
 
 case 2:
-Apagar();
-color_set("ROJO1");
-color_set("CYAN3");
-color_set("AZUL5");
-color_set("AZUL7");
+apagar();
+color_set(1);
+color_set(8);
+color_set(15);
+color_set(21);
 break;
 
 case 3:
-Apagar();
-color_set("ROJO1");
-color_set("AMARILLO3");
-color_set("CYAN5");
-color_set("AZUL7");
+apagar();
+color_set(1);
+color_set(10);
+color_set(14);
+color_set(21);
 if (UNAVEZ == 1) {
-color_set("BLANCO3");
+color_set(11);
 __delay_ms(80);
-color_set("BLANCO3OFF");
+color_set(12);
 __delay_ms(80);
-color_set("BLANCO3");
+color_set(11);
 __delay_ms(80);
 }
 UNAVEZ = 0;
 break;
 
 case 4:
-Apagar();
-color_set("AZUL1");
-color_set("AMARILLO3");
-color_set("CYAN5");
-color_set("CYAN7");
+apagar();
+color_set(3);
+color_set(10);
+color_set(14);
+color_set(20);
 break;
 
 case 5:
-Apagar();
-color_set("AZUL1");
-color_set("ROJO3");
-color_set("AMARILLO5");
-color_set("CYAN7");
+apagar();
+color_set(3);
+color_set(7);
+color_set(16);
+color_set(20);
 if (UNAVEZ == 1) {
-color_set("BLANCO5");
+color_set(17);
 __delay_ms(80);
-color_set("BLANCO5OFF");
+color_set(18);
 __delay_ms(80);
-color_set("BLANCO5");
+color_set(17);
 __delay_ms(80);
 }
 UNAVEZ = 0;
 break;
 
 case 6:
-Apagar();
-color_set("CYAN1");
-color_set("ROJO3");
-color_set("AMARILLO5");
-color_set("AMARILLO7");
+apagar();
+color_set(2);
+color_set(7);
+color_set(16);
+color_set(22);
 if (UNAVEZ == 1) {
-color_set("BLANCO7");
+color_set(23);
 __delay_ms(80);
-color_set("BLANCO7OFF");
+color_set(24);
 __delay_ms(80);
-color_set("BLANCO7");
+color_set(23);
 __delay_ms(80);
 }
 UNAVEZ = 0;
 break;
 
 case 7:
-Apagar();
-color_set(CYAN1);
-color_set(AZUL3);
-color_set(ROJO5);
-color_set(AMARILLO7);
+apagar();
+color_set(2);
+color_set(9);
+color_set(13);
+color_set(22);
 break;
 
 case 8:
@@ -164,17 +161,3 @@ break;
 return;
 }
 
-void Apagar(void) {
-PORTA = 0;
-PORTB = 0;
-PORTC = 0;
-
-}
-
-void prueba(void) {
-
-PORTA=47;
-PORTB=22;
-PORTC=15;
-
-}

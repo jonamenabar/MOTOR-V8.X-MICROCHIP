@@ -33,9 +33,37 @@ void bsp_init(); //prototipo de inicializador de hardware aca llamo a otras func
 #define verde7 10 //RB2
 #define azul7  11 //RB4
 
+/*-------------------------------DEFINO COLORES COMPUESTOS COMO NUMEROS PARA EL SWITCH------------------*/
+#define ROJO1       1
+#define CYAN1       2
+#define AZUL1       3
+#define AMARILLO1   4
+#define BLANCO1     5
+#define BLANCO1OFF  6
+#define ROJO3       7
+#define CYAN3       8
+#define AZUL3       9
+#define AMARILLO3  10
+#define BLANCO3    11
+#define BLANCO3OFF 12
+#define ROJO5      13
+#define CYAN5      14
+#define AZUL5      15
+#define AMARILLO5  16
+#define BLANCO5    17
+#define BLANCO5OFF 18
+#define ROJO7      19
+#define CYAN7      20
+#define AZUL7      21
+#define AMARILLO7  22
+#define BLANCO7    23
+#define BLANCO7OFF 24
+
+
+
 /*------------------------DEFINO LOS PULSADORES---------------------------------------------------------*/
-#define 	SENSOR_AR PORTBbits.RB0 //SENSOR ARBOL DE LEVA
-#define 	SENSOR_CI PORTBbits.RB5 //SENSOR CIGUE?AL
+#define SENSOR_AR PORTBbits.RB0 //SENSOR ARBOL DE LEVA
+#define SENSOR_CI PORTBbits.RB5 //SENSOR CIGUE?AL
 /*------------------------DEFINO LOS TIEMPOS------------------------------------------------------------*/
 #define ANTIREBOTE  __delay_ms(500)  //ANTI REBOTE, REVISAR SI EL TIEMPO ES MUY LARGO
 #define DELAY_FLASH __delay_ms(80) //establezco un delay para los flash
