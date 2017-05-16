@@ -1,6 +1,6 @@
 /*
  * File:   Main.c
- * Author: amenabarjonathan
+ * Author: Amenabar Jonathan
  *
  * Created on 8 de OCTUBRE de 1987, 20:57
  */
@@ -26,26 +26,26 @@ void main(void) {
     while (1) {
 
         do {
-            if (SENSOR_AR == SI) {
+            if (SENSOR_AR() == SI) {
 
                 inicio = SI;
-                ANTIREBOTE;
+               // ANTIREBOTE();
             }
         } while (inicio == 0);
 
-        if (SENSOR_AR == SI) { //Nota: Deberias meterlo en una interrupcion!.
+        if (SENSOR_AR() == SI) { //Nota: Deberias meterlo en una interrupcion!.
 
             contador = 4; //ARRANCA EN EL PISTON 4
-            ANTIREBOTE;
+          //  ANTIREBOTE();
             apagar();
             
         }
 
-        if (SENSOR_CI == SI) { //Nota: Deberias meterlo en una interrupcion!.
+        if (SENSOR_CI() == SI) { //Nota: Deberias meterlo en una interrupcion!.
 
             contador++;
             UNAVEZ = 1;
-            ANTIREBOTE;
+        //    ANTIREBOTE();
             if(contador>=9)
                 contador=0;
         }
@@ -59,11 +59,11 @@ void main(void) {
                 color_set(ROJO7);
                 if (UNAVEZ == 1) { //ESTO ES PARA GENERAR UN DOBLE DESTELLO
                     color_set(BLANCO1);
-                    DELAY_FLASH;
+                    DELAY_FLASH();
                     color_set(BLANCO1OFF);
-                    DELAY_FLASH;
+                    DELAY_FLASH();
                     color_set(BLANCO1);
-                    DELAY_FLASH;
+                    DELAY_FLASH();
                 }
                 UNAVEZ = 0;
                 break;
@@ -92,11 +92,11 @@ void main(void) {
                 color_set(AZUL7);
                 if (UNAVEZ == 1) {
                     color_set(BLANCO3); //BLANCO3 //ESTO ES PARA GENERAR UN DOBLE DESTELLO
-                    DELAY_FLASH;
+                    DELAY_FLASH();
                     color_set(BLANCO3OFF); //apago solo BLANCO3, dejo prendido el rojo1
-                    DELAY_FLASH;
+                    DELAY_FLASH();
                     color_set(BLANCO3); //BLANCO3
-                    DELAY_FLASH;
+                    DELAY_FLASH();
                 }
                 UNAVEZ = 0;
                 break;
@@ -117,11 +117,11 @@ void main(void) {
                 color_set(CYAN7);
                 if (UNAVEZ == 1) {     //ESTO ES PARA GENERAR UN DOBLE DESTELLO
                     color_set(BLANCO5);
-                    DELAY_FLASH;
+                    DELAY_FLASH();
                     color_set(BLANCO5OFF); //APAGO EL BLANCO 5
-                    DELAY_FLASH;
+                    DELAY_FLASH();
                     color_set(BLANCO5);
-                    DELAY_FLASH;
+                    DELAY_FLASH();
                 }
                 UNAVEZ = 0;
                 break;
@@ -134,11 +134,11 @@ void main(void) {
                 color_set(AMARILLO7);
                 if (UNAVEZ == 1) {     //ESTO ES PARA GENERAR UN DOBLE DESTELLO
                     color_set(BLANCO7);
-                    DELAY_FLASH;
+                    DELAY_FLASH();
                     color_set(BLANCO7OFF);
-                    DELAY_FLASH;
+                    DELAY_FLASH();
                     color_set(BLANCO7);
-                    DELAY_FLASH;    
+                    DELAY_FLASH();    
                 }
                 UNAVEZ = 0;
                 break;

@@ -38,14 +38,14 @@ do {
 if (SENSOR_AR() == SI) {
 
 inicio = SI;
-ANTIREBOTE();
+
 }
 } while (inicio == 0);
 
 if (SENSOR_AR() == SI) {
 
 contador = 4;
-ANTIREBOTE();
+
 apagar();
 
 }
@@ -54,7 +54,7 @@ if (SENSOR_CI() == SI) {
 
 contador++;
 UNAVEZ = 1;
-ANTIREBOTE();
+
 if(contador>=9)
 contador=0;
 }

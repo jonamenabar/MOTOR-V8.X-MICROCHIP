@@ -3,17 +3,32 @@
 
 /* 
  * File:   
- * Author: 
+ * Author: Amenabar Jonathan
  * Comments:
  * Revision history: 
  */
 
 // This is a guard condition so that contents of this file are not included
 // more than once.  
+
 #ifndef _BSP_H
 #define _BSP_H
 
 void bsp_init(); //prototipo de inicializador de hardware aca llamo a otras funciones para iniciar hardware
+
+/*Prototipos de funciones para iniciarlizacion de hardware y varias*/
+void bsp_hardware_init(void);
+void bsp_led_init(void);
+void bsp_sw_init(void);
+void color_set(unsigned int color);
+void delay(int tiempo);
+void ANTIREBOTE (void);
+void DELAY_FLASH (void);
+void apagar(void);
+void prueba(void);
+
+unsigned char SENSOR_AR(void);
+unsigned char SENSOR_CI(void);
 
 /*-------------------------------DEFINO POSICION DE LEDS EN ARREGLO-------------------------------------*/
 //Cilindro 1
@@ -62,14 +77,17 @@ void bsp_init(); //prototipo de inicializador de hardware aca llamo a otras func
 
 
 /*------------------------DEFINO LOS PULSADORES---------------------------------------------------------*/
-#define SENSOR_AR PORTBbits.RB0 //SENSOR ARBOL DE LEVA
-#define SENSOR_CI PORTBbits.RB5 //SENSOR CIGUE?AL
+//#define SENSOR_AR PORTBbits.RB0 //SENSOR ARBOL DE LEVA
+//#define SENSOR_CI PORTBbits.RB5 //SENSOR CIGUE?AL
 /*------------------------DEFINO LOS TIEMPOS------------------------------------------------------------*/
-#define ANTIREBOTE  __delay_ms(500)  //ANTI REBOTE, REVISAR SI EL TIEMPO ES MUY LARGO
-#define DELAY_FLASH __delay_ms(80) //establezco un delay para los flash
-#define RETARDO __delay_ms(4)    //ESTABLEZCO UN DELAY DE 100 ms
-#define TIEMPO_PRUEBA __delay_ms(2000); //10 segundos.
+//#define ANTIREBOTE  __delay_ms(500)  //ANTI REBOTE, REVISAR SI EL TIEMPO ES MUY LARGO
+//#define DELAY_FLASH __delay_ms(80) //establezco un delay para los flash
+//#define RETARDO __delay_ms(4)    //ESTABLEZCO UN DELAY DE 100 ms
+//#define TIEMPO_PRUEBA __delay_ms(2000) //10 segundos.
 /*------------------------DEFINO ESTADOS----------------------------------------------------------------*/
 #define ENCENDER 1
 #define APAGAR   0
+
+
+
 #endif

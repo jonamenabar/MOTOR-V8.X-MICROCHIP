@@ -5,23 +5,15 @@
  * Created on September 17, 2016, 1:52 PM
  */
 #include <xc.h>
-//#include <pic16f873a.h>
+#include <pic16f873a.h>
 #include "bsp.h"
 
-/*--------------------------ROJO1, VERDE1,AZUL1, ROJO3, VERDE3,AZUL3, ROJO5, VERDE5,AZUL5, ROJO7, VERDE7,AZUL7*/
-unsigned int leds_port[] = {PORTA, PORTA, PORTA, PORTA, PORTC, PORTA, PORTC, PORTC, PORTC, PORTB, PORTB, PORTB};
-unsigned char leds[] =     {0x00,  0x01,  0X02,  0x03,  0x03,  0x05,  0x00,  0x01,  0x02,  0x01,  0x02,  0x04};
-unsigned char color;
-/*----------------------     0      1      2      3      4      5      6      7       8      9     10      11  */
+/*-------------------------------------------ROJO1,  VERDE1,  AZUL1,  ROJO3, VERDE3,  AZUL3,  ROJO5,  VERDE5, AZUL5, ROJO7,  VERDE7,  AZUL7*/
+volatile unsigned char *const leds_port[] = {&PORTA, &PORTA, &PORTA, &PORTA, &PORTC, &PORTA, &PORTC, &PORTC, &PORTC, &PORTB, &PORTB, &PORTB};
+unsigned char leds[] =                      {0x00,    0x01,    0X02,   0x03,  0x03,   0x05,   0x00,   0x01,   0x02,   0x01,   0x02,   0x04};
+unsigned char color;/*-----------------------ROJO1,  VERDE1,  AZUL1,  ROJO3, VERDE3,  AZUL3,  ROJO5,  VERDE5, AZUL5, ROJO7,  VERDE7,  AZUL7*/
+/*----------------------------------------     0        1       2       3      4        5       6       7       8      9       10      11  */
 
-/*Prototipos de funciones para iniciarlizacion de hardware y varias*/
-void bsp_hardware_init(void);
-void bsp_led_init(void);
-void bsp_sw_init(void);
-void color_set(char color);
-void delay(int tiempo);
-void apagar();
-void prueba(void);
 
 
 /*Funcion principal que inicializa el hardware*/
@@ -30,7 +22,6 @@ void bsp_init(void){
    bsp_led_init();
    bsp_sw_init();
 }
-
 
 
 /*Aca declaro cada funcion, que va a iniciar el hardware*/
@@ -76,9 +67,9 @@ void bsp_sw_init(){
 
 void led_set(char led, char estado){
     if(estado)
-        leds_port[led] &= leds[led];   //si es 1 lo prende 
+        *leds_port[led] &= leds[led];   //si es 1 lo prende 
     else
-        leds_port[led] |= ~leds[led];  //si es 0 lo apaga
+        *leds_port[led] |= ~leds[led];  //si es 0 lo apaga
     
 }
 
@@ -207,8 +198,14 @@ void color_set(unsigned int color){
             break;
     }
 }
-void delay(int tiempo){
+/*void delay (int tiempo){
     __delay_ms(tiempo);
+}*/
+void ANTIREBOTE (void){
+    __delay_ms(500);
+}
+void DELAY_FLASH (void){
+    __delay_ms(80);
 }
 
 void apagar(void){ //deberia reemplazarlo con algo por estar en .c?
@@ -221,4 +218,12 @@ void prueba(void){
     PORTA=47;
     PORTB=22;
     PORTC=15;
+}
+
+unsigned char SENSOR_AR(){
+     return(PORTBbits.RB0);
+}
+
+unsigned char SENSOR_CI(){
+    return(PORTBbits.RB5);
 }
