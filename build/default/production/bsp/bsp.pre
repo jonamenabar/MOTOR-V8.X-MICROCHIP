@@ -1320,7 +1320,7 @@ unsigned char SENSOR_CI(void);
 
 # 12 "bsp/bsp.c"
 volatile unsigned char *const leds_port[] = {&PORTA, &PORTA, &PORTA, &PORTA, &PORTC, &PORTA, &PORTC, &PORTC, &PORTC, &PORTB, &PORTB, &PORTB};
-unsigned char leds[] = {0x00, 0x01, 0X02, 0x03, 0x03, 0x05, 0x00, 0x01, 0x02, 0x01, 0x02, 0x04};
+unsigned char leds[] = { 0x01, 0x02, 0X04, 0x08, 0x08, 0x20, 0x01, 0x02, 0x04, 0x02, 0x04, 0x10};
 unsigned char color;
 
 # 20
@@ -1343,8 +1343,12 @@ void bsp_hardware_init(){
 #pragma config CPD = OFF
 #pragma config WRT = OFF
 #pragma config CP = OFF
+PEIE = 0;
+GIE = 0;
+ADCON1 = 0X06;
 
-
+bsp_led_init();
+bsp_sw_init();
 }
 
 void bsp_led_init(){
@@ -1374,9 +1378,9 @@ TRISB5 = 1;
 
 void led_set(char led, char estado){
 if(estado)
-*leds_port[led] &= leds[led];
+*leds_port[led] |= leds[led];
 else
-*leds_port[led] |= ~leds[led];
+*leds_port[led] &= ~leds[led];
 
 }
 
@@ -1506,9 +1510,9 @@ break;
 }
 }
 
-# 204
+# 208
 void ANTIREBOTE (void){
-_delay((unsigned long)((500)*(4000000/4000.0)));
+_delay((unsigned long)((250)*(4000000/4000.0)));
 }
 void DELAY_FLASH (void){
 _delay((unsigned long)((80)*(4000000/4000.0)));

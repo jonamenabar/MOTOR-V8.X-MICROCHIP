@@ -10,9 +10,9 @@
 
 /*-------------------------------------------ROJO1,  VERDE1,  AZUL1,  ROJO3, VERDE3,  AZUL3,  ROJO5,  VERDE5, AZUL5, ROJO7,  VERDE7,  AZUL7*/
 volatile unsigned char *const leds_port[] = {&PORTA, &PORTA, &PORTA, &PORTA, &PORTC, &PORTA, &PORTC, &PORTC, &PORTC, &PORTB, &PORTB, &PORTB};
-unsigned char leds[] =                      {0x00,    0x01,    0X02,   0x03,  0x03,   0x05,   0x00,   0x01,   0x02,   0x01,   0x02,   0x04};
+unsigned char leds[] =                      {  0x01,   0x02,   0X04,   0x08,   0x08,   0x20,   0x01,   0x02,   0x04,   0x02,   0x04,   0x10};
 unsigned char color;/*-----------------------ROJO1,  VERDE1,  AZUL1,  ROJO3, VERDE3,  AZUL3,  ROJO5,  VERDE5, AZUL5, ROJO7,  VERDE7,  AZUL7*/
-/*----------------------------------------     0        1       2       3      4        5       6       7       8      9       10      11  */
+/*-------------------------------------------  0        1       2       3      4        5       6       7       8      9       10      11  */
 
 
 
@@ -36,8 +36,12 @@ void bsp_hardware_init(){
 #pragma config CPD = OFF        // Data EEPROM Memory Code Protection bit (Data EEPROM code protection off)
 #pragma config WRT = OFF        // Flash Program Memory Write Enable bits (Write protection off; all program memory may be written to by EECON control)
 #pragma config CP = OFF         // Flash Program Memory Code Protection bit (Code protection off)
-//PEIE = 0;
-//GIE = 0;
+PEIE = 0;
+GIE = 0;
+ADCON1 = 0X06;                  //sugerencia del datasheet, es el registro del conversor A/D.
+
+    bsp_led_init();
+    bsp_sw_init();
 }
 
 void bsp_led_init(){
@@ -67,9 +71,9 @@ void bsp_sw_init(){
 
 void led_set(char led, char estado){
     if(estado)
-        *leds_port[led] &= leds[led];   //si es 1 lo prende 
+        *leds_port[led] |= leds[led];   //si es 1 lo prende 
     else
-        *leds_port[led] |= ~leds[led];  //si es 0 lo apaga
+        *leds_port[led] &= ~leds[led];  //si es 0 lo apaga
     
 }
 
@@ -202,7 +206,7 @@ void color_set(unsigned int color){
     __delay_ms(tiempo);
 }*/
 void ANTIREBOTE (void){
-    __delay_ms(500);
+    __delay_ms(250);
 }
 void DELAY_FLASH (void){
     __delay_ms(80);

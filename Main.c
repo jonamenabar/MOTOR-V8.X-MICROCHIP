@@ -12,6 +12,7 @@
 
 void main(void) {
 
+    bsp_hardware_init();
     int const SI = 1;
     int const NO = 0;
 
@@ -20,6 +21,7 @@ void main(void) {
     int contador = 4;
     int inicio = 0;
     int UNAVEZ = 0; //Variable usada para que el flash solo se de 1 vez por vuelta
+    
 
     prueba(); /*CON ESTO PRUEBO LOS LEDS QUE TODOS LOS COLORES DE CADA UNO FUNCIONE CORRECTAMENTE */
 
@@ -29,14 +31,14 @@ void main(void) {
             if (SENSOR_AR() == SI) {
 
                 inicio = SI;
-               // ANTIREBOTE();
+                ANTIREBOTE();
             }
         } while (inicio == 0);
 
         if (SENSOR_AR() == SI) { //Nota: Deberias meterlo en una interrupcion!.
 
-            contador = 4; //ARRANCA EN EL PISTON 4
-          //  ANTIREBOTE();
+            contador = 4; //ARRANCA EN EL CILINRO 7
+            ANTIREBOTE();
             apagar();
             
         }
@@ -45,7 +47,7 @@ void main(void) {
 
             contador++;
             UNAVEZ = 1;
-        //    ANTIREBOTE();
+            ANTIREBOTE();
             if(contador>=9)
                 contador=0;
         }
@@ -103,10 +105,10 @@ void main(void) {
             
             case 4:
                 apagar();
-                color_set(AZUL1);
-                color_set(AMARILLO3);
-                color_set(CYAN5);
-                color_set(CYAN7);
+                color_set(AMARILLO1);
+                color_set(CYAN3);
+                color_set(AZUL5);
+                color_set(ROJO7);
                 break;
             
             case 5:

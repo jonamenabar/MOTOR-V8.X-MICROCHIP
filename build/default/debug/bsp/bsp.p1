@@ -11,7 +11,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _bsp_led_init `(v ~T0 @X0 0 ef ]
 "22
 [v _bsp_sw_init `(v ~T0 @X0 0 ef ]
-"2424 /Applications/microchip/xc8/v1.38/include/pic16f873a.h
+"2256 /Applications/microchip/xc8/v1.38/include/pic16f873a.h
+[v _PEIE `Vb ~T0 @X0 0 e@94 ]
+"2222
+[v _GIE `Vb ~T0 @X0 0 e@95 ]
+"1954
+[v _ADCON1 `Vuc ~T0 @X0 0 e@159 ]
+"2424
 [v _TRISA2 `Vb ~T0 @X0 0 e@1066 ]
 "2420
 [v _TRISA0 `Vb ~T0 @X0 0 e@1064 ]
@@ -1011,21 +1017,21 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _leds `uc ~T0 @X0 -> 0 `x e ]
 [i _leds
 :U ..
--> -> 0 `i `uc
--> -> 1 `i `uc
--> -> 2 `i `uc
--> -> 3 `i `uc
--> -> 3 `i `uc
--> -> 5 `i `uc
--> -> 0 `i `uc
--> -> 1 `i `uc
--> -> 2 `i `uc
 -> -> 1 `i `uc
 -> -> 2 `i `uc
 -> -> 4 `i `uc
+-> -> 8 `i `uc
+-> -> 8 `i `uc
+-> -> 32 `i `uc
+-> -> 1 `i `uc
+-> -> 2 `i `uc
+-> -> 4 `i `uc
+-> -> 2 `i `uc
+-> -> 4 `i `uc
+-> -> 16 `i `uc
 ..
 ]
-[; ;bsp.c: 13: unsigned char leds[] = {0x00, 0x01, 0X02, 0x03, 0x03, 0x05, 0x00, 0x01, 0x02, 0x01, 0x02, 0x04};
+[; ;bsp.c: 13: unsigned char leds[] = { 0x01, 0x02, 0X04, 0x08, 0x08, 0x20, 0x01, 0x02, 0x04, 0x02, 0x04, 0x10};
 "14
 [v _color `uc ~T0 @X0 1 e ]
 [; ;bsp.c: 14: unsigned char color;
@@ -1070,402 +1076,417 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p x WRT=OFF ]
 "38
 [p x CP=OFF ]
-[; ;bsp.c: 41: }
+[; ;bsp.c: 39: PEIE = 0;
+"39
+[e = _PEIE -> -> 0 `i `b ]
+[; ;bsp.c: 40: GIE = 0;
+"40
+[e = _GIE -> -> 0 `i `b ]
+[; ;bsp.c: 41: ADCON1 = 0X06;
 "41
+[e = _ADCON1 -> -> 6 `i `uc ]
+[; ;bsp.c: 43: bsp_led_init();
+"43
+[e ( _bsp_led_init ..  ]
+[; ;bsp.c: 44: bsp_sw_init();
+"44
+[e ( _bsp_sw_init ..  ]
+[; ;bsp.c: 45: }
+"45
 [e :UE 89 ]
 }
-"43
+"47
 [v _bsp_led_init `(v ~T0 @X0 1 ef ]
 {
-[; ;bsp.c: 43: void bsp_led_init(){
+[; ;bsp.c: 47: void bsp_led_init(){
 [e :U _bsp_led_init ]
 [f ]
-[; ;bsp.c: 45: TRISA2 = 0;
-"45
-[e = _TRISA2 -> -> 0 `i `b ]
-[; ;bsp.c: 46: TRISA0 = 0;
-"46
-[e = _TRISA0 -> -> 0 `i `b ]
-[; ;bsp.c: 47: TRISA1 = 0;
-"47
-[e = _TRISA1 -> -> 0 `i `b ]
-[; ;bsp.c: 49: TRISA5 = 0;
+[; ;bsp.c: 49: TRISA2 = 0;
 "49
-[e = _TRISA5 -> -> 0 `i `b ]
-[; ;bsp.c: 50: TRISA3 = 0;
+[e = _TRISA2 -> -> 0 `i `b ]
+[; ;bsp.c: 50: TRISA0 = 0;
 "50
-[e = _TRISA3 -> -> 0 `i `b ]
-[; ;bsp.c: 51: TRISC3 = 0;
+[e = _TRISA0 -> -> 0 `i `b ]
+[; ;bsp.c: 51: TRISA1 = 0;
 "51
-[e = _TRISC3 -> -> 0 `i `b ]
-[; ;bsp.c: 53: TRISC2 = 0;
+[e = _TRISA1 -> -> 0 `i `b ]
+[; ;bsp.c: 53: TRISA5 = 0;
 "53
-[e = _TRISC2 -> -> 0 `i `b ]
-[; ;bsp.c: 54: TRISC0 = 0;
+[e = _TRISA5 -> -> 0 `i `b ]
+[; ;bsp.c: 54: TRISA3 = 0;
 "54
-[e = _TRISC0 -> -> 0 `i `b ]
-[; ;bsp.c: 55: TRISC1 = 0;
+[e = _TRISA3 -> -> 0 `i `b ]
+[; ;bsp.c: 55: TRISC3 = 0;
 "55
-[e = _TRISC1 -> -> 0 `i `b ]
-[; ;bsp.c: 57: TRISB1 = 0;
+[e = _TRISC3 -> -> 0 `i `b ]
+[; ;bsp.c: 57: TRISC2 = 0;
 "57
-[e = _TRISB1 -> -> 0 `i `b ]
-[; ;bsp.c: 58: TRISB2 = 0;
+[e = _TRISC2 -> -> 0 `i `b ]
+[; ;bsp.c: 58: TRISC0 = 0;
 "58
-[e = _TRISB2 -> -> 0 `i `b ]
-[; ;bsp.c: 59: TRISB4 = 0;
+[e = _TRISC0 -> -> 0 `i `b ]
+[; ;bsp.c: 59: TRISC1 = 0;
 "59
+[e = _TRISC1 -> -> 0 `i `b ]
+[; ;bsp.c: 61: TRISB1 = 0;
+"61
+[e = _TRISB1 -> -> 0 `i `b ]
+[; ;bsp.c: 62: TRISB2 = 0;
+"62
+[e = _TRISB2 -> -> 0 `i `b ]
+[; ;bsp.c: 63: TRISB4 = 0;
+"63
 [e = _TRISB4 -> -> 0 `i `b ]
-[; ;bsp.c: 60: }
-"60
+[; ;bsp.c: 64: }
+"64
 [e :UE 90 ]
 }
-"62
+"66
 [v _bsp_sw_init `(v ~T0 @X0 1 ef ]
 {
-[; ;bsp.c: 62: void bsp_sw_init(){
+[; ;bsp.c: 66: void bsp_sw_init(){
 [e :U _bsp_sw_init ]
 [f ]
-[; ;bsp.c: 64: TRISB0 = 1;
-"64
+[; ;bsp.c: 68: TRISB0 = 1;
+"68
 [e = _TRISB0 -> -> 1 `i `b ]
-[; ;bsp.c: 65: TRISB5 = 1;
-"65
+[; ;bsp.c: 69: TRISB5 = 1;
+"69
 [e = _TRISB5 -> -> 1 `i `b ]
-[; ;bsp.c: 66: }
-"66
+[; ;bsp.c: 70: }
+"70
 [e :UE 91 ]
 }
-"68
+"72
 [v _led_set `(v ~T0 @X0 1 ef2`uc`uc ]
 {
-[; ;bsp.c: 68: void led_set(char led, char estado){
+[; ;bsp.c: 72: void led_set(char led, char estado){
 [e :U _led_set ]
 [v _led `uc ~T0 @X0 1 r1 ]
 [v _estado `uc ~T0 @X0 1 r2 ]
 [f ]
-[; ;bsp.c: 69: if(estado)
-"69
+[; ;bsp.c: 73: if(estado)
+"73
 [e $ ! != -> _estado `i -> -> -> 0 `i `uc `i 93  ]
-[; ;bsp.c: 70: *leds_port[led] &= leds[led];
-"70
-[e =& *U *U + &U _leds_port * -> _led `ux -> -> # *U &U _leds_port `ui `ux *U + &U _leds * -> _led `ux -> -> # *U &U _leds `ui `ux ]
-[e $U 94  ]
-"71
-[e :U 93 ]
-[; ;bsp.c: 71: else
-[; ;bsp.c: 72: *leds_port[led] |= ~leds[led];
-"72
-[e =| *U *U + &U _leds_port * -> _led `ux -> -> # *U &U _leds_port `ui `ux -> ~ -> *U + &U _leds * -> _led `ux -> -> # *U &U _leds `ui `ux `i `uc ]
-[e :U 94 ]
-[; ;bsp.c: 74: }
+[; ;bsp.c: 74: *leds_port[led] |= leds[led];
 "74
+[e =| *U *U + &U _leds_port * -> _led `ux -> -> # *U &U _leds_port `ui `ux *U + &U _leds * -> _led `ux -> -> # *U &U _leds `ui `ux ]
+[e $U 94  ]
+"75
+[e :U 93 ]
+[; ;bsp.c: 75: else
+[; ;bsp.c: 76: *leds_port[led] &= ~leds[led];
+"76
+[e =& *U *U + &U _leds_port * -> _led `ux -> -> # *U &U _leds_port `ui `ux -> ~ -> *U + &U _leds * -> _led `ux -> -> # *U &U _leds `ui `ux `i `uc ]
+[e :U 94 ]
+[; ;bsp.c: 78: }
+"78
 [e :UE 92 ]
 }
-"76
+"80
 [v _color_set `(v ~T0 @X0 1 ef1`ui ]
 {
-[; ;bsp.c: 76: void color_set(unsigned int color){
+[; ;bsp.c: 80: void color_set(unsigned int color){
 [e :U _color_set ]
 [v _color `ui ~T0 @X0 1 r1 ]
 [f ]
-[; ;bsp.c: 78: switch (color){
-"78
+[; ;bsp.c: 82: switch (color){
+"82
 [e $U 97  ]
 {
-[; ;bsp.c: 80: case 1:
-"80
-[e :U 98 ]
-[; ;bsp.c: 81: led_set(0,1);
-"81
-[e ( _led_set (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
-[; ;bsp.c: 82: break;
-"82
-[e $U 96  ]
-[; ;bsp.c: 84: case 2:
+[; ;bsp.c: 84: case 1:
 "84
-[e :U 99 ]
-[; ;bsp.c: 85: led_set(1,1);
+[e :U 98 ]
+[; ;bsp.c: 85: led_set(0,1);
 "85
-[e ( _led_set (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-[; ;bsp.c: 86: led_set(2,1);
+[e ( _led_set (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
+[; ;bsp.c: 86: break;
 "86
-[e ( _led_set (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
-[; ;bsp.c: 87: break;
-"87
 [e $U 96  ]
-[; ;bsp.c: 89: case 3:
+[; ;bsp.c: 88: case 2:
+"88
+[e :U 99 ]
+[; ;bsp.c: 89: led_set(1,1);
 "89
-[e :U 100 ]
+[e ( _led_set (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
 [; ;bsp.c: 90: led_set(2,1);
 "90
 [e ( _led_set (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
 [; ;bsp.c: 91: break;
 "91
 [e $U 96  ]
-[; ;bsp.c: 93: case 4:
+[; ;bsp.c: 93: case 3:
 "93
-[e :U 101 ]
-[; ;bsp.c: 94: led_set(1,1);
+[e :U 100 ]
+[; ;bsp.c: 94: led_set(2,1);
 "94
-[e ( _led_set (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-[; ;bsp.c: 95: led_set(0,1);
+[e ( _led_set (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
+[; ;bsp.c: 95: break;
 "95
-[e ( _led_set (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
-[; ;bsp.c: 96: break;
-"96
 [e $U 96  ]
-[; ;bsp.c: 98: case 5:
+[; ;bsp.c: 97: case 4:
+"97
+[e :U 101 ]
+[; ;bsp.c: 98: led_set(1,1);
 "98
-[e :U 102 ]
+[e ( _led_set (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
 [; ;bsp.c: 99: led_set(0,1);
 "99
 [e ( _led_set (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
-[; ;bsp.c: 100: led_set(1,1);
+[; ;bsp.c: 100: break;
 "100
-[e ( _led_set (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-[; ;bsp.c: 101: led_set(2,1);
-"101
-[e ( _led_set (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
-[; ;bsp.c: 102: break;
+[e $U 96  ]
+[; ;bsp.c: 102: case 5:
 "102
-[e $U 96  ]
-[; ;bsp.c: 104: case 6:
+[e :U 102 ]
+[; ;bsp.c: 103: led_set(0,1);
+"103
+[e ( _led_set (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
+[; ;bsp.c: 104: led_set(1,1);
 "104
-[e :U 103 ]
-[; ;bsp.c: 105: led_set(0,0);
+[e ( _led_set (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
+[; ;bsp.c: 105: led_set(2,1);
 "105
-[e ( _led_set (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
-[; ;bsp.c: 106: led_set(1,0);
+[e ( _led_set (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
+[; ;bsp.c: 106: break;
 "106
-[e ( _led_set (2 , -> -> 1 `i `uc -> -> 0 `i `uc ]
-[; ;bsp.c: 107: led_set(2,0);
-"107
-[e ( _led_set (2 , -> -> 2 `i `uc -> -> 0 `i `uc ]
-[; ;bsp.c: 108: break;
-"108
 [e $U 96  ]
-[; ;bsp.c: 110: case 7:
+[; ;bsp.c: 108: case 6:
+"108
+[e :U 103 ]
+[; ;bsp.c: 109: led_set(0,0);
+"109
+[e ( _led_set (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
+[; ;bsp.c: 110: led_set(1,0);
 "110
-[e :U 104 ]
-[; ;bsp.c: 111: led_set(3,1);
+[e ( _led_set (2 , -> -> 1 `i `uc -> -> 0 `i `uc ]
+[; ;bsp.c: 111: led_set(2,0);
 "111
-[e ( _led_set (2 , -> -> 3 `i `uc -> -> 1 `i `uc ]
+[e ( _led_set (2 , -> -> 2 `i `uc -> -> 0 `i `uc ]
 [; ;bsp.c: 112: break;
 "112
 [e $U 96  ]
-[; ;bsp.c: 114: case 8:
+[; ;bsp.c: 114: case 7:
 "114
-[e :U 105 ]
-[; ;bsp.c: 115: led_set(4,1);
+[e :U 104 ]
+[; ;bsp.c: 115: led_set(3,1);
 "115
-[e ( _led_set (2 , -> -> 4 `i `uc -> -> 1 `i `uc ]
-[; ;bsp.c: 116: led_set(5,1);
+[e ( _led_set (2 , -> -> 3 `i `uc -> -> 1 `i `uc ]
+[; ;bsp.c: 116: break;
 "116
-[e ( _led_set (2 , -> -> 5 `i `uc -> -> 1 `i `uc ]
-[; ;bsp.c: 117: break;
-"117
 [e $U 96  ]
-[; ;bsp.c: 119: case 9:
+[; ;bsp.c: 118: case 8:
+"118
+[e :U 105 ]
+[; ;bsp.c: 119: led_set(4,1);
 "119
-[e :U 106 ]
-[; ;bsp.c: 120: led_set(8,1);
+[e ( _led_set (2 , -> -> 4 `i `uc -> -> 1 `i `uc ]
+[; ;bsp.c: 120: led_set(5,1);
 "120
-[e ( _led_set (2 , -> -> 8 `i `uc -> -> 1 `i `uc ]
+[e ( _led_set (2 , -> -> 5 `i `uc -> -> 1 `i `uc ]
 [; ;bsp.c: 121: break;
 "121
 [e $U 96  ]
-[; ;bsp.c: 123: case 10:
+[; ;bsp.c: 123: case 9:
 "123
-[e :U 107 ]
-[; ;bsp.c: 124: led_set(4,1);
+[e :U 106 ]
+[; ;bsp.c: 124: led_set(8,1);
 "124
-[e ( _led_set (2 , -> -> 4 `i `uc -> -> 1 `i `uc ]
-[; ;bsp.c: 125: led_set(3,1);
+[e ( _led_set (2 , -> -> 8 `i `uc -> -> 1 `i `uc ]
+[; ;bsp.c: 125: break;
 "125
-[e ( _led_set (2 , -> -> 3 `i `uc -> -> 1 `i `uc ]
-[; ;bsp.c: 126: break;
-"126
 [e $U 96  ]
-[; ;bsp.c: 128: case 11:
+[; ;bsp.c: 127: case 10:
+"127
+[e :U 107 ]
+[; ;bsp.c: 128: led_set(4,1);
 "128
-[e :U 108 ]
+[e ( _led_set (2 , -> -> 4 `i `uc -> -> 1 `i `uc ]
 [; ;bsp.c: 129: led_set(3,1);
 "129
 [e ( _led_set (2 , -> -> 3 `i `uc -> -> 1 `i `uc ]
-[; ;bsp.c: 130: led_set(4,1);
+[; ;bsp.c: 130: break;
 "130
-[e ( _led_set (2 , -> -> 4 `i `uc -> -> 1 `i `uc ]
-[; ;bsp.c: 131: led_set(8,1);
-"131
-[e ( _led_set (2 , -> -> 8 `i `uc -> -> 1 `i `uc ]
-[; ;bsp.c: 132: break;
+[e $U 96  ]
+[; ;bsp.c: 132: case 11:
 "132
-[e $U 96  ]
-[; ;bsp.c: 134: case 12:
+[e :U 108 ]
+[; ;bsp.c: 133: led_set(3,1);
+"133
+[e ( _led_set (2 , -> -> 3 `i `uc -> -> 1 `i `uc ]
+[; ;bsp.c: 134: led_set(4,1);
 "134
-[e :U 109 ]
-[; ;bsp.c: 135: led_set(3,0);
+[e ( _led_set (2 , -> -> 4 `i `uc -> -> 1 `i `uc ]
+[; ;bsp.c: 135: led_set(8,1);
 "135
-[e ( _led_set (2 , -> -> 3 `i `uc -> -> 0 `i `uc ]
-[; ;bsp.c: 136: led_set(4,0);
+[e ( _led_set (2 , -> -> 8 `i `uc -> -> 1 `i `uc ]
+[; ;bsp.c: 136: break;
 "136
-[e ( _led_set (2 , -> -> 4 `i `uc -> -> 0 `i `uc ]
-[; ;bsp.c: 137: led_set(8,0);
-"137
-[e ( _led_set (2 , -> -> 8 `i `uc -> -> 0 `i `uc ]
-[; ;bsp.c: 138: break;
-"138
 [e $U 96  ]
-[; ;bsp.c: 140: case 13:
+[; ;bsp.c: 138: case 12:
+"138
+[e :U 109 ]
+[; ;bsp.c: 139: led_set(3,0);
+"139
+[e ( _led_set (2 , -> -> 3 `i `uc -> -> 0 `i `uc ]
+[; ;bsp.c: 140: led_set(4,0);
 "140
-[e :U 110 ]
-[; ;bsp.c: 141: led_set(6,1);
+[e ( _led_set (2 , -> -> 4 `i `uc -> -> 0 `i `uc ]
+[; ;bsp.c: 141: led_set(8,0);
 "141
-[e ( _led_set (2 , -> -> 6 `i `uc -> -> 1 `i `uc ]
+[e ( _led_set (2 , -> -> 8 `i `uc -> -> 0 `i `uc ]
 [; ;bsp.c: 142: break;
 "142
 [e $U 96  ]
-[; ;bsp.c: 144: case 14:
+[; ;bsp.c: 144: case 13:
 "144
-[e :U 111 ]
-[; ;bsp.c: 145: led_set(7,1);
+[e :U 110 ]
+[; ;bsp.c: 145: led_set(6,1);
 "145
-[e ( _led_set (2 , -> -> 7 `i `uc -> -> 1 `i `uc ]
-[; ;bsp.c: 146: led_set(8,1);
+[e ( _led_set (2 , -> -> 6 `i `uc -> -> 1 `i `uc ]
+[; ;bsp.c: 146: break;
 "146
-[e ( _led_set (2 , -> -> 8 `i `uc -> -> 1 `i `uc ]
-[; ;bsp.c: 147: break;
-"147
 [e $U 96  ]
-[; ;bsp.c: 149: case 15:
+[; ;bsp.c: 148: case 14:
+"148
+[e :U 111 ]
+[; ;bsp.c: 149: led_set(7,1);
 "149
-[e :U 112 ]
+[e ( _led_set (2 , -> -> 7 `i `uc -> -> 1 `i `uc ]
 [; ;bsp.c: 150: led_set(8,1);
 "150
 [e ( _led_set (2 , -> -> 8 `i `uc -> -> 1 `i `uc ]
 [; ;bsp.c: 151: break;
 "151
 [e $U 96  ]
-[; ;bsp.c: 153: case 16:
+[; ;bsp.c: 153: case 15:
 "153
-[e :U 113 ]
-[; ;bsp.c: 154: led_set(7,1);
+[e :U 112 ]
+[; ;bsp.c: 154: led_set(8,1);
 "154
-[e ( _led_set (2 , -> -> 7 `i `uc -> -> 1 `i `uc ]
-[; ;bsp.c: 155: led_set(6,1);
+[e ( _led_set (2 , -> -> 8 `i `uc -> -> 1 `i `uc ]
+[; ;bsp.c: 155: break;
 "155
-[e ( _led_set (2 , -> -> 6 `i `uc -> -> 1 `i `uc ]
-[; ;bsp.c: 156: break;
-"156
 [e $U 96  ]
-[; ;bsp.c: 158: case 17:
+[; ;bsp.c: 157: case 16:
+"157
+[e :U 113 ]
+[; ;bsp.c: 158: led_set(7,1);
 "158
-[e :U 114 ]
+[e ( _led_set (2 , -> -> 7 `i `uc -> -> 1 `i `uc ]
 [; ;bsp.c: 159: led_set(6,1);
 "159
 [e ( _led_set (2 , -> -> 6 `i `uc -> -> 1 `i `uc ]
-[; ;bsp.c: 160: led_set(7,1);
+[; ;bsp.c: 160: break;
 "160
-[e ( _led_set (2 , -> -> 7 `i `uc -> -> 1 `i `uc ]
-[; ;bsp.c: 161: led_set(8,1);
-"161
-[e ( _led_set (2 , -> -> 8 `i `uc -> -> 1 `i `uc ]
-[; ;bsp.c: 162: break;
+[e $U 96  ]
+[; ;bsp.c: 162: case 17:
 "162
-[e $U 96  ]
-[; ;bsp.c: 164: case 18:
+[e :U 114 ]
+[; ;bsp.c: 163: led_set(6,1);
+"163
+[e ( _led_set (2 , -> -> 6 `i `uc -> -> 1 `i `uc ]
+[; ;bsp.c: 164: led_set(7,1);
 "164
-[e :U 115 ]
-[; ;bsp.c: 165: led_set(6,0);
+[e ( _led_set (2 , -> -> 7 `i `uc -> -> 1 `i `uc ]
+[; ;bsp.c: 165: led_set(8,1);
 "165
-[e ( _led_set (2 , -> -> 6 `i `uc -> -> 0 `i `uc ]
-[; ;bsp.c: 166: led_set(7,0);
+[e ( _led_set (2 , -> -> 8 `i `uc -> -> 1 `i `uc ]
+[; ;bsp.c: 166: break;
 "166
-[e ( _led_set (2 , -> -> 7 `i `uc -> -> 0 `i `uc ]
-[; ;bsp.c: 167: led_set(8,0);
-"167
-[e ( _led_set (2 , -> -> 8 `i `uc -> -> 0 `i `uc ]
-[; ;bsp.c: 168: break;
-"168
 [e $U 96  ]
-[; ;bsp.c: 170: case 19:
+[; ;bsp.c: 168: case 18:
+"168
+[e :U 115 ]
+[; ;bsp.c: 169: led_set(6,0);
+"169
+[e ( _led_set (2 , -> -> 6 `i `uc -> -> 0 `i `uc ]
+[; ;bsp.c: 170: led_set(7,0);
 "170
-[e :U 116 ]
-[; ;bsp.c: 171: led_set(9,1);
+[e ( _led_set (2 , -> -> 7 `i `uc -> -> 0 `i `uc ]
+[; ;bsp.c: 171: led_set(8,0);
 "171
-[e ( _led_set (2 , -> -> 9 `i `uc -> -> 1 `i `uc ]
+[e ( _led_set (2 , -> -> 8 `i `uc -> -> 0 `i `uc ]
 [; ;bsp.c: 172: break;
 "172
 [e $U 96  ]
-[; ;bsp.c: 174: case 20:
+[; ;bsp.c: 174: case 19:
 "174
-[e :U 117 ]
-[; ;bsp.c: 175: led_set(10,1);
+[e :U 116 ]
+[; ;bsp.c: 175: led_set(9,1);
 "175
-[e ( _led_set (2 , -> -> 10 `i `uc -> -> 1 `i `uc ]
-[; ;bsp.c: 176: led_set(11,1);
+[e ( _led_set (2 , -> -> 9 `i `uc -> -> 1 `i `uc ]
+[; ;bsp.c: 176: break;
 "176
-[e ( _led_set (2 , -> -> 11 `i `uc -> -> 1 `i `uc ]
-[; ;bsp.c: 177: break;
-"177
 [e $U 96  ]
-[; ;bsp.c: 179: case 21:
+[; ;bsp.c: 178: case 20:
+"178
+[e :U 117 ]
+[; ;bsp.c: 179: led_set(10,1);
 "179
-[e :U 118 ]
+[e ( _led_set (2 , -> -> 10 `i `uc -> -> 1 `i `uc ]
 [; ;bsp.c: 180: led_set(11,1);
 "180
 [e ( _led_set (2 , -> -> 11 `i `uc -> -> 1 `i `uc ]
 [; ;bsp.c: 181: break;
 "181
 [e $U 96  ]
-[; ;bsp.c: 183: case 22:
+[; ;bsp.c: 183: case 21:
 "183
-[e :U 119 ]
-[; ;bsp.c: 184: led_set(10,1);
+[e :U 118 ]
+[; ;bsp.c: 184: led_set(11,1);
 "184
-[e ( _led_set (2 , -> -> 10 `i `uc -> -> 1 `i `uc ]
-[; ;bsp.c: 185: led_set(9,1);
+[e ( _led_set (2 , -> -> 11 `i `uc -> -> 1 `i `uc ]
+[; ;bsp.c: 185: break;
 "185
-[e ( _led_set (2 , -> -> 9 `i `uc -> -> 1 `i `uc ]
-[; ;bsp.c: 186: break;
-"186
 [e $U 96  ]
-[; ;bsp.c: 188: case 23:
+[; ;bsp.c: 187: case 22:
+"187
+[e :U 119 ]
+[; ;bsp.c: 188: led_set(10,1);
 "188
-[e :U 120 ]
+[e ( _led_set (2 , -> -> 10 `i `uc -> -> 1 `i `uc ]
 [; ;bsp.c: 189: led_set(9,1);
 "189
 [e ( _led_set (2 , -> -> 9 `i `uc -> -> 1 `i `uc ]
-[; ;bsp.c: 190: led_set(10,1);
+[; ;bsp.c: 190: break;
 "190
-[e ( _led_set (2 , -> -> 10 `i `uc -> -> 1 `i `uc ]
-[; ;bsp.c: 191: led_set(11,1);
-"191
-[e ( _led_set (2 , -> -> 11 `i `uc -> -> 1 `i `uc ]
-[; ;bsp.c: 192: break;
+[e $U 96  ]
+[; ;bsp.c: 192: case 23:
 "192
-[e $U 96  ]
-[; ;bsp.c: 194: case 24:
+[e :U 120 ]
+[; ;bsp.c: 193: led_set(9,1);
+"193
+[e ( _led_set (2 , -> -> 9 `i `uc -> -> 1 `i `uc ]
+[; ;bsp.c: 194: led_set(10,1);
 "194
-[e :U 121 ]
-[; ;bsp.c: 195: led_set(9,0);
+[e ( _led_set (2 , -> -> 10 `i `uc -> -> 1 `i `uc ]
+[; ;bsp.c: 195: led_set(11,1);
 "195
-[e ( _led_set (2 , -> -> 9 `i `uc -> -> 0 `i `uc ]
-[; ;bsp.c: 196: led_set(10,0);
+[e ( _led_set (2 , -> -> 11 `i `uc -> -> 1 `i `uc ]
+[; ;bsp.c: 196: break;
 "196
-[e ( _led_set (2 , -> -> 10 `i `uc -> -> 0 `i `uc ]
-[; ;bsp.c: 197: led_set(11,0);
-"197
-[e ( _led_set (2 , -> -> 11 `i `uc -> -> 0 `i `uc ]
-[; ;bsp.c: 198: break;
+[e $U 96  ]
+[; ;bsp.c: 198: case 24:
 "198
-[e $U 96  ]
+[e :U 121 ]
+[; ;bsp.c: 199: led_set(9,0);
 "199
-}
-[; ;bsp.c: 199: }
+[e ( _led_set (2 , -> -> 9 `i `uc -> -> 0 `i `uc ]
+[; ;bsp.c: 200: led_set(10,0);
+"200
+[e ( _led_set (2 , -> -> 10 `i `uc -> -> 0 `i `uc ]
+[; ;bsp.c: 201: led_set(11,0);
+"201
+[e ( _led_set (2 , -> -> 11 `i `uc -> -> 0 `i `uc ]
+[; ;bsp.c: 202: break;
+"202
 [e $U 96  ]
-"78
+"203
+}
+[; ;bsp.c: 203: }
+[e $U 96  ]
+"82
 [e :U 97 ]
 [e [\ _color , $ -> -> 1 `i `ui 98
  , $ -> -> 2 `i `ui 99
@@ -1492,101 +1513,101 @@ Version 3.2 HI-TECH Software Intermediate Code
  , $ -> -> 23 `i `ui 120
  , $ -> -> 24 `i `ui 121
  96 ]
-"199
+"203
 [e :U 96 ]
-[; ;bsp.c: 200: }
-"200
+[; ;bsp.c: 204: }
+"204
 [e :UE 95 ]
 }
-"204
+"208
 [v _ANTIREBOTE `(v ~T0 @X0 1 ef ]
 {
-[; ;bsp.c: 204: void ANTIREBOTE (void){
+[; ;bsp.c: 208: void ANTIREBOTE (void){
 [e :U _ANTIREBOTE ]
 [f ]
-[; ;bsp.c: 205: _delay((unsigned long)((500)*(4000000/4000.0)));
-"205
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-[; ;bsp.c: 206: }
-"206
+[; ;bsp.c: 209: _delay((unsigned long)((250)*(4000000/4000.0)));
+"209
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;bsp.c: 210: }
+"210
 [e :UE 122 ]
 }
-"207
+"211
 [v _DELAY_FLASH `(v ~T0 @X0 1 ef ]
 {
-[; ;bsp.c: 207: void DELAY_FLASH (void){
+[; ;bsp.c: 211: void DELAY_FLASH (void){
 [e :U _DELAY_FLASH ]
 [f ]
-[; ;bsp.c: 208: _delay((unsigned long)((80)*(4000000/4000.0)));
-"208
+[; ;bsp.c: 212: _delay((unsigned long)((80)*(4000000/4000.0)));
+"212
 [e ( __delay (1 -> * -> -> 80 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-[; ;bsp.c: 209: }
-"209
+[; ;bsp.c: 213: }
+"213
 [e :UE 123 ]
 }
-"211
+"215
 [v _apagar `(v ~T0 @X0 1 ef ]
 {
-[; ;bsp.c: 211: void apagar(void){
+[; ;bsp.c: 215: void apagar(void){
 [e :U _apagar ]
 [f ]
-[; ;bsp.c: 212: PORTA = 0;
-"212
+[; ;bsp.c: 216: PORTA = 0;
+"216
 [e = _PORTA -> -> 0 `i `uc ]
-[; ;bsp.c: 213: PORTB = 0;
-"213
+[; ;bsp.c: 217: PORTB = 0;
+"217
 [e = _PORTB -> -> 0 `i `uc ]
-[; ;bsp.c: 214: PORTC = 0;
-"214
+[; ;bsp.c: 218: PORTC = 0;
+"218
 [e = _PORTC -> -> 0 `i `uc ]
-[; ;bsp.c: 215: }
-"215
+[; ;bsp.c: 219: }
+"219
 [e :UE 124 ]
 }
-"217
+"221
 [v _prueba `(v ~T0 @X0 1 ef ]
 {
-[; ;bsp.c: 217: void prueba(void){
+[; ;bsp.c: 221: void prueba(void){
 [e :U _prueba ]
 [f ]
-[; ;bsp.c: 218: PORTA=47;
-"218
+[; ;bsp.c: 222: PORTA=47;
+"222
 [e = _PORTA -> -> 47 `i `uc ]
-[; ;bsp.c: 219: PORTB=22;
-"219
-[e = _PORTB -> -> 22 `i `uc ]
-[; ;bsp.c: 220: PORTC=15;
-"220
-[e = _PORTC -> -> 15 `i `uc ]
-[; ;bsp.c: 221: }
-"221
-[e :UE 125 ]
-}
+[; ;bsp.c: 223: PORTB=22;
 "223
-[v _SENSOR_AR `(uc ~T0 @X0 1 ef ]
-{
-[; ;bsp.c: 223: unsigned char SENSOR_AR(){
-[e :U _SENSOR_AR ]
-[f ]
-[; ;bsp.c: 224: return(PORTBbits.RB0);
+[e = _PORTB -> -> 22 `i `uc ]
+[; ;bsp.c: 224: PORTC=15;
 "224
-[e ) . . _PORTBbits 0 0 ]
-[e $UE 126  ]
+[e = _PORTC -> -> 15 `i `uc ]
 [; ;bsp.c: 225: }
 "225
-[e :UE 126 ]
+[e :UE 125 ]
 }
 "227
-[v _SENSOR_CI `(uc ~T0 @X0 1 ef ]
+[v _SENSOR_AR `(uc ~T0 @X0 1 ef ]
 {
-[; ;bsp.c: 227: unsigned char SENSOR_CI(){
-[e :U _SENSOR_CI ]
+[; ;bsp.c: 227: unsigned char SENSOR_AR(){
+[e :U _SENSOR_AR ]
 [f ]
-[; ;bsp.c: 228: return(PORTBbits.RB5);
+[; ;bsp.c: 228: return(PORTBbits.RB0);
 "228
-[e ) . . _PORTBbits 0 5 ]
-[e $UE 127  ]
+[e ) . . _PORTBbits 0 0 ]
+[e $UE 126  ]
 [; ;bsp.c: 229: }
 "229
+[e :UE 126 ]
+}
+"231
+[v _SENSOR_CI `(uc ~T0 @X0 1 ef ]
+{
+[; ;bsp.c: 231: unsigned char SENSOR_CI(){
+[e :U _SENSOR_CI ]
+[f ]
+[; ;bsp.c: 232: return(PORTBbits.RB5);
+"232
+[e ) . . _PORTBbits 0 5 ]
+[e $UE 127  ]
+[; ;bsp.c: 233: }
+"233
 [e :UE 127 ]
 }

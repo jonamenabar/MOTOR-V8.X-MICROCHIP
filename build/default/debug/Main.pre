@@ -21,6 +21,7 @@ unsigned char SENSOR_CI(void);
 # 13 "Main.c"
 void main(void) {
 
+bsp_hardware_init();
 int const SI = 1;
 int const NO = 0;
 
@@ -30,6 +31,7 @@ int contador = 4;
 int inicio = 0;
 int UNAVEZ = 0;
 
+
 prueba();
 
 while (1) {
@@ -38,14 +40,14 @@ do {
 if (SENSOR_AR() == SI) {
 
 inicio = SI;
-
+ANTIREBOTE();
 }
 } while (inicio == 0);
 
 if (SENSOR_AR() == SI) {
 
 contador = 4;
-
+ANTIREBOTE();
 apagar();
 
 }
@@ -54,7 +56,7 @@ if (SENSOR_CI() == SI) {
 
 contador++;
 UNAVEZ = 1;
-
+ANTIREBOTE();
 if(contador>=9)
 contador=0;
 }
@@ -112,10 +114,10 @@ break;
 
 case 4:
 apagar();
-color_set(3);
-color_set(10);
-color_set(14);
-color_set(20);
+color_set(4);
+color_set(8);
+color_set(15);
+color_set(19);
 break;
 
 case 5:
