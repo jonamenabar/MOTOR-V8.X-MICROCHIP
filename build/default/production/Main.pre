@@ -22,44 +22,55 @@ unsigned char SENSOR_CI(void);
 void main(void) {
 
 bsp_hardware_init();
-int const SI = 1;
-int const NO = 0;
+unsigned int const SI = 1;
+unsigned int const NO = 0;
 
 
 
-int contador = 4;
-int inicio = 0;
-int UNAVEZ = 0;
-
+unsigned int contador = 4;
+unsigned int inicio = 0;
+unsigned int UNAVEZ = 0;
+unsigned int ACTUAL_AR = 0;
+unsigned int ANTERIOR_AR = 0;
+unsigned int ACTUAL_CI = 0;
+unsigned int ANTERIOR_CI = 0;
 
 prueba();
 
 while (1) {
 
+ACTUAL_AR = SENSOR_AR();
+ACTUAL_CI = SENSOR_CI();
+
 do {
-if (SENSOR_AR() == SI) {
+ACTUAL_AR = SENSOR_AR();
+
+if (ACTUAL_AR == SI && ANTERIOR_AR == NO){
 
 inicio = SI;
-ANTIREBOTE();
-}
-} while (inicio == 0);
 
-if (SENSOR_AR() == SI) {
+}
+
+
+} while (inicio == NO);
+
+if (ACTUAL_AR == SI && ANTERIOR_AR == NO) {
 
 contador = 4;
-ANTIREBOTE();
 apagar();
 
 }
+ANTERIOR_AR = ACTUAL_AR;
 
-if (SENSOR_CI() == SI) {
+if (ACTUAL_CI == SI && ANTERIOR_CI == NO) {
 
 contador++;
 UNAVEZ = 1;
-ANTIREBOTE();
 if(contador>=9)
 contador=0;
 }
+ANTERIOR_CI = ACTUAL_CI;
+
 switch (contador) {
 
 case 0:

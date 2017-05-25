@@ -12,45 +12,56 @@
 
 void main(void) {
 
-    bsp_hardware_init();
-    int const SI = 1;
-    int const NO = 0;
+   bsp_hardware_init();
+   unsigned int const SI = 1;
+   unsigned int const NO = 0;
 
 
-    //----------DEFINO VARIABLES--------------------
-    int contador = 4;
-    int inicio = 0;
-    int UNAVEZ = 0; //Variable usada para que el flash solo se de 1 vez por vuelta
-    
+   //----------DEFINO VARIABLES--------------------
+   unsigned int contador = 4;
+   unsigned int inicio = 0;
+   unsigned int UNAVEZ = 0;      //Variable usada para que el flash solo se de 1 vez por vuelta
+   unsigned int ACTUAL_AR = 0;   //Variables necesarias para poder crear un evento y reaccionar ante este, antes era por estado.
+   unsigned int ANTERIOR_AR = 0; 
+   unsigned int ACTUAL_CI = 0;
+   unsigned int ANTERIOR_CI = 0;
 
     prueba(); /*CON ESTO PRUEBO LOS LEDS QUE TODOS LOS COLORES DE CADA UNO FUNCIONE CORRECTAMENTE */
 
     while (1) {
-
+    
+        ACTUAL_AR = SENSOR_AR();     //***REVISAR COMO MEJORAR ESTO
+        ACTUAL_CI = SENSOR_CI();
+        
         do {
-            if (SENSOR_AR() == SI) {
+            ACTUAL_AR = SENSOR_AR(); //***REVISAR COMO MEJORAR ESTO
+            
+            if (ACTUAL_AR == SI && ANTERIOR_AR == NO){
 
                 inicio = SI;
-                ANTIREBOTE();
+                
             }
-        } while (inicio == 0);
+            
+            
+        } while (inicio == NO);      //Es para que quede dentro de este while hasta que el arbol de leva de el arranque inicial del motor
 
-        if (SENSOR_AR() == SI) { //Nota: Deberias meterlo en una interrupcion!.
+        if (ACTUAL_AR == SI && ANTERIOR_AR == NO) { //Nota: Deberias meterlo en una interrupcion!.
 
-            contador = 4; //ARRANCA EN EL CILINRO 7
-            ANTIREBOTE();
+            contador = 4;            //ARRANCA EN EL CILINRO 7
             apagar();
             
         }
-
-        if (SENSOR_CI() == SI) { //Nota: Deberias meterlo en una interrupcion!.
+            ANTERIOR_AR = ACTUAL_AR;
+            
+        if (ACTUAL_CI == SI && ANTERIOR_CI == NO) {     //Nota: Deberias meterlo en una interrupcion!.
 
             contador++;
             UNAVEZ = 1;
-            ANTIREBOTE();
             if(contador>=9)
                 contador=0;
         }
+            ANTERIOR_CI = ACTUAL_CI;
+            
         switch (contador) {
             
             case 0:

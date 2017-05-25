@@ -6,12 +6,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _prueba `(v ~T0 @X0 0 ef ]
 "30
 [v _SENSOR_AR `(uc ~T0 @X0 0 ef ]
-"25
-[v _ANTIREBOTE `(v ~T0 @X0 0 ef ]
-"27
-[v _apagar `(v ~T0 @X0 0 ef ]
 "31
 [v _SENSOR_CI `(uc ~T0 @X0 0 ef ]
+"27
+[v _apagar `(v ~T0 @X0 0 ef ]
 "23
 [v _color_set `(v ~T0 @X0 0 ef1`ui ]
 "26
@@ -38,435 +36,457 @@ Version 3.2 HI-TECH Software Intermediate Code
 "15
 [e ( _bsp_hardware_init ..  ]
 "16
-[v F26 `Ci ~T0 @X0 1 s SI ]
+[v F26 `Cui ~T0 @X0 1 s SI ]
 [i F26
--> 1 `i
+-> -> 1 `i `ui
 ]
 "17
-[v F27 `Ci ~T0 @X0 1 s NO ]
+[v F27 `Cui ~T0 @X0 1 s NO ]
 [i F27
--> 0 `i
+-> -> 0 `i `ui
 ]
 "21
-[v _contador `i ~T0 @X0 1 a ]
-[; ;Main.c: 16: int const SI = 1;
-[; ;Main.c: 17: int const NO = 0;
-[; ;Main.c: 21: int contador = 4;
-[e = _contador -> 4 `i ]
+[v _contador `ui ~T0 @X0 1 a ]
+[; ;Main.c: 16: unsigned int const SI = 1;
+[; ;Main.c: 17: unsigned int const NO = 0;
+[; ;Main.c: 21: unsigned int contador = 4;
+[e = _contador -> -> 4 `i `ui ]
 "22
-[v _inicio `i ~T0 @X0 1 a ]
-[; ;Main.c: 22: int inicio = 0;
-[e = _inicio -> 0 `i ]
+[v _inicio `ui ~T0 @X0 1 a ]
+[; ;Main.c: 22: unsigned int inicio = 0;
+[e = _inicio -> -> 0 `i `ui ]
 "23
-[v _UNAVEZ `i ~T0 @X0 1 a ]
-[; ;Main.c: 23: int UNAVEZ = 0;
-[e = _UNAVEZ -> 0 `i ]
-[; ;Main.c: 26: prueba();
+[v _UNAVEZ `ui ~T0 @X0 1 a ]
+[; ;Main.c: 23: unsigned int UNAVEZ = 0;
+[e = _UNAVEZ -> -> 0 `i `ui ]
+"24
+[v _ACTUAL_AR `ui ~T0 @X0 1 a ]
+[; ;Main.c: 24: unsigned int ACTUAL_AR = 0;
+[e = _ACTUAL_AR -> -> 0 `i `ui ]
+"25
+[v _ANTERIOR_AR `ui ~T0 @X0 1 a ]
+[; ;Main.c: 25: unsigned int ANTERIOR_AR = 0;
+[e = _ANTERIOR_AR -> -> 0 `i `ui ]
 "26
+[v _ACTUAL_CI `ui ~T0 @X0 1 a ]
+[; ;Main.c: 26: unsigned int ACTUAL_CI = 0;
+[e = _ACTUAL_CI -> -> 0 `i `ui ]
+"27
+[v _ANTERIOR_CI `ui ~T0 @X0 1 a ]
+[; ;Main.c: 27: unsigned int ANTERIOR_CI = 0;
+[e = _ANTERIOR_CI -> -> 0 `i `ui ]
+[; ;Main.c: 29: prueba();
+"29
 [e ( _prueba ..  ]
-[; ;Main.c: 28: while (1) {
-"28
+[; ;Main.c: 31: while (1) {
+"31
 [e :U 3 ]
 {
-[; ;Main.c: 30: do {
-"30
+[; ;Main.c: 33: ACTUAL_AR = SENSOR_AR();
+"33
+[e = _ACTUAL_AR -> ( _SENSOR_AR ..  `ui ]
+[; ;Main.c: 34: ACTUAL_CI = SENSOR_CI();
+"34
+[e = _ACTUAL_CI -> ( _SENSOR_CI ..  `ui ]
+[; ;Main.c: 36: do {
+"36
 [e :U 7 ]
 {
-[; ;Main.c: 31: if (SENSOR_AR() == SI) {
-"31
-[e $ ! == -> ( _SENSOR_AR ..  `i F26 8  ]
+[; ;Main.c: 37: ACTUAL_AR = SENSOR_AR();
+"37
+[e = _ACTUAL_AR -> ( _SENSOR_AR ..  `ui ]
+[; ;Main.c: 39: if (ACTUAL_AR == SI && ANTERIOR_AR == NO){
+"39
+[e $ ! && == _ACTUAL_AR F26 == _ANTERIOR_AR F27 8  ]
 {
-[; ;Main.c: 33: inicio = SI;
-"33
+[; ;Main.c: 41: inicio = SI;
+"41
 [e = _inicio F26 ]
-[; ;Main.c: 34: ANTIREBOTE();
-"34
-[e ( _ANTIREBOTE ..  ]
-"35
+"43
 }
 [e :U 8 ]
-"36
-}
-[; ;Main.c: 35: }
-[; ;Main.c: 36: } while (inicio == 0);
-[e $ == _inicio -> 0 `i 7  ]
-[e :U 6 ]
-[; ;Main.c: 38: if (SENSOR_AR() == SI) {
-"38
-[e $ ! == -> ( _SENSOR_AR ..  `i F26 9  ]
-{
-[; ;Main.c: 40: contador = 4;
-"40
-[e = _contador -> 4 `i ]
-[; ;Main.c: 41: ANTIREBOTE();
-"41
-[e ( _ANTIREBOTE ..  ]
-[; ;Main.c: 42: apagar();
-"42
-[e ( _apagar ..  ]
-"44
-}
-[e :U 9 ]
-[; ;Main.c: 44: }
-[; ;Main.c: 46: if (SENSOR_CI() == SI) {
 "46
-[e $ ! == -> ( _SENSOR_CI ..  `i F26 10  ]
-{
-[; ;Main.c: 48: contador++;
+}
+[; ;Main.c: 43: }
+[; ;Main.c: 46: } while (inicio == NO);
+[e $ == _inicio F27 7  ]
+[e :U 6 ]
+[; ;Main.c: 48: if (ACTUAL_AR == SI && ANTERIOR_AR == NO) {
 "48
-[e ++ _contador -> 1 `i ]
-[; ;Main.c: 49: UNAVEZ = 1;
-"49
-[e = _UNAVEZ -> 1 `i ]
-[; ;Main.c: 50: ANTIREBOTE();
+[e $ ! && == _ACTUAL_AR F26 == _ANTERIOR_AR F27 9  ]
+{
+[; ;Main.c: 50: contador = 4;
 "50
-[e ( _ANTIREBOTE ..  ]
-[; ;Main.c: 51: if(contador>=9)
+[e = _contador -> -> 4 `i `ui ]
+[; ;Main.c: 51: apagar();
 "51
-[e $ ! >= _contador -> 9 `i 11  ]
-[; ;Main.c: 52: contador=0;
-"52
-[e = _contador -> 0 `i ]
-[e :U 11 ]
+[e ( _apagar ..  ]
 "53
 }
-[e :U 10 ]
+[e :U 9 ]
 [; ;Main.c: 53: }
-[; ;Main.c: 54: switch (contador) {
+[; ;Main.c: 54: ANTERIOR_AR = ACTUAL_AR;
 "54
+[e = _ANTERIOR_AR _ACTUAL_AR ]
+[; ;Main.c: 56: if (ACTUAL_CI == SI && ANTERIOR_CI == NO) {
+"56
+[e $ ! && == _ACTUAL_CI F26 == _ANTERIOR_CI F27 10  ]
+{
+[; ;Main.c: 58: contador++;
+"58
+[e ++ _contador -> -> 1 `i `ui ]
+[; ;Main.c: 59: UNAVEZ = 1;
+"59
+[e = _UNAVEZ -> -> 1 `i `ui ]
+[; ;Main.c: 60: if(contador>=9)
+"60
+[e $ ! >= _contador -> -> 9 `i `ui 11  ]
+[; ;Main.c: 61: contador=0;
+"61
+[e = _contador -> -> 0 `i `ui ]
+[e :U 11 ]
+"62
+}
+[e :U 10 ]
+[; ;Main.c: 62: }
+[; ;Main.c: 63: ANTERIOR_CI = ACTUAL_CI;
+"63
+[e = _ANTERIOR_CI _ACTUAL_CI ]
+[; ;Main.c: 65: switch (contador) {
+"65
 [e $U 13  ]
 {
-[; ;Main.c: 56: case 0:
-"56
-[e :U 14 ]
-[; ;Main.c: 57: apagar();
-"57
-[e ( _apagar ..  ]
-[; ;Main.c: 58: color_set(4);
-"58
-[e ( _color_set (1 -> -> 4 `i `ui ]
-[; ;Main.c: 59: color_set(9);
-"59
-[e ( _color_set (1 -> -> 9 `i `ui ]
-[; ;Main.c: 60: color_set(13);
-"60
-[e ( _color_set (1 -> -> 13 `i `ui ]
-[; ;Main.c: 61: color_set(19);
-"61
-[e ( _color_set (1 -> -> 19 `i `ui ]
-[; ;Main.c: 62: if (UNAVEZ == 1) {
-"62
-[e $ ! == _UNAVEZ -> 1 `i 15  ]
-{
-[; ;Main.c: 63: color_set(5);
-"63
-[e ( _color_set (1 -> -> 5 `i `ui ]
-[; ;Main.c: 64: DELAY_FLASH();
-"64
-[e ( _DELAY_FLASH ..  ]
-[; ;Main.c: 65: color_set(6);
-"65
-[e ( _color_set (1 -> -> 6 `i `ui ]
-[; ;Main.c: 66: DELAY_FLASH();
-"66
-[e ( _DELAY_FLASH ..  ]
-[; ;Main.c: 67: color_set(5);
+[; ;Main.c: 67: case 0:
 "67
-[e ( _color_set (1 -> -> 5 `i `ui ]
-[; ;Main.c: 68: DELAY_FLASH();
+[e :U 14 ]
+[; ;Main.c: 68: apagar();
 "68
-[e ( _DELAY_FLASH ..  ]
+[e ( _apagar ..  ]
+[; ;Main.c: 69: color_set(4);
 "69
+[e ( _color_set (1 -> -> 4 `i `ui ]
+[; ;Main.c: 70: color_set(9);
+"70
+[e ( _color_set (1 -> -> 9 `i `ui ]
+[; ;Main.c: 71: color_set(13);
+"71
+[e ( _color_set (1 -> -> 13 `i `ui ]
+[; ;Main.c: 72: color_set(19);
+"72
+[e ( _color_set (1 -> -> 19 `i `ui ]
+[; ;Main.c: 73: if (UNAVEZ == 1) {
+"73
+[e $ ! == _UNAVEZ -> -> 1 `i `ui 15  ]
+{
+[; ;Main.c: 74: color_set(5);
+"74
+[e ( _color_set (1 -> -> 5 `i `ui ]
+[; ;Main.c: 75: DELAY_FLASH();
+"75
+[e ( _DELAY_FLASH ..  ]
+[; ;Main.c: 76: color_set(6);
+"76
+[e ( _color_set (1 -> -> 6 `i `ui ]
+[; ;Main.c: 77: DELAY_FLASH();
+"77
+[e ( _DELAY_FLASH ..  ]
+[; ;Main.c: 78: color_set(5);
+"78
+[e ( _color_set (1 -> -> 5 `i `ui ]
+[; ;Main.c: 79: DELAY_FLASH();
+"79
+[e ( _DELAY_FLASH ..  ]
+"80
 }
 [e :U 15 ]
-[; ;Main.c: 69: }
-[; ;Main.c: 70: UNAVEZ = 0;
-"70
-[e = _UNAVEZ -> 0 `i ]
-[; ;Main.c: 71: break;
-"71
-[e $U 12  ]
-[; ;Main.c: 73: case 1:
-"73
-[e :U 16 ]
-[; ;Main.c: 74: apagar();
-"74
-[e ( _apagar ..  ]
-[; ;Main.c: 75: color_set(4);
-"75
-[e ( _color_set (1 -> -> 4 `i `ui ]
-[; ;Main.c: 76: color_set(8);
-"76
-[e ( _color_set (1 -> -> 8 `i `ui ]
-[; ;Main.c: 77: color_set(15);
-"77
-[e ( _color_set (1 -> -> 15 `i `ui ]
-[; ;Main.c: 78: color_set(19);
-"78
-[e ( _color_set (1 -> -> 19 `i `ui ]
-[; ;Main.c: 79: break;
-"79
-[e $U 12  ]
-[; ;Main.c: 81: case 2:
+[; ;Main.c: 80: }
+[; ;Main.c: 81: UNAVEZ = 0;
 "81
-[e :U 17 ]
-[; ;Main.c: 82: apagar();
+[e = _UNAVEZ -> -> 0 `i `ui ]
+[; ;Main.c: 82: break;
 "82
-[e ( _apagar ..  ]
-[; ;Main.c: 83: color_set(1);
-"83
-[e ( _color_set (1 -> -> 1 `i `ui ]
-[; ;Main.c: 84: color_set(8);
-"84
-[e ( _color_set (1 -> -> 8 `i `ui ]
-[; ;Main.c: 85: color_set(15);
-"85
-[e ( _color_set (1 -> -> 15 `i `ui ]
-[; ;Main.c: 86: color_set(21);
-"86
-[e ( _color_set (1 -> -> 21 `i `ui ]
-[; ;Main.c: 87: break;
-"87
 [e $U 12  ]
-[; ;Main.c: 89: case 3:
-"89
-[e :U 18 ]
-[; ;Main.c: 90: apagar();
-"90
+[; ;Main.c: 84: case 1:
+"84
+[e :U 16 ]
+[; ;Main.c: 85: apagar();
+"85
 [e ( _apagar ..  ]
-[; ;Main.c: 91: color_set(1);
-"91
-[e ( _color_set (1 -> -> 1 `i `ui ]
-[; ;Main.c: 92: color_set(10);
+[; ;Main.c: 86: color_set(4);
+"86
+[e ( _color_set (1 -> -> 4 `i `ui ]
+[; ;Main.c: 87: color_set(8);
+"87
+[e ( _color_set (1 -> -> 8 `i `ui ]
+[; ;Main.c: 88: color_set(15);
+"88
+[e ( _color_set (1 -> -> 15 `i `ui ]
+[; ;Main.c: 89: color_set(19);
+"89
+[e ( _color_set (1 -> -> 19 `i `ui ]
+[; ;Main.c: 90: break;
+"90
+[e $U 12  ]
+[; ;Main.c: 92: case 2:
 "92
-[e ( _color_set (1 -> -> 10 `i `ui ]
-[; ;Main.c: 93: color_set(14);
+[e :U 17 ]
+[; ;Main.c: 93: apagar();
 "93
-[e ( _color_set (1 -> -> 14 `i `ui ]
-[; ;Main.c: 94: color_set(21);
+[e ( _apagar ..  ]
+[; ;Main.c: 94: color_set(1);
 "94
-[e ( _color_set (1 -> -> 21 `i `ui ]
-[; ;Main.c: 95: if (UNAVEZ == 1) {
+[e ( _color_set (1 -> -> 1 `i `ui ]
+[; ;Main.c: 95: color_set(8);
 "95
-[e $ ! == _UNAVEZ -> 1 `i 19  ]
-{
-[; ;Main.c: 96: color_set(11);
+[e ( _color_set (1 -> -> 8 `i `ui ]
+[; ;Main.c: 96: color_set(15);
 "96
-[e ( _color_set (1 -> -> 11 `i `ui ]
-[; ;Main.c: 97: DELAY_FLASH();
+[e ( _color_set (1 -> -> 15 `i `ui ]
+[; ;Main.c: 97: color_set(21);
 "97
-[e ( _DELAY_FLASH ..  ]
-[; ;Main.c: 98: color_set(12);
+[e ( _color_set (1 -> -> 21 `i `ui ]
+[; ;Main.c: 98: break;
 "98
-[e ( _color_set (1 -> -> 12 `i `ui ]
-[; ;Main.c: 99: DELAY_FLASH();
-"99
-[e ( _DELAY_FLASH ..  ]
-[; ;Main.c: 100: color_set(11);
+[e $U 12  ]
+[; ;Main.c: 100: case 3:
 "100
-[e ( _color_set (1 -> -> 11 `i `ui ]
-[; ;Main.c: 101: DELAY_FLASH();
+[e :U 18 ]
+[; ;Main.c: 101: apagar();
 "101
-[e ( _DELAY_FLASH ..  ]
+[e ( _apagar ..  ]
+[; ;Main.c: 102: color_set(1);
 "102
+[e ( _color_set (1 -> -> 1 `i `ui ]
+[; ;Main.c: 103: color_set(10);
+"103
+[e ( _color_set (1 -> -> 10 `i `ui ]
+[; ;Main.c: 104: color_set(14);
+"104
+[e ( _color_set (1 -> -> 14 `i `ui ]
+[; ;Main.c: 105: color_set(21);
+"105
+[e ( _color_set (1 -> -> 21 `i `ui ]
+[; ;Main.c: 106: if (UNAVEZ == 1) {
+"106
+[e $ ! == _UNAVEZ -> -> 1 `i `ui 19  ]
+{
+[; ;Main.c: 107: color_set(11);
+"107
+[e ( _color_set (1 -> -> 11 `i `ui ]
+[; ;Main.c: 108: DELAY_FLASH();
+"108
+[e ( _DELAY_FLASH ..  ]
+[; ;Main.c: 109: color_set(12);
+"109
+[e ( _color_set (1 -> -> 12 `i `ui ]
+[; ;Main.c: 110: DELAY_FLASH();
+"110
+[e ( _DELAY_FLASH ..  ]
+[; ;Main.c: 111: color_set(11);
+"111
+[e ( _color_set (1 -> -> 11 `i `ui ]
+[; ;Main.c: 112: DELAY_FLASH();
+"112
+[e ( _DELAY_FLASH ..  ]
+"113
 }
 [e :U 19 ]
-[; ;Main.c: 102: }
-[; ;Main.c: 103: UNAVEZ = 0;
-"103
-[e = _UNAVEZ -> 0 `i ]
-[; ;Main.c: 104: break;
-"104
-[e $U 12  ]
-[; ;Main.c: 106: case 4:
-"106
-[e :U 20 ]
-[; ;Main.c: 107: apagar();
-"107
-[e ( _apagar ..  ]
-[; ;Main.c: 108: color_set(4);
-"108
-[e ( _color_set (1 -> -> 4 `i `ui ]
-[; ;Main.c: 109: color_set(8);
-"109
-[e ( _color_set (1 -> -> 8 `i `ui ]
-[; ;Main.c: 110: color_set(15);
-"110
-[e ( _color_set (1 -> -> 15 `i `ui ]
-[; ;Main.c: 111: color_set(19);
-"111
-[e ( _color_set (1 -> -> 19 `i `ui ]
-[; ;Main.c: 112: break;
-"112
-[e $U 12  ]
-[; ;Main.c: 114: case 5:
+[; ;Main.c: 113: }
+[; ;Main.c: 114: UNAVEZ = 0;
 "114
-[e :U 21 ]
-[; ;Main.c: 115: apagar();
+[e = _UNAVEZ -> -> 0 `i `ui ]
+[; ;Main.c: 115: break;
 "115
-[e ( _apagar ..  ]
-[; ;Main.c: 116: color_set(3);
-"116
-[e ( _color_set (1 -> -> 3 `i `ui ]
-[; ;Main.c: 117: color_set(7);
+[e $U 12  ]
+[; ;Main.c: 117: case 4:
 "117
-[e ( _color_set (1 -> -> 7 `i `ui ]
-[; ;Main.c: 118: color_set(16);
+[e :U 20 ]
+[; ;Main.c: 118: apagar();
 "118
-[e ( _color_set (1 -> -> 16 `i `ui ]
-[; ;Main.c: 119: color_set(20);
+[e ( _apagar ..  ]
+[; ;Main.c: 119: color_set(4);
 "119
-[e ( _color_set (1 -> -> 20 `i `ui ]
-[; ;Main.c: 120: if (UNAVEZ == 1) {
+[e ( _color_set (1 -> -> 4 `i `ui ]
+[; ;Main.c: 120: color_set(8);
 "120
-[e $ ! == _UNAVEZ -> 1 `i 22  ]
-{
-[; ;Main.c: 121: color_set(17);
+[e ( _color_set (1 -> -> 8 `i `ui ]
+[; ;Main.c: 121: color_set(15);
 "121
-[e ( _color_set (1 -> -> 17 `i `ui ]
-[; ;Main.c: 122: DELAY_FLASH();
+[e ( _color_set (1 -> -> 15 `i `ui ]
+[; ;Main.c: 122: color_set(19);
 "122
-[e ( _DELAY_FLASH ..  ]
-[; ;Main.c: 123: color_set(18);
+[e ( _color_set (1 -> -> 19 `i `ui ]
+[; ;Main.c: 123: break;
 "123
-[e ( _color_set (1 -> -> 18 `i `ui ]
-[; ;Main.c: 124: DELAY_FLASH();
-"124
-[e ( _DELAY_FLASH ..  ]
-[; ;Main.c: 125: color_set(17);
+[e $U 12  ]
+[; ;Main.c: 125: case 5:
 "125
-[e ( _color_set (1 -> -> 17 `i `ui ]
-[; ;Main.c: 126: DELAY_FLASH();
+[e :U 21 ]
+[; ;Main.c: 126: apagar();
 "126
-[e ( _DELAY_FLASH ..  ]
+[e ( _apagar ..  ]
+[; ;Main.c: 127: color_set(3);
 "127
+[e ( _color_set (1 -> -> 3 `i `ui ]
+[; ;Main.c: 128: color_set(7);
+"128
+[e ( _color_set (1 -> -> 7 `i `ui ]
+[; ;Main.c: 129: color_set(16);
+"129
+[e ( _color_set (1 -> -> 16 `i `ui ]
+[; ;Main.c: 130: color_set(20);
+"130
+[e ( _color_set (1 -> -> 20 `i `ui ]
+[; ;Main.c: 131: if (UNAVEZ == 1) {
+"131
+[e $ ! == _UNAVEZ -> -> 1 `i `ui 22  ]
+{
+[; ;Main.c: 132: color_set(17);
+"132
+[e ( _color_set (1 -> -> 17 `i `ui ]
+[; ;Main.c: 133: DELAY_FLASH();
+"133
+[e ( _DELAY_FLASH ..  ]
+[; ;Main.c: 134: color_set(18);
+"134
+[e ( _color_set (1 -> -> 18 `i `ui ]
+[; ;Main.c: 135: DELAY_FLASH();
+"135
+[e ( _DELAY_FLASH ..  ]
+[; ;Main.c: 136: color_set(17);
+"136
+[e ( _color_set (1 -> -> 17 `i `ui ]
+[; ;Main.c: 137: DELAY_FLASH();
+"137
+[e ( _DELAY_FLASH ..  ]
+"138
 }
 [e :U 22 ]
-[; ;Main.c: 127: }
-[; ;Main.c: 128: UNAVEZ = 0;
-"128
-[e = _UNAVEZ -> 0 `i ]
-[; ;Main.c: 129: break;
-"129
-[e $U 12  ]
-[; ;Main.c: 131: case 6:
-"131
-[e :U 23 ]
-[; ;Main.c: 132: apagar();
-"132
-[e ( _apagar ..  ]
-[; ;Main.c: 133: color_set(2);
-"133
-[e ( _color_set (1 -> -> 2 `i `ui ]
-[; ;Main.c: 134: color_set(7);
-"134
-[e ( _color_set (1 -> -> 7 `i `ui ]
-[; ;Main.c: 135: color_set(16);
-"135
-[e ( _color_set (1 -> -> 16 `i `ui ]
-[; ;Main.c: 136: color_set(22);
-"136
-[e ( _color_set (1 -> -> 22 `i `ui ]
-[; ;Main.c: 137: if (UNAVEZ == 1) {
-"137
-[e $ ! == _UNAVEZ -> 1 `i 24  ]
-{
-[; ;Main.c: 138: color_set(23);
-"138
-[e ( _color_set (1 -> -> 23 `i `ui ]
-[; ;Main.c: 139: DELAY_FLASH();
+[; ;Main.c: 138: }
+[; ;Main.c: 139: UNAVEZ = 0;
 "139
-[e ( _DELAY_FLASH ..  ]
-[; ;Main.c: 140: color_set(24);
+[e = _UNAVEZ -> -> 0 `i `ui ]
+[; ;Main.c: 140: break;
 "140
-[e ( _color_set (1 -> -> 24 `i `ui ]
-[; ;Main.c: 141: DELAY_FLASH();
-"141
-[e ( _DELAY_FLASH ..  ]
-[; ;Main.c: 142: color_set(23);
+[e $U 12  ]
+[; ;Main.c: 142: case 6:
 "142
-[e ( _color_set (1 -> -> 23 `i `ui ]
-[; ;Main.c: 143: DELAY_FLASH();
+[e :U 23 ]
+[; ;Main.c: 143: apagar();
 "143
-[e ( _DELAY_FLASH ..  ]
+[e ( _apagar ..  ]
+[; ;Main.c: 144: color_set(2);
 "144
+[e ( _color_set (1 -> -> 2 `i `ui ]
+[; ;Main.c: 145: color_set(7);
+"145
+[e ( _color_set (1 -> -> 7 `i `ui ]
+[; ;Main.c: 146: color_set(16);
+"146
+[e ( _color_set (1 -> -> 16 `i `ui ]
+[; ;Main.c: 147: color_set(22);
+"147
+[e ( _color_set (1 -> -> 22 `i `ui ]
+[; ;Main.c: 148: if (UNAVEZ == 1) {
+"148
+[e $ ! == _UNAVEZ -> -> 1 `i `ui 24  ]
+{
+[; ;Main.c: 149: color_set(23);
+"149
+[e ( _color_set (1 -> -> 23 `i `ui ]
+[; ;Main.c: 150: DELAY_FLASH();
+"150
+[e ( _DELAY_FLASH ..  ]
+[; ;Main.c: 151: color_set(24);
+"151
+[e ( _color_set (1 -> -> 24 `i `ui ]
+[; ;Main.c: 152: DELAY_FLASH();
+"152
+[e ( _DELAY_FLASH ..  ]
+[; ;Main.c: 153: color_set(23);
+"153
+[e ( _color_set (1 -> -> 23 `i `ui ]
+[; ;Main.c: 154: DELAY_FLASH();
+"154
+[e ( _DELAY_FLASH ..  ]
+"155
 }
 [e :U 24 ]
-[; ;Main.c: 144: }
-[; ;Main.c: 145: UNAVEZ = 0;
-"145
-[e = _UNAVEZ -> 0 `i ]
-[; ;Main.c: 146: break;
-"146
-[e $U 12  ]
-[; ;Main.c: 148: case 7:
-"148
-[e :U 25 ]
-[; ;Main.c: 149: apagar();
-"149
-[e ( _apagar ..  ]
-[; ;Main.c: 150: color_set(2);
-"150
-[e ( _color_set (1 -> -> 2 `i `ui ]
-[; ;Main.c: 151: color_set(9);
-"151
-[e ( _color_set (1 -> -> 9 `i `ui ]
-[; ;Main.c: 152: color_set(13);
-"152
-[e ( _color_set (1 -> -> 13 `i `ui ]
-[; ;Main.c: 153: color_set(22);
-"153
-[e ( _color_set (1 -> -> 22 `i `ui ]
-[; ;Main.c: 154: break;
-"154
-[e $U 12  ]
-[; ;Main.c: 156: case 8:
+[; ;Main.c: 155: }
+[; ;Main.c: 156: UNAVEZ = 0;
 "156
-[e :U 26 ]
-[; ;Main.c: 157: contador = 0;
+[e = _UNAVEZ -> -> 0 `i `ui ]
+[; ;Main.c: 157: break;
 "157
-[e = _contador -> 0 `i ]
-[; ;Main.c: 158: break;
-"158
 [e $U 12  ]
-[; ;Main.c: 159: default:
+[; ;Main.c: 159: case 7:
 "159
-[e :U 27 ]
-[; ;Main.c: 160: contador = 4;
+[e :U 25 ]
+[; ;Main.c: 160: apagar();
 "160
-[e = _contador -> 4 `i ]
-[; ;Main.c: 161: break;
+[e ( _apagar ..  ]
+[; ;Main.c: 161: color_set(2);
 "161
-[e $U 12  ]
+[e ( _color_set (1 -> -> 2 `i `ui ]
+[; ;Main.c: 162: color_set(9);
 "162
-}
-[; ;Main.c: 162: }
-[e $U 12  ]
-"54
-[e :U 13 ]
-[e [\ _contador , $ -> 0 `i 14
- , $ -> 1 `i 16
- , $ -> 2 `i 17
- , $ -> 3 `i 18
- , $ -> 4 `i 20
- , $ -> 5 `i 21
- , $ -> 6 `i 23
- , $ -> 7 `i 25
- , $ -> 8 `i 26
- 27 ]
-"162
-[e :U 12 ]
+[e ( _color_set (1 -> -> 9 `i `ui ]
+[; ;Main.c: 163: color_set(13);
+"163
+[e ( _color_set (1 -> -> 13 `i `ui ]
+[; ;Main.c: 164: color_set(22);
 "164
+[e ( _color_set (1 -> -> 22 `i `ui ]
+[; ;Main.c: 165: break;
+"165
+[e $U 12  ]
+[; ;Main.c: 167: case 8:
+"167
+[e :U 26 ]
+[; ;Main.c: 168: contador = 0;
+"168
+[e = _contador -> -> 0 `i `ui ]
+[; ;Main.c: 169: break;
+"169
+[e $U 12  ]
+[; ;Main.c: 170: default:
+"170
+[e :U 27 ]
+[; ;Main.c: 171: contador = 4;
+"171
+[e = _contador -> -> 4 `i `ui ]
+[; ;Main.c: 172: break;
+"172
+[e $U 12  ]
+"173
+}
+[; ;Main.c: 173: }
+[e $U 12  ]
+"65
+[e :U 13 ]
+[e [\ _contador , $ -> -> 0 `i `ui 14
+ , $ -> -> 1 `i `ui 16
+ , $ -> -> 2 `i `ui 17
+ , $ -> -> 3 `i `ui 18
+ , $ -> -> 4 `i `ui 20
+ , $ -> -> 5 `i `ui 21
+ , $ -> -> 6 `i `ui 23
+ , $ -> -> 7 `i `ui 25
+ , $ -> -> 8 `i `ui 26
+ 27 ]
+"173
+[e :U 12 ]
+"175
 }
 [e :U 2 ]
-"28
+"31
 [e $U 3  ]
 [e :U 4 ]
-[; ;Main.c: 164: }
-[; ;Main.c: 168: return;
-"168
+[; ;Main.c: 175: }
+[; ;Main.c: 179: return;
+"179
 [e $UE 1  ]
-[; ;Main.c: 169: }
-"169
+[; ;Main.c: 180: }
+"180
 [e :UE 1 ]
 }
